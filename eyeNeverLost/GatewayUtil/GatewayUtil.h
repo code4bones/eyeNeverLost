@@ -42,7 +42,7 @@ enum kLocationModes {
 +(BeaconObj*) createWithLocationString:(NSString*)src;
 @end
 
-
+// http helpers
 @interface GatewayUtil : NSObject {
     NSMutableDictionary *response;
     NSString *deviceID;
