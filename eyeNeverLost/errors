@@ -1,0 +1,1069 @@
+
+Jul  6 00:00:43 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 47
+Jul  6 00:00:43 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] applicationWillEnterForeground
+Jul  6 00:00:43 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 37
+Jul  6 00:00:43 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] FG: Battery drain...
+Jul  6 00:00:43 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 43
+Jul  6 00:00:43 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] applicationDidBecomeActive
+Jul  6 00:00:43 unknown networkd[11301] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 00:00:49 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 41
+Jul  6 00:00:49 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Stopping update Location
+Jul  6 00:00:57 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 41
+Jul  6 00:00:57 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Starting update location
+Jul  6 00:00:58 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 00:00:58 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 00:00:58 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 00:00:58 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 310
+Jul  6 00:00:58 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.phone_authorization%3C/name%3E%3Cindex%3E%3C/index%3E%3Cparam%3Ebada%5Ebada%5E1423%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 00:00:58 unknown networkd[11303] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 00:00:58 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 38
+Jul  6 00:00:58 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 247
+Jul  6 00:00:58 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 247
+Jul  6 00:00:58 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 40
+Jul  6 00:00:58 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] SetCode status: 5 [5^1]
+Jul  6 00:00:58 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 00:00:58 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85667423,+37.49403559> +/- 99.54m (speed -1.00 mps / course -1.00) @ 06.07.12, 0:00:58 Московское стандартное время
+Jul  6 00:00:58 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 00:00:58 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 00:00:58 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 00:00:58 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 343
+Jul  6 00:00:58 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494034%5E55.856674%5E99.535614%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 00:00:59 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 38
+Jul  6 00:00:59 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 330
+Jul  6 00:00:59 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 330
+Jul  6 00:00:59 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 00:00:59 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85667423,+37.49403559> +/- 99.54m (speed -1.00 mps / course -1.00) @ 06.07.12, 0:00:58 Московское стандартное время
+Jul  6 00:00:59 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 00:00:59 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 00:00:59 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 00:00:59 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 343
+Jul  6 00:00:59 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494034%5E55.856674%5E99.535614%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 00:00:59 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 38
+Jul  6 00:00:59 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 330
+Jul  6 00:00:59 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 330
+Jul  6 00:00:59 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 00:00:59 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85661160,+37.49410304> +/- 91.11m (speed -1.00 mps / course -1.00) @ 06.07.12, 0:00:59 Московское стандартное время
+Jul  6 00:00:59 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 00:00:59 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 00:00:59 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 00:00:59 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 343
+Jul  6 00:00:59 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494102%5E55.856613%5E91.107803%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 00:00:59 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 38
+Jul  6 00:00:59 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 330
+Jul  6 00:00:59 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 330
+Jul  6 00:01:01 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 00:01:01 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85660359,+37.49410458> +/- 92.19m (speed -1.00 mps / course -1.00) @ 06.07.12, 0:01:01 Московское стандартное время
+Jul  6 00:01:01 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 00:01:01 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 00:01:01 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 00:01:01 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 343
+Jul  6 00:01:01 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494106%5E55.856602%5E92.192200%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 00:01:01 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 38
+Jul  6 00:01:01 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 330
+Jul  6 00:01:01 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 330
+Jul  6 00:01:02 unknown CommCenter[66] <Error>: kDataAttachStatusNotification sent, wasAttached: 1 isAttached: 1
+Jul  6 00:01:05 unknown sandboxd[11305] <Notice>: MS:Notice: Installing: (null) [sandboxd] (690.10)
+Jul  6 00:01:05 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 44
+Jul  6 00:01:05 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] applicationWillResignActive
+Jul  6 00:01:05 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 46
+Jul  6 00:01:05 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] applicationDidEnterBackground
+Jul  6 00:01:05 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 37
+Jul  6 00:01:05 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] BG: Battery drain...
+Jul  6 00:01:08 unknown CommCenter[66] <Error>: kDataAttachStatusNotification sent, wasAttached: 1 isAttached: 1
+Jul  6 00:01:22 unknown CommCenter[66] <Error>: kDataAttachStatusNotification sent, wasAttached: 1 isAttached: 1
+Jul  6 00:02:25 unknown timed[11307] <Notice>: MS:Notice: Installing: com.apple.timed [timed] (690.10)
+Jul  6 00:02:28 unknown timed[11307] <Notice>: (Note ) CoreTime: Want active time in 34.46hrs. Need active time in 117.79hrs.
+Jul  6 00:02:38 unknown timed[11307] <Notice>: (Note ) CoreTime: Not setting system time to 07/05/2012 20:02:17 from NTP because should not set system time
+Jul  6 00:03:00 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 00:03:00 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363211680.022573) (current time == 363211380.022587)
+Jul  6 00:03:00 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 00:03:00 unknown securityd[11309] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 00:03:00 unknown networkd[11311] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 00:06:07 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 00:06:07 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85654612,+37.49407788> +/- 98.53m (speed -1.00 mps / course -1.00) @ 06.07.12, 0:06:07 Московское стандартное время
+Jul  6 00:06:07 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 00:06:07 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 00:06:07 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 00:06:07 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 343
+Jul  6 00:06:07 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494080%5E55.856544%5E98.532623%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 00:06:07 unknown networkd[11313] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 00:06:08 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 38
+Jul  6 00:06:08 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 330
+Jul  6 00:06:08 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 330
+Jul  6 00:06:34 unknown SpringBoard[7428] <Notice>: Posting 'com.apple.iokit.hid.displayStatus' notifyState=0
+Jul  6 00:06:34 unknown UserEventAgent[19] <Warning>: DEBUG: Changing screen blanked state: 1
+Jul  6 00:06:34 unknown SpringBoard[7428] <Notice>: MultitouchHID: detection mode: 0->255
+Jul  6 00:06:45 unknown kernel[0] <Debug>: AppleSerialMultiplexer: mux-ad(eng)::dormancySetIntervalGated: Setting dormancy interval to 2500 ms with mask 0x1700
+Jul  6 00:06:52 unknown CommCenter[66] <Error>: kDataAttachStatusNotification sent, wasAttached: 1 isAttached: 1
+Jul  6 00:07:47 unknown CommCenter[66] <Error>: kDataAttachStatusNotification sent, wasAttached: 1 isAttached: 1
+Jul  6 00:08:30 unknown CommCenter[66] <Error>: kDataAttachStatusNotification sent, wasAttached: 1 isAttached: 1
+Jul  6 00:08:49 unknown SpringBoard[7428] <Notice>: Posting 'com.apple.iokit.hid.displayStatus' notifyState=1
+Jul  6 00:08:49 unknown UserEventAgent[19] <Warning>: DEBUG: Changing screen blanked state: 0
+Jul  6 00:08:50 unknown SpringBoard[7428] <Notice>: MultitouchHID: detection mode: 255->0 (deferring until bootloaded)
+Jul  6 00:08:50 unknown SpringBoard[7428] <Notice>: MultitouchHID: device bootloaded
+Jul  6 00:08:50 unknown SpringBoard[7428] <Notice>: MultitouchHID: detection mode: 0->0
+Jul  6 00:08:51 unknown calaccessd[11315] <Notice>: MS:Notice: Installing: (null) [calaccessd] (690.10)
+Jul  6 00:08:52 unknown sandboxd[11317] <Notice>: MS:Notice: Installing: (null) [sandboxd] (690.10)
+Jul  6 00:08:54 unknown SpringBoard[7428] <Notice>: Posting 'com.apple.iokit.hid.displayStatus' notifyState=0
+Jul  6 00:08:54 unknown SpringBoard[7428] <Notice>: MultitouchHID: detection mode: 0->255
+Jul  6 00:08:54 unknown UserEventAgent[19] <Warning>: DEBUG: Changing screen blanked state: 1
+Jul  6 00:09:05 unknown kernel[0] <Debug>: AppleSerialMultiplexer: mux-ad(eng)::dormancySetIntervalGated: Setting dormancy interval to 2500 ms with mask 0x1700
+Jul  6 00:10:00 unknown CommCenter[66] <Error>: kDataAttachStatusNotification sent, wasAttached: 1 isAttached: 1
+Jul  6 00:10:33 unknown timed[11319] <Notice>: MS:Notice: Installing: com.apple.timed [timed] (690.10)
+Jul  6 00:10:36 unknown timed[11319] <Notice>: (Note ) CoreTime: Want active time in 34.32hrs. Need active time in 117.65hrs.
+Jul  6 00:10:46 unknown timed[11319] <Notice>: (Note ) CoreTime: Not setting system time to 07/05/2012 20:10:25 from NTP because should not set system time
+Jul  6 00:11:10 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 00:11:10 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85656705,+37.49400380> +/- 86.63m (speed -1.00 mps / course -1.00) @ 06.07.12, 0:11:10 Московское стандартное время
+Jul  6 00:11:10 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 00:11:10 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 00:11:10 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 00:11:10 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 343
+Jul  6 00:11:10 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494003%5E55.856567%5E86.630875%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 00:11:10 unknown networkd[11321] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 00:11:10 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 38
+Jul  6 00:11:11 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 330
+Jul  6 00:11:11 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 330
+Jul  6 00:11:49 unknown CommCenter[66] <Error>: kDataAttachStatusNotification sent, wasAttached: 1 isAttached: 1
+Jul  6 00:12:32 unknown CommCenter[66] <Error>: kDataAttachStatusNotification sent, wasAttached: 1 isAttached: 1
+Jul  6 00:12:54 unknown CommCenter[66] <Error>: kDataAttachStatusNotification sent, wasAttached: 1 isAttached: 1
+Jul  6 00:13:28 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 00:13:28 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363212308.771387) (current time == 363212008.771400)
+Jul  6 00:13:28 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 00:13:28 unknown securityd[11323] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 00:13:29 unknown networkd[11325] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 00:13:36 unknown CommCenter[66] <Error>: kDataAttachStatusNotification sent, wasAttached: 1 isAttached: 1
+Jul  6 00:15:44 unknown CommCenter[66] <Error>: kDataAttachStatusNotification sent, wasAttached: 1 isAttached: 1
+Jul  6 00:16:16 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 182
+Jul  6 00:16:16 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85620629,+37.49403110> +/- 100.00m (speed -1.00 mps / course -1.00) @ 06.07.12, 0:16:16 Московское стандартное время
+Jul  6 00:16:16 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 00:16:16 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 00:16:16 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 00:16:16 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 344
+Jul  6 00:16:16 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494030%5E55.856205%5E100.000000%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 00:16:16 unknown networkd[11327] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 00:16:17 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 38
+Jul  6 00:16:17 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 331
+Jul  6 00:16:17 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 331
+Jul  6 00:16:40 unknown CommCenter[66] <Error>: kDataAttachStatusNotification sent, wasAttached: 1 isAttached: 1
+Jul  6 00:16:43 unknown CommCenter[66] <Error>: kDataAttachStatusNotification sent, wasAttached: 1 isAttached: 1
+Jul  6 00:16:49 unknown CommCenter[66] <Error>: kDataAttachStatusNotification sent, wasAttached: 1 isAttached: 1
+Jul  6 00:17:13 unknown CommCenter[66] <Error>: kDataAttachStatusNotification sent, wasAttached: 1 isAttached: 1
+Jul  6 00:17:29 unknown CommCenter[66] <Error>: kDataAttachStatusNotification sent, wasAttached: 1 isAttached: 1
+Jul  6 00:21:07 unknown SpringBoard[7428] <Notice>: Posting 'com.apple.iokit.hid.displayStatus' notifyState=1
+Jul  6 00:21:07 unknown UserEventAgent[19] <Warning>: DEBUG: Changing screen blanked state: 0
+Jul  6 00:21:07 unknown SpringBoard[7428] <Notice>: MultitouchHID: detection mode: 255->0 (deferring until bootloaded)
+Jul  6 00:21:07 unknown SpringBoard[7428] <Notice>: MultitouchHID: device bootloaded
+Jul  6 00:21:07 unknown SpringBoard[7428] <Notice>: MultitouchHID: detection mode: 0->0
+Jul  6 00:21:09 unknown SpringBoard[7428] <Notice>: Posting 'com.apple.iokit.hid.displayStatus' notifyState=0
+Jul  6 00:21:09 unknown SpringBoard[7428] <Notice>: MultitouchHID: detection mode: 0->255
+Jul  6 00:21:09 unknown UserEventAgent[19] <Warning>: DEBUG: Changing screen blanked state: 1
+Jul  6 00:21:19 unknown kernel[0] <Debug>: AppleSerialMultiplexer: mux-ad(eng)::dormancySetIntervalGated: Setting dormancy interval to 2500 ms with mask 0x1700
+Jul  6 00:21:22 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 182
+Jul  6 00:21:22 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85615773,+37.49403477> +/- 100.00m (speed -1.00 mps / course -1.00) @ 06.07.12, 0:21:22 Московское стандартное время
+Jul  6 00:21:22 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 00:21:22 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 00:21:22 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 00:21:22 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 344
+Jul  6 00:21:22 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494034%5E55.856159%5E100.000000%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 00:21:22 unknown networkd[11329] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 00:21:23 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 38
+Jul  6 00:21:23 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 331
+Jul  6 00:21:23 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 331
+Jul  6 00:22:09 unknown SpringBoard[7428] <Notice>: Posting 'com.apple.iokit.hid.displayStatus' notifyState=1
+Jul  6 00:22:09 unknown UserEventAgent[19] <Warning>: DEBUG: Changing screen blanked state: 0
+Jul  6 00:22:09 unknown SpringBoard[7428] <Notice>: MultitouchHID: detection mode: 255->0 (deferring until bootloaded)
+Jul  6 00:22:09 unknown SpringBoard[7428] <Notice>: MultitouchHID: device bootloaded
+Jul  6 00:22:09 unknown SpringBoard[7428] <Notice>: MultitouchHID: detection mode: 0->0
+Jul  6 00:22:10 unknown calaccessd[11331] <Notice>: MS:Notice: Installing: (null) [calaccessd] (690.10)
+Jul  6 00:22:11 unknown sandboxd[11333] <Notice>: MS:Notice: Installing: (null) [sandboxd] (690.10)
+Jul  6 00:22:13 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 47
+Jul  6 00:22:13 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] applicationWillEnterForeground
+Jul  6 00:22:13 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 37
+Jul  6 00:22:13 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] FG: Battery drain...
+Jul  6 00:22:13 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 43
+Jul  6 00:22:13 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] applicationDidBecomeActive
+Jul  6 00:22:13 unknown networkd[11335] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 00:22:20 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 44
+Jul  6 00:22:20 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] applicationWillResignActive
+Jul  6 00:22:20 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 46
+Jul  6 00:22:20 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] applicationDidEnterBackground
+Jul  6 00:22:20 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 37
+Jul  6 00:22:20 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] BG: Battery drain...
+Jul  6 00:22:21 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 47
+Jul  6 00:22:21 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] applicationWillEnterForeground
+Jul  6 00:22:21 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 37
+Jul  6 00:22:21 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] FG: Battery drain...
+Jul  6 00:22:21 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 43
+Jul  6 00:22:21 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] applicationDidBecomeActive
+Jul  6 00:23:30 unknown networkd[11338] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 00:23:30 unknown sandboxd[11337] <Notice>: MS:Notice: Installing: (null) [sandboxd] (690.10)
+Jul  6 00:23:30 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 44
+Jul  6 00:23:30 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] applicationWillResignActive
+Jul  6 00:23:30 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 46
+Jul  6 00:23:30 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] applicationDidEnterBackground
+Jul  6 00:23:30 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 37
+Jul  6 00:23:30 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] BG: Battery drain...
+Jul  6 00:23:35 unknown SpringBoard[7428] <Notice>: Posting 'com.apple.iokit.hid.displayStatus' notifyState=0
+Jul  6 00:23:35 unknown UserEventAgent[19] <Warning>: DEBUG: Changing screen blanked state: 1
+Jul  6 00:23:35 unknown SpringBoard[7428] <Notice>: MultitouchHID: detection mode: 0->255
+Jul  6 00:23:45 unknown kernel[0] <Debug>: AppleSerialMultiplexer: mux-ad(eng)::dormancySetIntervalGated: Setting dormancy interval to 2500 ms with mask 0x1700
+Jul  6 00:23:50 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 00:23:50 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363212930.358902) (current time == 363212630.358914)
+Jul  6 00:23:50 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 00:25:28 unknown SpringBoard[7428] <Notice>: Posting 'com.apple.iokit.hid.displayStatus' notifyState=1
+Jul  6 00:25:28 unknown UserEventAgent[19] <Warning>: DEBUG: Changing screen blanked state: 0
+Jul  6 00:25:28 unknown SpringBoard[7428] <Notice>: MultitouchHID: detection mode: 255->0 (deferring until bootloaded)
+Jul  6 00:25:28 unknown SpringBoard[7428] <Notice>: MultitouchHID: device bootloaded
+Jul  6 00:25:28 unknown SpringBoard[7428] <Notice>: MultitouchHID: detection mode: 0->0
+Jul  6 00:25:29 unknown calaccessd[11341] <Notice>: MS:Notice: Installing: (null) [calaccessd] (690.10)
+Jul  6 00:25:30 unknown sandboxd[11343] <Notice>: MS:Notice: Installing: (null) [sandboxd] (690.10)
+Jul  6 00:25:33 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 47
+Jul  6 00:25:33 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] applicationWillEnterForeground
+Jul  6 00:25:33 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 37
+Jul  6 00:25:33 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] FG: Battery drain...
+Jul  6 00:25:33 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 43
+Jul  6 00:25:33 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] applicationDidBecomeActive
+Jul  6 00:25:34 unknown networkd[11345] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 00:25:36 unknown CommCenter[66] <Error>: kDataAttachStatusNotification sent, wasAttached: 1 isAttached: 1
+Jul  6 00:25:36 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 00:25:56 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 41
+Jul  6 00:25:56 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Stopping update Location
+Jul  6 00:25:58 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 41
+Jul  6 00:25:58 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Starting update location
+Jul  6 00:25:58 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 00:25:58 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 00:25:58 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 00:25:58 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 310
+Jul  6 00:25:58 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.phone_authorization%3C/name%3E%3Cindex%3E%3C/index%3E%3Cparam%3Ebada%5Ebada%5E1423%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 00:25:58 unknown networkd[11347] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 00:25:58 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 38
+Jul  6 00:25:58 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 247
+Jul  6 00:25:58 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 247
+Jul  6 00:25:58 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 40
+Jul  6 00:25:58 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] SetCode status: 5 [5^1]
+Jul  6 00:25:58 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 182
+Jul  6 00:25:58 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85615773,+37.49403477> +/- 100.00m (speed -1.00 mps / course -1.00) @ 06.07.12, 0:25:58 Московское стандартное время
+Jul  6 00:25:58 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 00:25:58 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 00:25:58 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 00:25:58 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 368
+Jul  6 00:25:58 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494034%5E55.856159%5E100.000000%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%D0%BF%D0%BF%D0%BF%D0%BF%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 00:25:59 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 38
+Jul  6 00:25:59 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 339
+Jul  6 00:25:59 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 339
+Jul  6 00:25:59 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 182
+Jul  6 00:25:59 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85615773,+37.49403477> +/- 100.00m (speed -1.00 mps / course -1.00) @ 06.07.12, 0:25:58 Московское стандартное время
+Jul  6 00:25:59 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 00:25:59 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 00:25:59 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 00:25:59 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 368
+Jul  6 00:25:59 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494034%5E55.856159%5E100.000000%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%D0%BF%D0%BF%D0%BF%D0%BF%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 00:25:59 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 38
+Jul  6 00:25:59 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 339
+Jul  6 00:25:59 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 339
+Jul  6 00:25:59 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 182
+Jul  6 00:25:59 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85669088,+37.49409353> +/- 100.65m (speed -1.00 mps / course -1.00) @ 06.07.12, 0:25:59 Московское стандартное время
+Jul  6 00:25:59 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 00:25:59 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 00:25:59 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 00:25:59 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 368
+Jul  6 00:25:59 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494095%5E55.856689%5E100.645744%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%D0%BF%D0%BF%D0%BF%D0%BF%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 00:26:00 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 38
+Jul  6 00:26:00 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 339
+Jul  6 00:26:00 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 339
+Jul  6 00:26:01 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 00:26:01 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85667795,+37.49407748> +/- 98.50m (speed -1.00 mps / course -1.00) @ 06.07.12, 0:26:01 Московское стандартное время
+Jul  6 00:26:01 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 00:26:01 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 00:26:01 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 00:26:01 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 367
+Jul  6 00:26:01 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494076%5E55.856678%5E98.496307%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%D0%BF%D0%BF%D0%BF%D0%BF%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 00:26:02 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 38
+Jul  6 00:26:02 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 338
+Jul  6 00:26:02 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 338
+Jul  6 00:26:13 unknown sandboxd[11349] <Notice>: MS:Notice: Installing: (null) [sandboxd] (690.10)
+Jul  6 00:26:13 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 44
+Jul  6 00:26:13 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] applicationWillResignActive
+Jul  6 00:26:13 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 46
+Jul  6 00:26:13 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] applicationDidEnterBackground
+Jul  6 00:26:13 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 37
+Jul  6 00:26:13 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] BG: Battery drain...
+Jul  6 00:26:15 unknown SpringBoard[7428] <Notice>: Posting 'com.apple.iokit.hid.displayStatus' notifyState=0
+Jul  6 00:26:15 unknown UserEventAgent[19] <Warning>: DEBUG: Changing screen blanked state: 1
+Jul  6 00:26:15 unknown SpringBoard[7428] <Notice>: MultitouchHID: detection mode: 0->255
+Jul  6 00:26:26 unknown kernel[0] <Debug>: AppleSerialMultiplexer: mux-ad(eng)::dormancySetIntervalGated: Setting dormancy interval to 2500 ms with mask 0x1700
+Jul  6 00:26:26 unknown CommCenter[66] <Error>: kDataAttachStatusNotification sent, wasAttached: 1 isAttached: 1
+Jul  6 00:31:01 unknown networkd[11351] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 00:31:01 unknown securityd[11353] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 00:31:07 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 00:31:07 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85605515,+37.49406764> +/- 65.00m (speed -1.00 mps / course -1.00) @ 06.07.12, 0:31:07 Московское стандартное время
+Jul  6 00:31:07 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 00:31:07 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 00:31:07 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 00:31:07 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 367
+Jul  6 00:31:07 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494068%5E55.856056%5E65.000000%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%D0%BF%D0%BF%D0%BF%D0%BF%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 00:31:08 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 38
+Jul  6 00:31:08 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 338
+Jul  6 00:31:08 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 338
+Jul  6 00:35:32 unknown CommCenter[66] <Error>: kDataAttachStatusNotification sent, wasAttached: 1 isAttached: 1
+Jul  6 00:35:49 unknown CommCenter[66] <Error>: kDataAttachStatusNotification sent, wasAttached: 1 isAttached: 1
+Jul  6 00:36:13 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 00:36:13 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85604735,+37.49406779> +/- 65.00m (speed -1.00 mps / course -1.00) @ 06.07.12, 0:36:13 Московское стандартное время
+Jul  6 00:36:13 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 00:36:13 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 00:36:13 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 00:36:13 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 367
+Jul  6 00:36:13 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494068%5E55.856049%5E65.000000%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%D0%BF%D0%BF%D0%BF%D0%BF%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 00:36:14 unknown networkd[11355] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 00:36:14 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 38
+Jul  6 00:36:14 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 338
+Jul  6 00:36:14 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 338
+Jul  6 00:39:08 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 00:39:08 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363213848.474228) (current time == 363213548.474241)
+Jul  6 00:39:08 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 00:39:08 unknown securityd[11357] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 00:39:08 unknown networkd[11359] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 00:41:15 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 00:41:15 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85604498,+37.49406784> +/- 65.00m (speed -1.00 mps / course -1.00) @ 06.07.12, 0:41:15 Московское стандартное время
+Jul  6 00:41:15 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 00:41:15 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 00:41:15 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 00:41:15 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 367
+Jul  6 00:41:15 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494068%5E55.856045%5E65.000000%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%D0%BF%D0%BF%D0%BF%D0%BF%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 00:41:15 unknown networkd[11361] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 00:41:16 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 38
+Jul  6 00:41:16 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 338
+Jul  6 00:41:16 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 338
+Jul  6 00:41:23 unknown CommCenter[66] <Error>: kDataAttachStatusNotification sent, wasAttached: 1 isAttached: 1
+Jul  6 00:46:21 unknown networkd[11363] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 00:46:21 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 00:46:21 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85626207,+37.49409146> +/- 65.00m (speed -1.00 mps / course -1.00) @ 06.07.12, 0:46:21 Московское стандартное время
+Jul  6 00:46:21 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 00:46:21 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 00:46:22 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 00:46:22 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 367
+Jul  6 00:46:22 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494091%5E55.856262%5E65.000000%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%D0%BF%D0%BF%D0%BF%D0%BF%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 00:46:22 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 38
+Jul  6 00:46:22 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 338
+Jul  6 00:46:22 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 338
+Jul  6 00:46:22 unknown securityd[11365] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 00:46:23 unknown timed[11367] <Notice>: MS:Notice: Installing: com.apple.timed [timed] (690.10)
+Jul  6 00:46:23 unknown timed[11367] <Notice>: (Note ) CoreTime: Received time 07/05/2012 20:46:02±-1-5-.-0-0 -f-r-o-m -"-L-o-c-a-t-i-o-n-S-e-r-v-e-r-"
+Jul  6 00:46:23 unknown timed[11367] <Notice>: (Note ) CoreTime: Not setting system time to 07/05/2012 20:46:02 from NTP because should not set system time
+Jul  6 00:46:24 unknown timed[11367] <Notice>: (Note ) CoreTime: Want active time in 33.72hrs. Need active time in 117.06hrs.
+Jul  6 00:46:25 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 00:46:25 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85635324,+37.49410415> +/- 65.00m (speed -1.00 mps / course -1.00) @ 06.07.12, 0:46:25 Московское стандартное время
+Jul  6 00:46:25 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 00:46:25 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 00:46:25 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 00:46:25 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 367
+Jul  6 00:46:25 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494102%5E55.856354%5E65.000000%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%D0%BF%D0%BF%D0%BF%D0%BF%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 00:46:26 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 38
+Jul  6 00:46:26 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 338
+Jul  6 00:46:26 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 338
+Jul  6 00:46:26 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 00:46:26 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85640287,+37.49411106> +/- 65.00m (speed -1.00 mps / course -1.00) @ 06.07.12, 0:46:25 Московское стандартное время
+Jul  6 00:46:26 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 00:46:26 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 00:46:26 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 00:46:26 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 367
+Jul  6 00:46:26 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494110%5E55.856403%5E65.000000%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%D0%BF%D0%BF%D0%BF%D0%BF%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 00:46:26 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 38
+Jul  6 00:46:26 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 338
+Jul  6 00:46:26 unknown timed[11367] <Notice>: (Note ) CoreTime: Want active time in 33.72hrs. Need active time in 117.06hrs.
+Jul  6 00:46:26 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 338
+Jul  6 00:51:28 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 00:51:28 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85651478,+37.49412664> +/- 95.71m (speed -1.00 mps / course -1.00) @ 06.07.12, 0:51:28 Московское стандартное время
+Jul  6 00:51:28 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 00:51:28 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 00:51:28 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 00:51:28 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 367
+Jul  6 00:51:28 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494125%5E55.856514%5E95.713890%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%D0%BF%D0%BF%D0%BF%D0%BF%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 00:51:28 unknown networkd[11369] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 00:51:28 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 38
+Jul  6 00:51:28 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 338
+Jul  6 00:51:28 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 338
+Jul  6 00:51:40 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 00:51:40 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363214600.411774) (current time == 363214300.411786)
+Jul  6 00:51:40 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 00:51:40 unknown securityd[11371] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 00:56:34 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 00:56:34 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85628820,+37.49408296> +/- 67.67m (speed -1.00 mps / course -1.00) @ 06.07.12, 0:56:34 Московское стандартное время
+Jul  6 00:56:34 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 00:56:34 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 00:56:34 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 00:56:34 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 367
+Jul  6 00:56:34 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494083%5E55.856289%5E67.670769%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%D0%BF%D0%BF%D0%BF%D0%BF%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 00:56:34 unknown networkd[11373] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 00:56:35 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 38
+Jul  6 00:56:35 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 338
+Jul  6 00:56:35 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 338
+Jul  6 01:01:40 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 01:01:40 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85623805,+37.49406719> +/- 65.00m (speed -1.00 mps / course -1.00) @ 06.07.12, 1:01:40 Московское стандартное время
+Jul  6 01:01:40 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 01:01:40 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 01:01:40 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 01:01:40 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 367
+Jul  6 01:01:40 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494068%5E55.856239%5E65.000000%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%D0%BF%D0%BF%D0%BF%D0%BF%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 01:01:40 unknown networkd[11375] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 01:01:41 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 38
+Jul  6 01:01:41 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 338
+Jul  6 01:01:41 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 338
+Jul  6 01:02:10 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 01:02:10 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363215230.922685) (current time == 363214930.922699)
+Jul  6 01:02:10 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 01:02:11 unknown securityd[11377] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 01:04:43 unknown CommCenter[66] <Error>: kDataAttachStatusNotification sent, wasAttached: 1 isAttached: 1
+Jul  6 01:04:57 unknown CommCenter[66] <Error>: kDataAttachStatusNotification sent, wasAttached: 1 isAttached: 1
+Jul  6 01:06:46 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 182
+Jul  6 01:06:46 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85617383,+37.49404700> +/- 100.00m (speed -1.00 mps / course -1.00) @ 06.07.12, 1:06:46 Московское стандартное время
+Jul  6 01:06:46 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 01:06:46 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 01:06:46 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 01:06:47 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 368
+Jul  6 01:06:47 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494045%5E55.856174%5E100.000000%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%D0%BF%D0%BF%D0%BF%D0%BF%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 01:06:47 unknown networkd[11379] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 01:06:47 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 38
+Jul  6 01:06:47 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 339
+Jul  6 01:06:47 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 339
+Jul  6 01:10:05 unknown CommCenter[66] <Error>: kDataAttachStatusNotification sent, wasAttached: 1 isAttached: 1
+Jul  6 01:10:33 unknown timed[11381] <Notice>: MS:Notice: Installing: com.apple.timed [timed] (690.10)
+Jul  6 01:10:36 unknown timed[11381] <Notice>: (Note ) CoreTime: Want active time in 33.32hrs. Need active time in 116.65hrs.
+Jul  6 01:10:46 unknown timed[11381] <Notice>: (Note ) CoreTime: Not setting system time to 07/05/2012 21:10:25 from NTP because should not set system time
+Jul  6 01:11:10 unknown CommCenter[66] <Error>: kDataAttachStatusNotification sent, wasAttached: 1 isAttached: 1
+Jul  6 01:11:10 unknown networkd[11383] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 01:11:10 unknown securityd[11385] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 01:11:53 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 01:11:53 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85622177,+37.49409130> +/- 65.48m (speed -1.00 mps / course -1.00) @ 06.07.12, 1:11:53 Московское стандартное время
+Jul  6 01:11:53 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 01:11:53 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 01:11:53 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 01:11:53 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 367
+Jul  6 01:11:53 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494091%5E55.856220%5E65.475143%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%D0%BF%D0%BF%D0%BF%D0%BF%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 01:11:53 unknown networkd[11387] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 01:11:53 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 38
+Jul  6 01:11:53 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 338
+Jul  6 01:11:53 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 338
+Jul  6 01:12:40 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 01:12:40 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363215860.505009) (current time == 363215560.505022)
+Jul  6 01:12:40 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 01:12:40 unknown securityd[11389] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 01:12:40 unknown networkd[11391] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 01:16:59 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 01:16:59 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85636420,+37.49409487> +/- 69.12m (speed -1.00 mps / course -1.00) @ 06.07.12, 1:16:59 Московское стандартное время
+Jul  6 01:16:59 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 01:16:59 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 01:16:59 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 01:16:59 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 367
+Jul  6 01:16:59 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494095%5E55.856365%5E69.124222%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%D0%BF%D0%BF%D0%BF%D0%BF%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 01:16:59 unknown networkd[11393] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 01:17:00 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 38
+Jul  6 01:17:00 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 338
+Jul  6 01:17:00 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 338
+Jul  6 01:22:05 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 01:22:05 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85656761,+37.49410550> +/- 99.91m (speed -1.00 mps / course -1.00) @ 06.07.12, 1:22:05 Московское стандартное время
+Jul  6 01:22:05 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 01:22:05 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 01:22:05 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 01:22:05 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 367
+Jul  6 01:22:05 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494106%5E55.856567%5E99.907043%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%D0%BF%D0%BF%D0%BF%D0%BF%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 01:22:05 unknown networkd[11395] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 01:23:05 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 36
+Jul  6 01:23:05 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 0
+Jul  6 01:23:05 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 0
+Jul  6 01:23:10 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 01:23:10 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363216490.535513) (current time == 363216190.535527)
+Jul  6 01:23:10 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 01:23:10 unknown securityd[11397] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 01:23:10 unknown networkd[11399] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 01:27:12 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 01:27:12 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85629071,+37.49407926> +/- 67.67m (speed -1.00 mps / course -1.00) @ 06.07.12, 1:27:12 Московское стандартное время
+Jul  6 01:27:12 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 01:27:12 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 01:27:12 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 01:27:12 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 367
+Jul  6 01:27:12 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494080%5E55.856289%5E67.670769%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%D0%BF%D0%BF%D0%BF%D0%BF%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 01:27:12 unknown networkd[11401] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 01:28:12 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 36
+Jul  6 01:28:12 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 0
+Jul  6 01:28:12 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 0
+Jul  6 01:32:18 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 01:32:18 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85611203,+37.49407117> +/- 65.00m (speed -1.00 mps / course -1.00) @ 06.07.12, 1:32:18 Московское стандартное время
+Jul  6 01:32:18 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 01:32:18 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 01:32:18 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 01:32:18 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 367
+Jul  6 01:32:18 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494072%5E55.856113%5E65.000000%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%D0%BF%D0%BF%D0%BF%D0%BF%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 01:32:18 unknown networkd[11403] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 01:33:18 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 36
+Jul  6 01:33:18 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 0
+Jul  6 01:33:18 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 0
+Jul  6 01:33:39 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 01:33:39 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363217119.860952) (current time == 363216819.860966)
+Jul  6 01:33:39 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 01:33:40 unknown securityd[11405] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 01:33:40 unknown networkd[11407] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 01:37:24 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 01:37:24 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85607660,+37.49406957> +/- 65.00m (speed -1.00 mps / course -1.00) @ 06.07.12, 1:37:24 Московское стандартное время
+Jul  6 01:37:24 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 01:37:24 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 01:37:24 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 01:37:24 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 367
+Jul  6 01:37:24 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494068%5E55.856075%5E65.000000%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%D0%BF%D0%BF%D0%BF%D0%BF%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 01:37:24 unknown networkd[11409] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 01:38:24 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 36
+Jul  6 01:38:24 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 0
+Jul  6 01:38:24 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 0
+Jul  6 01:42:30 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 01:42:30 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85606099,+37.49406886> +/- 65.00m (speed -1.00 mps / course -1.00) @ 06.07.12, 1:42:30 Московское стандартное время
+Jul  6 01:42:31 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 01:42:31 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 01:42:31 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 01:42:31 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 367
+Jul  6 01:42:31 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494068%5E55.856060%5E65.000000%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%D0%BF%D0%BF%D0%BF%D0%BF%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 01:42:31 unknown networkd[11411] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 01:43:31 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 36
+Jul  6 01:43:31 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 0
+Jul  6 01:43:31 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 0
+Jul  6 01:44:10 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 01:44:10 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363217750.234864) (current time == 363217450.234878)
+Jul  6 01:44:10 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 01:44:10 unknown securityd[11413] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 01:44:10 unknown networkd[11415] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 01:47:37 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 01:47:37 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85605273,+37.49406849> +/- 65.00m (speed -1.00 mps / course -1.00) @ 06.07.12, 1:47:37 Московское стандартное время
+Jul  6 01:47:37 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 01:47:37 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 01:47:37 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 01:47:37 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 367
+Jul  6 01:47:37 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494068%5E55.856052%5E65.000000%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%D0%BF%D0%BF%D0%BF%D0%BF%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 01:47:37 unknown networkd[11417] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 01:48:18 unknown networkd[11419] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 01:48:48 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 36
+Jul  6 01:48:48 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 0
+Jul  6 01:48:48 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 0
+Jul  6 01:52:43 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 01:52:43 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85666923,+37.49412808> +/- 65.00m (speed -1.00 mps / course -1.00) @ 06.07.12, 1:52:43 Московское стандартное время
+Jul  6 01:52:43 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 01:52:43 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 01:52:43 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 01:52:43 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 367
+Jul  6 01:52:43 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494129%5E55.856670%5E65.000000%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%D0%BF%D0%BF%D0%BF%D0%BF%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 01:52:43 unknown networkd[11421] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 01:53:43 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 36
+Jul  6 01:53:43 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 0
+Jul  6 01:53:43 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 0
+Jul  6 01:54:40 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 01:54:40 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363218380.009764) (current time == 363218080.009777)
+Jul  6 01:54:40 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 01:54:40 unknown securityd[11423] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 01:54:40 unknown networkd[11425] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 01:57:48 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 01:57:48 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85628889,+37.49408035> +/- 67.67m (speed -1.00 mps / course -1.00) @ 06.07.12, 1:57:48 Московское стандартное время
+Jul  6 01:57:48 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 01:57:48 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 01:57:48 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 01:57:48 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 367
+Jul  6 01:57:48 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494080%5E55.856289%5E67.670769%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%D0%BF%D0%BF%D0%BF%D0%BF%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 01:57:48 unknown networkd[11427] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 01:58:48 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 36
+Jul  6 01:58:48 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 0
+Jul  6 01:58:48 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 0
+Jul  6 02:02:54 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 02:02:55 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85625021,+37.49407549> +/- 67.67m (speed -1.00 mps / course -1.00) @ 06.07.12, 2:02:54 Московское стандартное время
+Jul  6 02:02:55 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 02:02:55 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 02:02:55 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 02:02:55 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 367
+Jul  6 02:02:55 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494076%5E55.856251%5E67.670769%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%D0%BF%D0%BF%D0%BF%D0%BF%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 02:02:55 unknown networkd[11429] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 02:03:55 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 36
+Jul  6 02:03:55 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 0
+Jul  6 02:03:55 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 0
+Jul  6 02:05:09 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 02:05:09 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363219009.109018) (current time == 363218709.109031)
+Jul  6 02:05:09 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 02:05:09 unknown securityd[11431] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 02:05:09 unknown networkd[11433] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 02:08:01 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 02:08:01 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85624911,+37.49407536> +/- 67.67m (speed -1.00 mps / course -1.00) @ 06.07.12, 2:08:01 Московское стандартное время
+Jul  6 02:08:01 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 02:08:01 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 02:08:01 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 02:08:01 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 367
+Jul  6 02:08:01 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494076%5E55.856251%5E67.670769%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%D0%BF%D0%BF%D0%BF%D0%BF%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 02:08:01 unknown networkd[11435] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 02:09:01 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 36
+Jul  6 02:09:01 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 0
+Jul  6 02:09:01 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 0
+Jul  6 02:10:33 unknown timed[11437] <Notice>: MS:Notice: Installing: com.apple.timed [timed] (690.10)
+Jul  6 02:10:36 unknown timed[11437] <Notice>: (Note ) CoreTime: Want active time in 32.32hrs. Need active time in 115.65hrs.
+Jul  6 02:10:46 unknown timed[11437] <Notice>: (Note ) CoreTime: Not setting system time to 07/05/2012 22:10:25 from NTP because should not set system time
+Jul  6 02:13:07 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 02:13:07 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85624857,+37.49407529> +/- 67.67m (speed -1.00 mps / course -1.00) @ 06.07.12, 2:13:07 Московское стандартное время
+Jul  6 02:13:07 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 02:13:07 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 02:13:07 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 02:13:07 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 367
+Jul  6 02:13:07 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494076%5E55.856247%5E67.670769%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%D0%BF%D0%BF%D0%BF%D0%BF%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 02:13:07 unknown networkd[11439] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 02:14:07 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 36
+Jul  6 02:14:07 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 0
+Jul  6 02:14:07 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 0
+Jul  6 02:15:38 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 02:15:38 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363219638.783621) (current time == 363219338.783634)
+Jul  6 02:15:38 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 02:15:38 unknown securityd[11441] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 02:15:39 unknown networkd[11443] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 02:18:13 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 02:18:13 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85624829,+37.49407525> +/- 67.67m (speed -1.00 mps / course -1.00) @ 06.07.12, 2:18:13 Московское стандартное время
+Jul  6 02:18:13 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 02:18:13 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 02:18:13 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 02:18:13 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 367
+Jul  6 02:18:13 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494076%5E55.856247%5E67.670769%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%D0%BF%D0%BF%D0%BF%D0%BF%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 02:18:13 unknown networkd[11445] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 02:19:13 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 36
+Jul  6 02:19:13 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 0
+Jul  6 02:19:13 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 0
+Jul  6 02:23:19 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 02:23:19 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85624815,+37.49407523> +/- 67.67m (speed -1.00 mps / course -1.00) @ 06.07.12, 2:23:19 Московское стандартное время
+Jul  6 02:23:19 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 02:23:19 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 02:23:20 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 02:23:20 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 367
+Jul  6 02:23:20 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494076%5E55.856247%5E67.670769%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%D0%BF%D0%BF%D0%BF%D0%BF%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 02:23:20 unknown networkd[11447] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 02:24:00 unknown networkd[11449] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 02:24:30 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 36
+Jul  6 02:24:30 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 0
+Jul  6 02:24:30 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 0
+Jul  6 02:26:08 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 02:26:08 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363220268.592078) (current time == 363219968.592091)
+Jul  6 02:26:08 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 02:26:08 unknown securityd[11451] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 02:26:08 unknown networkd[11453] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 02:28:26 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 02:28:26 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85624804,+37.49407522> +/- 67.67m (speed -1.00 mps / course -1.00) @ 06.07.12, 2:28:26 Московское стандартное время
+Jul  6 02:28:26 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 02:28:26 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 02:28:26 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 02:28:26 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 367
+Jul  6 02:28:26 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494076%5E55.856247%5E67.670769%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%D0%BF%D0%BF%D0%BF%D0%BF%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 02:28:26 unknown networkd[11455] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 02:29:26 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 36
+Jul  6 02:29:26 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 0
+Jul  6 02:29:26 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 0
+Jul  6 02:33:32 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 02:33:32 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85624803,+37.49407522> +/- 67.67m (speed -1.00 mps / course -1.00) @ 06.07.12, 2:33:32 Московское стандартное время
+Jul  6 02:33:32 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 02:33:32 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 02:33:32 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 02:33:32 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 367
+Jul  6 02:33:32 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494076%5E55.856247%5E67.670769%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%D0%BF%D0%BF%D0%BF%D0%BF%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 02:33:32 unknown networkd[11457] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 02:34:13 unknown networkd[11459] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 02:34:43 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 36
+Jul  6 02:34:43 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 0
+Jul  6 02:34:43 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 0
+Jul  6 02:36:38 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 02:36:38 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363220898.285926) (current time == 363220598.285939)
+Jul  6 02:36:38 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 02:36:38 unknown securityd[11461] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 02:36:38 unknown networkd[11463] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 02:38:38 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 02:38:38 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85624802,+37.49407522> +/- 67.67m (speed -1.00 mps / course -1.00) @ 06.07.12, 2:38:38 Московское стандартное время
+Jul  6 02:38:38 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 02:38:38 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 02:38:38 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 02:38:38 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 367
+Jul  6 02:38:38 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494076%5E55.856247%5E67.670769%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%D0%BF%D0%BF%D0%BF%D0%BF%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 02:38:39 unknown networkd[11465] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 02:39:39 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 36
+Jul  6 02:39:39 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 0
+Jul  6 02:39:39 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 0
+Jul  6 02:43:42 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 02:43:42 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85624802,+37.49407522> +/- 67.67m (speed -1.00 mps / course -1.00) @ 06.07.12, 2:43:42 Московское стандартное время
+Jul  6 02:43:42 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 02:43:42 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 02:43:42 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 02:43:42 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 367
+Jul  6 02:43:42 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494076%5E55.856247%5E67.670769%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%D0%BF%D0%BF%D0%BF%D0%BF%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 02:43:42 unknown networkd[11467] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 02:44:42 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 36
+Jul  6 02:44:42 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 0
+Jul  6 02:44:42 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 0
+Jul  6 02:47:07 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 02:47:07 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363221527.859519) (current time == 363221227.859531)
+Jul  6 02:47:07 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 02:47:07 unknown securityd[11469] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 02:47:08 unknown networkd[11471] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 02:48:43 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 02:48:43 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85624802,+37.49407522> +/- 67.67m (speed -1.00 mps / course -1.00) @ 06.07.12, 2:48:43 Московское стандартное время
+Jul  6 02:48:43 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 02:48:43 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 02:48:43 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 02:48:43 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 367
+Jul  6 02:48:43 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494076%5E55.856247%5E67.670769%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%D0%BF%D0%BF%D0%BF%D0%BF%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 02:48:43 unknown networkd[11473] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 02:49:43 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 36
+Jul  6 02:49:43 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 0
+Jul  6 02:49:43 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 0
+Jul  6 02:53:49 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 02:53:49 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85624802,+37.49407522> +/- 67.67m (speed -1.00 mps / course -1.00) @ 06.07.12, 2:53:49 Московское стандартное время
+Jul  6 02:53:49 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 02:53:49 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 02:53:49 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 02:53:49 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 367
+Jul  6 02:53:49 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494076%5E55.856247%5E67.670769%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%D0%BF%D0%BF%D0%BF%D0%BF%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 02:53:49 unknown networkd[11475] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 02:54:49 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 36
+Jul  6 02:54:49 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 0
+Jul  6 02:54:49 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 0
+Jul  6 02:57:37 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 02:57:37 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363222157.351497) (current time == 363221857.351510)
+Jul  6 02:57:37 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 02:57:37 unknown securityd[11477] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 02:57:37 unknown networkd[11479] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 02:58:55 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 02:58:55 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85624802,+37.49407522> +/- 67.67m (speed -1.00 mps / course -1.00) @ 06.07.12, 2:58:55 Московское стандартное время
+Jul  6 02:58:55 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 02:58:55 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 02:58:55 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 02:58:55 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 367
+Jul  6 02:58:55 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494076%5E55.856247%5E67.670769%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%D0%BF%D0%BF%D0%BF%D0%BF%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 02:58:55 unknown networkd[11481] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 02:59:55 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 36
+Jul  6 02:59:55 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 0
+Jul  6 02:59:55 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 0
+Jul  6 03:04:01 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 03:04:01 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85624802,+37.49407522> +/- 67.67m (speed -1.00 mps / course -1.00) @ 06.07.12, 3:04:01 Московское стандартное время
+Jul  6 03:04:02 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 03:04:02 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 03:04:02 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 03:04:02 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 367
+Jul  6 03:04:02 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494076%5E55.856247%5E67.670769%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%D0%BF%D0%BF%D0%BF%D0%BF%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 03:04:02 unknown mobile_profile_janitor[11483] <Notice>: MS:Notice: Installing: com.apple.managedconfiguration.janitor [mobile_profile_janitor] (690.10)
+Jul  6 03:04:02 unknown networkd[11485] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 03:04:02 unknown mobile_profile_janitor[11483] <Notice>: (Note ) MPJ: No provisioning profiles to check. Exiting.
+Jul  6 03:04:42 unknown networkd[11487] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 03:05:12 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 36
+Jul  6 03:05:12 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 0
+Jul  6 03:05:12 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 0
+Jul  6 03:08:06 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 03:08:06 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363222786.809394) (current time == 363222486.809407)
+Jul  6 03:08:06 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 03:08:06 unknown securityd[11489] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 03:08:07 unknown networkd[11491] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 03:09:08 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 181
+Jul  6 03:09:08 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] Updating location <+55.85624802,+37.49407522> +/- 67.67m (speed -1.00 mps / course -1.00) @ 06.07.12, 3:09:08 Московское стандартное время
+Jul  6 03:09:08 unknown eyeNeverLost[11294] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 03:09:08 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 88
+Jul  6 03:09:08 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] GatewayUtil Initialized: UID = d1dc41d17ebbb5184eadf11395213647ca62fb8b
+Jul  6 03:09:08 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 367
+Jul  6 03:09:08 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] sending: [http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=%3Crequest%3E%3Cfunction%3E%3Cname%3EPHONEFUNC_PKG.saveLocation_Phone_IPhnone%3C/name%3E%3Cindex%3E1%3C/index%3E%3Cparam%3E1423%5E37.494076%5E55.856247%5E67.670769%5E-d1dc41d17ebbb5184eadf11395213647ca62fb8b%5E%D0%BF%D0%BF%D0%BF%D0%BF%3C/param%3E%3C/function%3E%3C/request%3E]
+Jul  6 03:09:08 unknown networkd[11493] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 03:10:08 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 36
+Jul  6 03:10:08 unknown eyeNeverLost[11294] <Warning>: [Pete's iPhone] response length = 0
+Jul  6 03:10:08 unknown eyeNeverLost[11294] <Warning>: Total Sended 0 / 0
+Jul  6 03:10:33 unknown timed[11496] <Notice>: MS:Notice: Installing: com.apple.timed [timed] (690.10)
+Jul  6 03:10:33 unknown sandboxd[11499] <Notice>: MS:Notice: Installing: (null) [sandboxd] (690.10)
+Jul  6 03:10:33 unknown syncdefaultsd[11495] <Notice>: MS:Notice: Installing: (null) [syncdefaultsd] (690.10)
+Jul  6 03:10:34 unknown kernel[0] <Debug>: launchd[11498] Builtin profile: syncdefaultsd (sandbox)
+Jul  6 03:10:34 unknown kernel[0] <Debug>: launchd[11495] Builtin profile: syncdefaultsd (sandbox)
+Jul  6 03:10:34 unknown installd[11501] <Notice>: MS:Notice: Installing: (null) [installd] (690.10)
+Jul  6 03:10:34 unknown installd[11501] <Error>: 3ee73d98 check_freshness: sb.st_mtime = 1341518200 reference_mtime = 1341518197
+Jul  6 03:10:34 unknown installd[11501] <Error>: 3ee73d98 check_stale_maps: /Applications appears stale
+Jul  6 03:10:34 unknown installd[11501] <Error>: 3ee73d98 verify_signer_identity: Could not copy validate signature: -402620388
+Jul  6 03:10:34 unknown installd[11501] <Error>: 3ee73d98 verify_signer_identity: Could not copy validate signature: -402620388
+Jul  6 03:10:34 unknown installd[11501] <Error>: 3ee73d98 verify_signer_identity: Could not copy validate signature: -402620388
+Jul  6 03:10:34 unknown installd[11501] <Error>: 3ee73d98 verify_signer_identity: Could not copy validate signature: -402620391
+Jul  6 03:10:34 unknown installd[11501] <Error>: 3ee73d98 verify_signer_identity: Could not copy validate signature: -402620391
+Jul  6 03:10:34 unknown installd[11501] <Error>: 3ee73d98 verify_signer_identity: Could not copy validate signature: -402620388
+Jul  6 03:10:34 unknown installd[11501] <Error>: 3ee73d98 verify_signer_identity: Could not copy validate signature: -402620388
+Jul  6 03:10:34 unknown installd[11501] <Error>: 3ee73d98 verify_signer_identity: Could not copy validate signature: -402620388
+Jul  6 03:10:34 unknown installd[11501] <Error>: 3ee73d98 verify_signer_identity: Could not copy validate signature: -402620388
+Jul  6 03:10:34 unknown installd[11501] <Error>: 3ee73d98 verify_signer_identity: Could not copy validate signature: -402620388
+Jul  6 03:10:34 unknown installd[11501] <Error>: 3ee73d98 load_application_type: Ignoring Utilities
+Jul  6 03:10:34 unknown installd[11501] <Error>: 3ee73d98 verify_signer_identity: Could not copy validate signature: -402620388
+Jul  6 03:10:35 unknown securityd[11503] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 03:10:35 unknown installd[11501] <Error>: libMobileGestalt computeUniqueDeviceID: total time for bb to return imei: 0
+Jul  6 03:10:35 unknown installd[11501] <Error>: 3ee73d98 verify_signer_identity: Could not copy validate signature: -402620395
+Jul  6 03:10:35 unknown installd[11501] <Error>: 3ee73d98 verify_signer_identity: Could not copy validate signature: -402620388
+Jul  6 03:10:35 unknown installd[11501] <Error>: 3ee73d98 verify_signer_identity: Could not copy validate signature: -402620388
+Jul  6 03:10:35 unknown installd[11501] <Error>: developer cert trust result = 5
+Jul  6 03:10:35 unknown installd[11501] <Error>: 3ee73d98 verify_signer_identity: Could not copy validate signature: -402620392
+Jul  6 03:10:35 unknown installd[11501] <Error>: developer cert trust result = 5
+Jul  6 03:10:35 unknown installd[11501] <Error>: 3ee73d98 verify_signer_identity: Could not copy validate signature: -402620392
+Jul  6 03:10:35 unknown installd[11501] <Error>: 3ee73d98 verify_signer_identity: Could not copy validate signature: -402620391
+Jul  6 03:10:35 unknown installd[11501] <Error>: developer cert trust result = 5
+Jul  6 03:10:35 unknown installd[11501] <Error>: 3ee73d98 verify_signer_identity: Could not copy validate signature: -402620392
+Jul  6 03:10:35 unknown SpringBoard[7428] <Warning>: Reloading application state for 'com.code4bones.eyeNeverLost' as its modification date or path has changed
+Jul  6 03:10:35 unknown SpringBoard[7428] <Warning>: Reloading and rendering all application icons.
+Jul  6 03:10:35 unknown SpringBoard[7428] <Warning>: pid_suspend failed for [11294]: Unknown error: -1, Unknown error: -1
+Jul  6 03:10:36 unknown com.apple.launchd[1] <Notice>: (UIKitApplication:com.code4bones.eyeNeverLost[0x2737]) Exited: Killed: 9
+Jul  6 03:10:36 unknown SpringBoard[7428] <Warning>: Application 'eyeNeverLost' exited abnormally with signal 9: Killed: 9
+Jul  6 03:10:36 unknown timed[11496] <Notice>: (Note ) CoreTime: Want active time in 31.32hrs. Need active time in 114.65hrs.
+Jul  6 03:10:46 unknown timed[11496] <Notice>: (Note ) CoreTime: Not setting system time to 07/05/2012 23:10:25 from NTP because should not set system time
+Jul  6 03:12:34 unknown syncdefaultsd[11495] <Warning>: Asked to perform job com.apple.syncdefaultsd.relaunch
+Jul  6 03:18:36 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 03:18:36 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363223416.709159) (current time == 363223116.709172)
+Jul  6 03:18:36 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 03:18:36 unknown securityd[11508] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 03:18:37 unknown networkd[11510] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 03:29:05 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 03:29:05 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363224045.534057) (current time == 363223745.534070)
+Jul  6 03:29:05 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 03:29:05 unknown securityd[11512] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 03:29:05 unknown networkd[11514] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 03:39:34 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 03:39:34 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363224674.999160) (current time == 363224374.999173)
+Jul  6 03:39:35 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 03:39:35 unknown securityd[11516] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 03:39:35 unknown networkd[11518] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 03:50:04 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 03:50:04 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363225304.029850) (current time == 363225004.029863)
+Jul  6 03:50:04 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 03:50:04 unknown securityd[11520] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 03:50:04 unknown networkd[11522] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 04:00:33 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 04:00:33 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363225933.404111) (current time == 363225633.404125)
+Jul  6 04:00:33 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 04:00:33 unknown securityd[11524] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 04:00:33 unknown networkd[11526] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 04:10:33 unknown timed[11528] <Notice>: MS:Notice: Installing: com.apple.timed [timed] (690.10)
+Jul  6 04:10:36 unknown timed[11528] <Notice>: (Note ) CoreTime: Want active time in 30.32hrs. Need active time in 113.65hrs.
+Jul  6 04:10:46 unknown timed[11528] <Notice>: (Note ) CoreTime: Not setting system time to 07/06/2012 00:10:25 from NTP because should not set system time
+Jul  6 04:11:02 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 04:11:02 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363226562.943995) (current time == 363226262.944008)
+Jul  6 04:11:02 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 04:11:03 unknown securityd[11530] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 04:11:03 unknown networkd[11532] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 04:21:32 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 04:21:32 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363227192.656212) (current time == 363226892.656225)
+Jul  6 04:21:32 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 04:21:32 unknown securityd[11534] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 04:21:32 unknown networkd[11536] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 04:32:01 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 04:32:01 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363227821.543868) (current time == 363227521.543881)
+Jul  6 04:32:01 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 04:32:01 unknown securityd[11538] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 04:32:01 unknown networkd[11540] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 04:42:30 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 04:42:30 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363228450.824832) (current time == 363228150.824845)
+Jul  6 04:42:30 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 04:42:30 unknown securityd[11542] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 04:42:31 unknown networkd[11544] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 04:53:00 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 04:53:00 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363229080.562021) (current time == 363228780.562034)
+Jul  6 04:53:00 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 04:53:00 unknown securityd[11546] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 04:53:00 unknown networkd[11548] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 05:03:29 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 05:03:29 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363229709.966594) (current time == 363229409.966606)
+Jul  6 05:03:29 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 05:03:30 unknown securityd[11550] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 05:03:30 unknown networkd[11552] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 05:10:33 unknown timed[11554] <Notice>: MS:Notice: Installing: com.apple.timed [timed] (690.10)
+Jul  6 05:10:36 unknown timed[11554] <Notice>: (Note ) CoreTime: Want active time in 29.32hrs. Need active time in 112.65hrs.
+Jul  6 05:10:46 unknown timed[11554] <Notice>: (Note ) CoreTime: Not setting system time to 07/06/2012 01:10:25 from NTP because should not set system time
+Jul  6 05:13:58 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 05:13:58 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363230338.919385) (current time == 363230038.919397)
+Jul  6 05:13:58 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 05:13:59 unknown securityd[11556] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 05:13:59 unknown networkd[11558] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 05:20:53 unknown softwareupdateservicesd[11560] <Notice>: MS:Notice: Installing: com.apple.${PRODUCT_NAME:rfc1034Identifier} [softwareupdateservicesd] (690.10)
+Jul  6 05:20:53 unknown softwareupdateservicesd[11560] <Notice>: MS:Notice: Loading: /Library/MobileSubstrate/DynamicLibraries/Activator.dylib
+Jul  6 05:20:53 unknown wifid[22] <Error>: WiFi:[363230453.603961]: Client softwareupdatese is background application
+Jul  6 05:20:53 unknown mobileassetd[11562] <Notice>: MS:Notice: Installing: (null) [mobileassetd] (690.10)
+Jul  6 05:20:54 unknown networkd[11564] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 05:24:28 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 05:24:28 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363230968.088567) (current time == 363230668.088579)
+Jul  6 05:24:28 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 05:24:28 unknown securityd[11566] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 05:24:28 unknown networkd[11568] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 05:29:50 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 05:29:50 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363231290.017251) (current time == 363230990.017265)
+Jul  6 05:29:50 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 05:40:10 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 05:40:10 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363231910.127791) (current time == 363231610.127804)
+Jul  6 05:40:10 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 05:40:10 unknown securityd[11570] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 05:40:10 unknown networkd[11572] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 05:50:39 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 05:50:39 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363232539.227873) (current time == 363232239.227885)
+Jul  6 05:50:39 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 05:50:39 unknown securityd[11574] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 05:50:39 unknown networkd[11576] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 05:52:04 unknown wifid[22] <Error>: WiFi:[363232324.546698]: Processing link event DOWN
+Jul  6 05:52:05 unknown kernel[0] <Debug>: AppleBCMWLANCore::setDISASSOCIATE() [wifid]:
+Jul  6 05:52:05 unknown kernel[0] <Debug>: AppleBCMWLAN Left BSS:       @ 0xc0f1c200, BSSID = 00:1e:58:e9:7a:1b, rssi = -58, rate = 54 (100%), channel =  9, encryption = 0x8, ap = 1, failures =   0, age = 9776, ssid[ 9] = "ilion_gst"
+Jul  6 05:52:05 unknown kernel[0] <Debug>: AirPort: Link Down on en0. Reason 1 (Unspecified).
+Jul  6 05:52:05 unknown configd[54] <Notice>: network configuration changed.
+Jul  6 05:52:05 unknown UserEventAgent[19] <Warning>: DEBUG: Changing WiFi state: 0
+Jul  6 05:52:10 unknown atwakeup[11578] <Notice>: MS:Notice: Installing: com.apple.atwakeup [atwakeup] (690.10)
+Jul  6 06:01:09 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 06:01:09 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363233169.118642) (current time == 363232869.118656)
+Jul  6 06:01:09 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 06:01:09 unknown securityd[11580] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 06:01:09 unknown networkd[11582] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 06:10:33 unknown timed[11584] <Notice>: MS:Notice: Installing: com.apple.timed [timed] (690.10)
+Jul  6 06:10:36 unknown timed[11584] <Notice>: (Note ) CoreTime: Want active time in 28.32hrs. Need active time in 111.65hrs.
+Jul  6 06:10:46 unknown timed[11584] <Notice>: (Note ) CoreTime: Not setting system time to 07/06/2012 02:10:25 from NTP because should not set system time
+Jul  6 06:11:38 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 06:11:38 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363233798.811755) (current time == 363233498.811767)
+Jul  6 06:11:38 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 06:11:38 unknown securityd[11586] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 06:11:39 unknown networkd[11588] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 06:22:07 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 06:22:07 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363234427.755776) (current time == 363234127.755789)
+Jul  6 06:22:07 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 06:22:07 unknown securityd[11590] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 06:22:07 unknown networkd[11592] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 06:22:10 unknown UserEventAgent[19] <Warning>: Unable to cancel system wake for 2012-07-06 06:21:55 +0400. IOPMCancelScheduledPowerEvent() returned 0xe00002c2
+Jul  6 06:32:37 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 06:32:37 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363235057.400774) (current time == 363234757.400787)
+Jul  6 06:32:37 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 06:32:37 unknown securityd[11594] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 06:32:37 unknown networkd[11596] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 06:43:06 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 06:43:06 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363235686.529645) (current time == 363235386.529657)
+Jul  6 06:43:06 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 06:43:06 unknown securityd[11598] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 06:43:06 unknown networkd[11600] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 06:53:35 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 06:53:35 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363236315.743263) (current time == 363236015.743277)
+Jul  6 06:53:35 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 06:53:35 unknown securityd[11602] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 06:53:35 unknown networkd[11604] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 07:04:06 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 07:04:06 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363236946.106928) (current time == 363236646.106941)
+Jul  6 07:04:06 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 07:04:06 unknown securityd[11606] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 07:04:06 unknown networkd[11608] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 07:10:33 unknown timed[11611] <Notice>: MS:Notice: Installing: com.apple.timed [timed] (690.10)
+Jul  6 07:10:33 unknown syncdefaultsd[11610] <Notice>: MS:Notice: Installing: (null) [syncdefaultsd] (690.10)
+Jul  6 07:10:33 unknown installd[11614] <Notice>: MS:Notice: Installing: (null) [installd] (690.10)
+Jul  6 07:10:34 unknown kernel[0] <Debug>: launchd[11612] Builtin profile: syncdefaultsd (sandbox)
+Jul  6 07:10:34 unknown kernel[0] <Debug>: launchd[11610] Builtin profile: syncdefaultsd (sandbox)
+Jul  6 07:10:36 unknown timed[11611] <Notice>: (Note ) CoreTime: Want active time in 27.32hrs. Need active time in 110.65hrs.
+Jul  6 07:10:46 unknown timed[11611] <Notice>: (Note ) CoreTime: Not setting system time to 07/06/2012 03:10:25 from NTP because should not set system time
+Jul  6 07:14:35 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 07:14:35 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363237575.428683) (current time == 363237275.428697)
+Jul  6 07:14:35 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 07:14:35 unknown securityd[11616] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 07:14:35 unknown networkd[11618] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 07:25:05 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 07:25:05 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363238205.683014) (current time == 363237905.683028)
+Jul  6 07:25:05 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 07:25:05 unknown securityd[11620] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 07:25:05 unknown networkd[11622] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 07:35:34 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 07:35:34 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363238834.795244) (current time == 363238534.795257)
+Jul  6 07:35:34 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 07:35:34 unknown securityd[11624] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 07:35:35 unknown networkd[11626] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 07:46:04 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 07:46:04 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363239464.940561) (current time == 363239164.940574)
+Jul  6 07:46:04 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 07:46:05 unknown securityd[11628] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 07:46:05 unknown networkd[11630] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 07:56:34 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 07:56:34 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363240094.011119) (current time == 363239794.011132)
+Jul  6 07:56:34 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 07:56:34 unknown securityd[11632] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 07:56:34 unknown networkd[11634] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 08:07:06 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 08:07:06 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363240726.221124) (current time == 363240426.221138)
+Jul  6 08:07:06 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 08:07:06 unknown securityd[11636] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 08:07:06 unknown networkd[11638] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 08:10:33 unknown timed[11640] <Notice>: MS:Notice: Installing: com.apple.timed [timed] (690.10)
+Jul  6 08:10:36 unknown timed[11640] <Notice>: (Note ) CoreTime: Want active time in 26.32hrs. Need active time in 109.65hrs.
+Jul  6 08:10:46 unknown timed[11640] <Notice>: (Note ) CoreTime: Not setting system time to 07/06/2012 04:10:24 from NTP because should not set system time
+Jul  6 08:17:37 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 08:17:37 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363241357.778407) (current time == 363241057.778419)
+Jul  6 08:17:37 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 08:17:37 unknown securityd[11642] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 08:17:38 unknown networkd[11644] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 08:28:06 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 08:28:06 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363241986.929614) (current time == 363241686.929626)
+Jul  6 08:28:06 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 08:28:07 unknown securityd[11646] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 08:28:07 unknown networkd[11648] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 08:38:36 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 08:38:36 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363242616.347013) (current time == 363242316.347026)
+Jul  6 08:38:36 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 08:38:36 unknown securityd[11650] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 08:38:36 unknown networkd[11652] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 08:49:06 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 08:49:06 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363243246.540516) (current time == 363242946.540528)
+Jul  6 08:49:06 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 08:49:06 unknown securityd[11654] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 08:49:06 unknown networkd[11656] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 08:57:51 unknown CommCenter[66] <Error>: kDataAttachStatusNotification sent, wasAttached: 1 isAttached: 1
+Jul  6 08:58:06 unknown CommCenter[66] <Error>: kDataAttachStatusNotification sent, wasAttached: 1 isAttached: 1
+Jul  6 08:59:36 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 08:59:36 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363243876.856126) (current time == 363243576.856139)
+Jul  6 08:59:36 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 08:59:36 unknown securityd[11658] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 08:59:37 unknown networkd[11660] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 09:05:17 unknown CommCenter[66] <Error>: kDataAttachStatusNotification sent, wasAttached: 1 isAttached: 1
+Jul  6 09:07:02 unknown CommCenter[66] <Error>: kDataAttachStatusNotification sent, wasAttached: 1 isAttached: 1
+Jul  6 09:07:14 unknown CommCenter[66] <Error>: kDataAttachStatusNotification sent, wasAttached: 1 isAttached: 1
+Jul  6 09:10:05 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 09:10:05 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363244505.092140) (current time == 363244205.092153)
+Jul  6 09:10:05 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 09:10:05 unknown securityd[11662] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 09:10:05 unknown networkd[11664] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 09:10:33 unknown timed[11666] <Notice>: MS:Notice: Installing: com.apple.timed [timed] (690.10)
+Jul  6 09:10:36 unknown timed[11666] <Notice>: (Note ) CoreTime: Want active time in 25.32hrs. Need active time in 108.65hrs.
+Jul  6 09:10:46 unknown timed[11666] <Notice>: (Note ) CoreTime: Not setting system time to 07/06/2012 05:10:24 from NTP because should not set system time
+Jul  6 09:11:09 unknown CommCenter[66] <Error>: kDataAttachStatusNotification sent, wasAttached: 1 isAttached: 1
+Jul  6 09:11:20 unknown CommCenter[66] <Error>: kDataAttachStatusNotification sent, wasAttached: 1 isAttached: 1
+Jul  6 09:20:18 unknown CommCenter[66] <Error>: kDataAttachStatusNotification sent, wasAttached: 1 isAttached: 1
+Jul  6 09:20:33 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 09:20:33 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363245133.896792) (current time == 363244833.896805)
+Jul  6 09:20:33 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 09:20:33 unknown securityd[11668] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 09:20:34 unknown networkd[11670] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 09:20:56 unknown CommCenter[66] <Error>: kDataAttachStatusNotification sent, wasAttached: 1 isAttached: 1
+Jul  6 09:22:22 unknown CommCenter[66] <Error>: kDataAttachStatusNotification sent, wasAttached: 1 isAttached: 1
+Jul  6 09:22:35 unknown CommCenter[66] <Error>: kDataAttachStatusNotification sent, wasAttached: 1 isAttached: 1
+Jul  6 09:31:03 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 09:31:03 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363245763.232683) (current time == 363245463.232695)
+Jul  6 09:31:03 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 09:31:03 unknown securityd[11672] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 09:31:03 unknown networkd[11674] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 09:33:33 unknown CommCenter[66] <Error>: kDataAttachStatusNotification sent, wasAttached: 1 isAttached: 1
+Jul  6 09:33:43 unknown CommCenter[66] <Error>: kDataAttachStatusNotification sent, wasAttached: 1 isAttached: 1
+Jul  6 09:41:31 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 09:41:31 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363246391.659516) (current time == 363246091.659530)
+Jul  6 09:41:31 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 09:41:31 unknown securityd[11676] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 09:41:31 unknown networkd[11678] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 09:51:57 unknown SpringBoard[7428] <Notice>: Posting 'com.apple.iokit.hid.displayStatus' notifyState=1
+Jul  6 09:51:57 unknown UserEventAgent[19] <Warning>: DEBUG: Changing screen blanked state: 0
+Jul  6 09:51:57 unknown SpringBoard[7428] <Notice>: MultitouchHID: detection mode: 255->0 (deferring until bootloaded)
+Jul  6 09:51:57 unknown SpringBoard[7428] <Notice>: MultitouchHID: device bootloaded
+Jul  6 09:51:57 unknown SpringBoard[7428] <Notice>: MultitouchHID: detection mode: 0->0
+Jul  6 09:51:59 unknown securityd[11680] <Notice>: MS:Notice: Installing: (null) [securityd] (690.10)
+Jul  6 09:51:59 unknown CommCenter[66] <Notice>: No more assertions for PDP context 0.  Returning it back to normal.
+Jul  6 09:51:59 unknown CommCenter[66] <Notice>: Scheduling PDP tear down timer for (363247019.334849) (current time == 363246719.334863)
+Jul  6 09:51:59 unknown CommCenter[66] <Notice>: Client [com.apple.persistentconnection[apsd,59]] is telling PDP context 0 to go active.
+Jul  6 09:51:59 unknown networkd[11682] <Notice>: MS:Notice: Installing: (null) [networkd] (690.10)
+Jul  6 09:51:59 unknown kernel[0] <Debug>: AppleBCMWLANCore::setASSOCIATE() [wifid]:  lowerAuth = AUTHTYPE_OPEN, upperAuth = AUTHTYPE_WPA2_PSK, key = CIPHER_PMK , don't disassociate    .
+Jul  6 09:51:59 unknown kernel[0] <Debug>: [254503.605964333]: AppleBCMWLANNetManager::prepareToBringUpLink(): Delaying powersave entry in order to get an IP address
+Jul  6 09:51:59 unknown kernel[0] <Debug>: AppleBCMWLAN Joined BSS:     @ 0xc0f1c200, BSSID = 00:1e:58:e9:7a:1b, rssi = -76, rate = 54 (100%), channel =  9, encryption = 0x8, ap = 1, failures =   0, age = 0, ssid[ 9] = "ilion_gst"
+Jul  6 09:51:59 unknown kernel[0] <Debug>: AirPort: Link Up on en0
+Jul  6 09:51:59 unknown kernel[0] <Debug>: en0: BSSID changed to 00:1e:58:e9:7a:1b
+Jul  6 09:51:59 unknown kernel[0] <Debug>: AppleBCMWLANJoinManager::handleSupplicantEvent(): status = 6, reason = 0, flags = 0x18, authtype = 0, addr = 0b:16:32:08:0c:12
+Jul  6 09:51:59 unknown wifid[22] <Error>: WiFi:[363246719.683452]: Processing link event UP
+Jul  6 09:51:59 unknown kernel[0] <Debug>: [254503.869542875]: AppleBCMWLANNetManager::receivedIPv4Address(): Received address 192.168.1.10, entering powersave mode 2
+Jul  6 09:51:59 unknown configd[54] <Notice>: network configuration changed.
+Jul  6 09:52:00 unknown configd[54] <Notice>: Captive: en0: Not probing 'ilion_gst' (protected network)
+Jul  6 09:52:00 unknown configd[54] <Notice>: network configuration changed.
+Jul  6 09:52:00 unknown UserEventAgent[19] <Warning>: DEBUG: Changing WiFi state: 1
+Jul  6 09:52:01 unknown calaccessd[11684] <Notice>: MS:Notice: Installing: (null) [calaccessd] (690.10)
+Jul  6 09:52:01 unknown sandboxd[11686] <Notice>: MS:Notice: Installing: (null) [sandboxd] (690.10)
+Jul  6 09:52:05 unknown atwakeup[11688] <Notice>: MS:Notice: Installing: com.apple.atwakeup [atwakeup] (690.10)

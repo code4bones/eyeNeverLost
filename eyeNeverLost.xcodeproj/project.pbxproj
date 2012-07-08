@@ -1,0 +1,554 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CE74E7C915A4C04E0021912B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE74E7C815A4C04E0021912B /* UIKit.framework */; };
+		CE74E7CB15A4C04E0021912B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE74E7CA15A4C04E0021912B /* Foundation.framework */; };
+		CE74E7CD15A4C04E0021912B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE74E7CC15A4C04E0021912B /* CoreGraphics.framework */; };
+		CE74E7D315A4C04E0021912B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE74E7D115A4C04E0021912B /* InfoPlist.strings */; };
+		CE74E7D515A4C04E0021912B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE74E7D415A4C04E0021912B /* main.m */; };
+		CE74E7D915A4C04E0021912B /* eyeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE74E7D815A4C04E0021912B /* eyeAppDelegate.m */; };
+		CE74E7DC15A4C04E0021912B /* eyeFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE74E7DB15A4C04E0021912B /* eyeFirstViewController.m */; };
+		CE74E7DE15A4C04E0021912B /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = CE74E7DD15A4C04E0021912B /* first.png */; };
+		CE74E7E015A4C04E0021912B /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE74E7DF15A4C04E0021912B /* first@2x.png */; };
+		CE74E7E315A4C04E0021912B /* eyeSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE74E7E215A4C04E0021912B /* eyeSecondViewController.m */; };
+		CE74E7E515A4C04E0021912B /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = CE74E7E415A4C04E0021912B /* second.png */; };
+		CE74E7E715A4C04E0021912B /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE74E7E615A4C04E0021912B /* second@2x.png */; };
+		CE74E7EA15A4C04E0021912B /* eyeFirstViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE74E7E815A4C04E0021912B /* eyeFirstViewController_iPhone.xib */; };
+		CE74E7ED15A4C04E0021912B /* eyeFirstViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE74E7EB15A4C04E0021912B /* eyeFirstViewController_iPad.xib */; };
+		CE74E7F015A4C04F0021912B /* eyeSecondViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE74E7EE15A4C04E0021912B /* eyeSecondViewController_iPhone.xib */; };
+		CE74E7F315A4C04F0021912B /* eyeSecondViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE74E7F115A4C04F0021912B /* eyeSecondViewController_iPad.xib */; };
+		CE74E80015A4C1EB0021912B /* NetLog.m in Sources */ = {isa = PBXBuildFile; fileRef = CE74E7FF15A4C1EB0021912B /* NetLog.m */; };
+		CE74E80415A4C2180021912B /* GatewayUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CE74E80315A4C2180021912B /* GatewayUtil.m */; };
+		CE74E80E15A4C22D0021912B /* TBXML+Compression.m in Sources */ = {isa = PBXBuildFile; fileRef = CE74E80715A4C22D0021912B /* TBXML+Compression.m */; };
+		CE74E80F15A4C22D0021912B /* TBXML+HTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = CE74E80815A4C22D0021912B /* TBXML+HTTP.m */; };
+		CE74E81015A4C22D0021912B /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = CE74E80915A4C22D0021912B /* TBXML.m */; };
+		CE74E81315A4C3A30021912B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE74E81115A4C3A30021912B /* CoreLocation.framework */; };
+		CE74E81415A4C3A30021912B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CE74E81215A4C3A30021912B /* libz.dylib */; };
+		CE93D55B15A8799200E00E7A /* MKMapView+ZoomLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE93D55A15A8799200E00E7A /* MKMapView+ZoomLevel.m */; };
+		CE93D55D15A9E00000E00E7A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE93D55C15A9DFFF00E00E7A /* SystemConfiguration.framework */; };
+		CEC8F45515A6D19A00DFFD0E /* eyeNeverLost.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC8F45415A6D19900DFFD0E /* eyeNeverLost.png */; };
+		CEC8F46415A738E500DFFD0E /* eyeMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC8F46215A738E400DFFD0E /* eyeMapViewController.m */; };
+		CEC8F46515A738E500DFFD0E /* eyeMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC8F46315A738E500DFFD0E /* eyeMapViewController.xib */; };
+		CEC8F46715A73E6F00DFFD0E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC8F46615A73E6E00DFFD0E /* MapKit.framework */; };
+		CEC8F47D15A8213500DFFD0E /* eyeSelectBeaconView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC8F47C15A8213500DFFD0E /* eyeSelectBeaconView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CE74E7C415A4C04E0021912B /* eyeNeverLost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eyeNeverLost.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE74E7C815A4C04E0021912B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CE74E7CA15A4C04E0021912B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CE74E7CC15A4C04E0021912B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CE74E7D015A4C04E0021912B /* eyeNeverLost-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "eyeNeverLost-Info.plist"; sourceTree = "<group>"; };
+		CE74E7D215A4C04E0021912B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CE74E7D415A4C04E0021912B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CE74E7D615A4C04E0021912B /* eyeNeverLost-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "eyeNeverLost-Prefix.pch"; sourceTree = "<group>"; };
+		CE74E7D715A4C04E0021912B /* eyeAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = eyeAppDelegate.h; sourceTree = "<group>"; };
+		CE74E7D815A4C04E0021912B /* eyeAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = eyeAppDelegate.m; sourceTree = "<group>"; };
+		CE74E7DA15A4C04E0021912B /* eyeFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = eyeFirstViewController.h; sourceTree = "<group>"; };
+		CE74E7DB15A4C04E0021912B /* eyeFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = eyeFirstViewController.m; sourceTree = "<group>"; };
+		CE74E7DD15A4C04E0021912B /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		CE74E7DF15A4C04E0021912B /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		CE74E7E115A4C04E0021912B /* eyeSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = eyeSecondViewController.h; sourceTree = "<group>"; };
+		CE74E7E215A4C04E0021912B /* eyeSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = eyeSecondViewController.m; sourceTree = "<group>"; };
+		CE74E7E415A4C04E0021912B /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		CE74E7E615A4C04E0021912B /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		CE74E7E915A4C04E0021912B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/eyeFirstViewController_iPhone.xib; sourceTree = "<group>"; };
+		CE74E7EC15A4C04E0021912B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/eyeFirstViewController_iPad.xib; sourceTree = "<group>"; };
+		CE74E7EF15A4C04F0021912B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/eyeSecondViewController_iPhone.xib; sourceTree = "<group>"; };
+		CE74E7F215A4C04F0021912B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/eyeSecondViewController_iPad.xib; sourceTree = "<group>"; };
+		CE74E7FE15A4C1EB0021912B /* NetLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetLog.h; sourceTree = "<group>"; };
+		CE74E7FF15A4C1EB0021912B /* NetLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetLog.m; sourceTree = "<group>"; };
+		CE74E80215A4C2180021912B /* GatewayUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GatewayUtil.h; sourceTree = "<group>"; };
+		CE74E80315A4C2180021912B /* GatewayUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GatewayUtil.m; sourceTree = "<group>"; };
+		CE74E80715A4C22D0021912B /* TBXML+Compression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TBXML+Compression.m"; sourceTree = "<group>"; };
+		CE74E80815A4C22D0021912B /* TBXML+HTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TBXML+HTTP.m"; sourceTree = "<group>"; };
+		CE74E80915A4C22D0021912B /* TBXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBXML.m; sourceTree = "<group>"; };
+		CE74E80B15A4C22D0021912B /* TBXML+Compression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TBXML+Compression.h"; sourceTree = "<group>"; };
+		CE74E80C15A4C22D0021912B /* TBXML+HTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TBXML+HTTP.h"; sourceTree = "<group>"; };
+		CE74E80D15A4C22D0021912B /* TBXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBXML.h; sourceTree = "<group>"; };
+		CE74E81115A4C3A30021912B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		CE74E81215A4C3A30021912B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		CE74E82115A52D000021912B /* EventSinkDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventSinkDelegate.h; sourceTree = "<group>"; };
+		CE93D55915A8799200E00E7A /* MKMapView+ZoomLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKMapView+ZoomLevel.h"; sourceTree = "<group>"; };
+		CE93D55A15A8799200E00E7A /* MKMapView+ZoomLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKMapView+ZoomLevel.m"; sourceTree = "<group>"; };
+		CE93D55C15A9DFFF00E00E7A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		CEC8F45415A6D19900DFFD0E /* eyeNeverLost.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eyeNeverLost.png; sourceTree = SOURCE_ROOT; };
+		CEC8F46115A738E400DFFD0E /* eyeMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eyeMapViewController.h; sourceTree = "<group>"; };
+		CEC8F46215A738E400DFFD0E /* eyeMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = eyeMapViewController.m; sourceTree = "<group>"; };
+		CEC8F46315A738E500DFFD0E /* eyeMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = eyeMapViewController.xib; sourceTree = "<group>"; };
+		CEC8F46615A73E6E00DFFD0E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CEC8F47B15A8213400DFFD0E /* eyeSelectBeaconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eyeSelectBeaconView.h; sourceTree = "<group>"; };
+		CEC8F47C15A8213500DFFD0E /* eyeSelectBeaconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = eyeSelectBeaconView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CE74E7C115A4C04E0021912B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE93D55D15A9E00000E00E7A /* SystemConfiguration.framework in Frameworks */,
+				CEC8F46715A73E6F00DFFD0E /* MapKit.framework in Frameworks */,
+				CE74E81315A4C3A30021912B /* CoreLocation.framework in Frameworks */,
+				CE74E81415A4C3A30021912B /* libz.dylib in Frameworks */,
+				CE74E7C915A4C04E0021912B /* UIKit.framework in Frameworks */,
+				CE74E7CB15A4C04E0021912B /* Foundation.framework in Frameworks */,
+				CE74E7CD15A4C04E0021912B /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CE74E7B915A4C04E0021912B = {
+			isa = PBXGroup;
+			children = (
+				CE74E7CE15A4C04E0021912B /* eyeNeverLost */,
+				CE74E7C715A4C04E0021912B /* Frameworks */,
+				CE74E7C515A4C04E0021912B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CE74E7C515A4C04E0021912B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE74E7C415A4C04E0021912B /* eyeNeverLost.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE74E7C715A4C04E0021912B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE93D55C15A9DFFF00E00E7A /* SystemConfiguration.framework */,
+				CEC8F46615A73E6E00DFFD0E /* MapKit.framework */,
+				CE74E81115A4C3A30021912B /* CoreLocation.framework */,
+				CE74E81215A4C3A30021912B /* libz.dylib */,
+				CE74E7C815A4C04E0021912B /* UIKit.framework */,
+				CE74E7CA15A4C04E0021912B /* Foundation.framework */,
+				CE74E7CC15A4C04E0021912B /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE74E7CE15A4C04E0021912B /* eyeNeverLost */ = {
+			isa = PBXGroup;
+			children = (
+				CEC8F47315A7445600DFFD0E /* 3rd Party Source */,
+				CEC8F47215A7440400DFFD0E /* Source */,
+				CE74E81615A4CA7B0021912B /* Interface */,
+				CE74E81515A4CA500021912B /* Icons */,
+				CE74E7CF15A4C04E0021912B /* Supporting Files */,
+			);
+			path = eyeNeverLost;
+			sourceTree = "<group>";
+		};
+		CE74E7CF15A4C04E0021912B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CE74E7D015A4C04E0021912B /* eyeNeverLost-Info.plist */,
+				CE74E7D115A4C04E0021912B /* InfoPlist.strings */,
+				CE74E7D415A4C04E0021912B /* main.m */,
+				CE74E7D615A4C04E0021912B /* eyeNeverLost-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CE74E7FD15A4C1EB0021912B /* NetLog */ = {
+			isa = PBXGroup;
+			children = (
+				CE74E7FE15A4C1EB0021912B /* NetLog.h */,
+				CE74E7FF15A4C1EB0021912B /* NetLog.m */,
+			);
+			path = NetLog;
+			sourceTree = "<group>";
+		};
+		CE74E80115A4C2180021912B /* GatewayUtil */ = {
+			isa = PBXGroup;
+			children = (
+				CE74E80315A4C2180021912B /* GatewayUtil.m */,
+				CE74E80215A4C2180021912B /* GatewayUtil.h */,
+			);
+			path = GatewayUtil;
+			sourceTree = "<group>";
+		};
+		CE74E80515A4C22D0021912B /* TBXML */ = {
+			isa = PBXGroup;
+			children = (
+				CE74E80615A4C22D0021912B /* TBXML-Code */,
+				CE74E80A15A4C22D0021912B /* TBXML-Headers */,
+			);
+			path = TBXML;
+			sourceTree = "<group>";
+		};
+		CE74E80615A4C22D0021912B /* TBXML-Code */ = {
+			isa = PBXGroup;
+			children = (
+				CE74E80715A4C22D0021912B /* TBXML+Compression.m */,
+				CE74E80815A4C22D0021912B /* TBXML+HTTP.m */,
+				CE74E80915A4C22D0021912B /* TBXML.m */,
+			);
+			path = "TBXML-Code";
+			sourceTree = "<group>";
+		};
+		CE74E80A15A4C22D0021912B /* TBXML-Headers */ = {
+			isa = PBXGroup;
+			children = (
+				CE74E80B15A4C22D0021912B /* TBXML+Compression.h */,
+				CE74E80C15A4C22D0021912B /* TBXML+HTTP.h */,
+				CE74E80D15A4C22D0021912B /* TBXML.h */,
+			);
+			path = "TBXML-Headers";
+			sourceTree = "<group>";
+		};
+		CE74E81515A4CA500021912B /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				CEC8F45415A6D19900DFFD0E /* eyeNeverLost.png */,
+				CE74E7DD15A4C04E0021912B /* first.png */,
+				CE74E7DF15A4C04E0021912B /* first@2x.png */,
+				CE74E7E415A4C04E0021912B /* second.png */,
+				CE74E7E615A4C04E0021912B /* second@2x.png */,
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
+		CE74E81615A4CA7B0021912B /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				CEC8F46315A738E500DFFD0E /* eyeMapViewController.xib */,
+				CE74E7E815A4C04E0021912B /* eyeFirstViewController_iPhone.xib */,
+				CE74E7EB15A4C04E0021912B /* eyeFirstViewController_iPad.xib */,
+				CE74E7EE15A4C04E0021912B /* eyeSecondViewController_iPhone.xib */,
+				CE74E7F115A4C04F0021912B /* eyeSecondViewController_iPad.xib */,
+			);
+			name = Interface;
+			sourceTree = "<group>";
+		};
+		CE93D55715A835B100E00E7A /* GUI Views */ = {
+			isa = PBXGroup;
+			children = (
+				CEC8F47B15A8213400DFFD0E /* eyeSelectBeaconView.h */,
+				CEC8F47C15A8213500DFFD0E /* eyeSelectBeaconView.m */,
+			);
+			name = "GUI Views";
+			sourceTree = "<group>";
+		};
+		CEC8F46E15A7437F00DFFD0E /* Login( FirstViewController ) */ = {
+			isa = PBXGroup;
+			children = (
+				CE74E7DA15A4C04E0021912B /* eyeFirstViewController.h */,
+				CE74E7DB15A4C04E0021912B /* eyeFirstViewController.m */,
+			);
+			name = "Login( FirstViewController )";
+			sourceTree = "<group>";
+		};
+		CEC8F46F15A7439B00DFFD0E /* Status ( SecondViewController ) */ = {
+			isa = PBXGroup;
+			children = (
+				CE74E7E115A4C04E0021912B /* eyeSecondViewController.h */,
+				CE74E7E215A4C04E0021912B /* eyeSecondViewController.m */,
+			);
+			name = "Status ( SecondViewController )";
+			sourceTree = "<group>";
+		};
+		CEC8F47015A743C200DFFD0E /* MapPage ( MapViewController ) */ = {
+			isa = PBXGroup;
+			children = (
+				CEC8F46115A738E400DFFD0E /* eyeMapViewController.h */,
+				CEC8F46215A738E400DFFD0E /* eyeMapViewController.m */,
+				CE93D55915A8799200E00E7A /* MKMapView+ZoomLevel.h */,
+				CE93D55A15A8799200E00E7A /* MKMapView+ZoomLevel.m */,
+			);
+			name = "MapPage ( MapViewController )";
+			sourceTree = "<group>";
+		};
+		CEC8F47115A743DE00DFFD0E /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				CE74E7D715A4C04E0021912B /* eyeAppDelegate.h */,
+				CE74E7D815A4C04E0021912B /* eyeAppDelegate.m */,
+				CE74E82115A52D000021912B /* EventSinkDelegate.h */,
+			);
+			name = Delegates;
+			sourceTree = "<group>";
+		};
+		CEC8F47215A7440400DFFD0E /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				CE93D55715A835B100E00E7A /* GUI Views */,
+				CEC8F47115A743DE00DFFD0E /* Delegates */,
+				CEC8F46E15A7437F00DFFD0E /* Login( FirstViewController ) */,
+				CEC8F46F15A7439B00DFFD0E /* Status ( SecondViewController ) */,
+				CEC8F47015A743C200DFFD0E /* MapPage ( MapViewController ) */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		CEC8F47315A7445600DFFD0E /* 3rd Party Source */ = {
+			isa = PBXGroup;
+			children = (
+				CE74E80515A4C22D0021912B /* TBXML */,
+				CE74E80115A4C2180021912B /* GatewayUtil */,
+				CE74E7FD15A4C1EB0021912B /* NetLog */,
+			);
+			name = "3rd Party Source";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CE74E7C315A4C04E0021912B /* eyeNeverLost */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE74E7F615A4C04F0021912B /* Build configuration list for PBXNativeTarget "eyeNeverLost" */;
+			buildPhases = (
+				CE74E7C015A4C04E0021912B /* Sources */,
+				CE74E7C115A4C04E0021912B /* Frameworks */,
+				CE74E7C215A4C04E0021912B /* Resources */,
+				CE74E7F915A4C05C0021912B /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = eyeNeverLost;
+			productName = eyeNeverLost;
+			productReference = CE74E7C415A4C04E0021912B /* eyeNeverLost.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CE74E7BB15A4C04E0021912B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = CE74E7BE15A4C04E0021912B /* Build configuration list for PBXProject "eyeNeverLost" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CE74E7B915A4C04E0021912B;
+			productRefGroup = CE74E7C515A4C04E0021912B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CE74E7C315A4C04E0021912B /* eyeNeverLost */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CE74E7C215A4C04E0021912B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE74E7D315A4C04E0021912B /* InfoPlist.strings in Resources */,
+				CE74E7DE15A4C04E0021912B /* first.png in Resources */,
+				CE74E7E015A4C04E0021912B /* first@2x.png in Resources */,
+				CE74E7E515A4C04E0021912B /* second.png in Resources */,
+				CE74E7E715A4C04E0021912B /* second@2x.png in Resources */,
+				CE74E7EA15A4C04E0021912B /* eyeFirstViewController_iPhone.xib in Resources */,
+				CE74E7ED15A4C04E0021912B /* eyeFirstViewController_iPad.xib in Resources */,
+				CE74E7F015A4C04F0021912B /* eyeSecondViewController_iPhone.xib in Resources */,
+				CE74E7F315A4C04F0021912B /* eyeSecondViewController_iPad.xib in Resources */,
+				CEC8F45515A6D19A00DFFD0E /* eyeNeverLost.png in Resources */,
+				CEC8F46515A738E500DFFD0E /* eyeMapViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CE74E7F915A4C05C0021912B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = ../x.sh;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CE74E7C015A4C04E0021912B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE74E7D515A4C04E0021912B /* main.m in Sources */,
+				CE74E7D915A4C04E0021912B /* eyeAppDelegate.m in Sources */,
+				CE74E7DC15A4C04E0021912B /* eyeFirstViewController.m in Sources */,
+				CE74E7E315A4C04E0021912B /* eyeSecondViewController.m in Sources */,
+				CE74E80015A4C1EB0021912B /* NetLog.m in Sources */,
+				CE74E80415A4C2180021912B /* GatewayUtil.m in Sources */,
+				CE74E80E15A4C22D0021912B /* TBXML+Compression.m in Sources */,
+				CE74E80F15A4C22D0021912B /* TBXML+HTTP.m in Sources */,
+				CE74E81015A4C22D0021912B /* TBXML.m in Sources */,
+				CEC8F46415A738E500DFFD0E /* eyeMapViewController.m in Sources */,
+				CEC8F47D15A8213500DFFD0E /* eyeSelectBeaconView.m in Sources */,
+				CE93D55B15A8799200E00E7A /* MKMapView+ZoomLevel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CE74E7D115A4C04E0021912B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE74E7D215A4C04E0021912B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CE74E7E815A4C04E0021912B /* eyeFirstViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE74E7E915A4C04E0021912B /* en */,
+			);
+			name = eyeFirstViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		CE74E7EB15A4C04E0021912B /* eyeFirstViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE74E7EC15A4C04E0021912B /* en */,
+			);
+			name = eyeFirstViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+		CE74E7EE15A4C04E0021912B /* eyeSecondViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE74E7EF15A4C04F0021912B /* en */,
+			);
+			name = eyeSecondViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		CE74E7F115A4C04F0021912B /* eyeSecondViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE74E7F215A4C04F0021912B /* en */,
+			);
+			name = eyeSecondViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CE74E7F415A4C04F0021912B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CE74E7F515A4C04F0021912B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CE74E7F715A4C04F0021912B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "eyeNeverLost/eyeNeverLost-Prefix.pch";
+				INFOPLIST_FILE = "eyeNeverLost/eyeNeverLost-Info.plist";
+				OTHER_CFLAGS = "-DARC_ENABLED";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=*]" = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CE74E7F815A4C04F0021912B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "eyeNeverLost/eyeNeverLost-Prefix.pch";
+				INFOPLIST_FILE = "eyeNeverLost/eyeNeverLost-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CE74E7BE15A4C04E0021912B /* Build configuration list for PBXProject "eyeNeverLost" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE74E7F415A4C04F0021912B /* Debug */,
+				CE74E7F515A4C04F0021912B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE74E7F615A4C04F0021912B /* Build configuration list for PBXNativeTarget "eyeNeverLost" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE74E7F715A4C04F0021912B /* Debug */,
+				CE74E7F815A4C04F0021912B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CE74E7BB15A4C04E0021912B /* Project object */;
+}
