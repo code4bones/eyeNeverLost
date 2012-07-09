@@ -29,6 +29,7 @@ enum kLocationModes {
     NSNumber *latidude;
     NSNumber *longitude;
     NSString *status;
+    NSNumber *accuracy;
     
 }
 @property (nonatomic,retain) NSString *name;
@@ -37,6 +38,7 @@ enum kLocationModes {
 @property (nonatomic,retain) NSNumber *longitude;
 @property (nonatomic,retain) NSString   *date;
 @property (nonatomic,retain) NSString *status;
+@property (nonatomic,retain) NSNumber *accuracy;
 
 +(BeaconObj*) createWithString:(NSString*)src;
 +(BeaconObj*) createWithLocationString:(NSString*)src;

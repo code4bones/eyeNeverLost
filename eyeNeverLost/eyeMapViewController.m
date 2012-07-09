@@ -67,6 +67,16 @@
     [self onRefreshBuddie: nil];               
 }
 
+-(MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id)overlay 
+{
+    MKCircleView* circleView = [[MKCircleView alloc] initWithOverlay:overlay];
+    circleView.fillColor = [UIColor blueColor];
+    circleView.strokeColor = [UIColor redColor];
+    circleView.lineWidth = 0.5;
+    circleView.alpha = 0.1;
+    return circleView;
+}
+
 - (MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>) annotation{
     MKPinAnnotationView *annView=[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"currentloc"];
     annView.pinColor = MKPinAnnotationColorGreen;
@@ -95,20 +105,39 @@
     
     lbTitle.text = [NSString stringWithFormat:@"%@ // %@",seatMateName,obj.date];
     
+    
+    NSMutableArray *annotationsToRemove = [[NSMutableArray alloc] initWithArray: mapView.annotations]; 
+    [annotationsToRemove removeObject: mapView.userLocation]; 
+    [mapView removeAnnotations: annotationsToRemove];
+
+    NSMutableArray *overlaysToRemove = [[NSMutableArray alloc] initWithArray: mapView.overlays]; 
+    [mapView removeOverlays: overlaysToRemove];
+    
+    
     CLLocationCoordinate2D coord; 
     coord.latitude =  [obj.latitude doubleValue];
     coord.longitude = [obj.longitude doubleValue];
+    double accuracy = [obj.accuracy doubleValue];
     
     MKPointAnnotation *annotationPoint = [[MKPointAnnotation alloc] init];
     annotationPoint.coordinate = coord;
     annotationPoint.title = seatMateName;
     annotationPoint.subtitle = [NSString stringWithFormat:@"%@ // %@",obj.status,obj.date];
     
+    
     [mapView addAnnotation:annotationPoint]; 
+
+    // иногда в базу попадает отрицательна, целочисленная точнонсть - хз что это такое...
+    if ( accuracy > 0 ) {
+        MKCircle *circle = [MKCircle circleWithCenterCoordinate:coord radius:accuracy];
+        [mapView addOverlay:circle];
+    }
+    
     
     CLLocationCoordinate2D centerCoord = coord; 
     [mapView setCenterCoordinate:centerCoord zoomLevel:15 animated:YES];    
 
+    
 }
 
 -(IBAction) onSelectBuddie:(id)sender {

@@ -10,7 +10,7 @@
 
 @implementation BeaconObj
 
-@synthesize name,uid,date,latitude,longitude,status; 
+@synthesize name,uid,date,latitude,longitude,status,accuracy; 
 
 +(BeaconObj*) createWithString:(NSString*)src {
     BeaconObj *obj = [[BeaconObj alloc] init];
@@ -35,6 +35,7 @@
     arTokens = [src componentsSeparatedByString:@"^"]; 	
     obj.latitude = [NSNumber numberWithDouble:[[arTokens objectAtIndex:0] doubleValue]];
     obj.longitude = [NSNumber numberWithDouble:[[arTokens objectAtIndex:1] doubleValue]];
+    obj.accuracy  = [NSNumber numberWithDouble:[[arTokens objectAtIndex:2] doubleValue]];
     obj.date = [arTokens objectAtIndex:3];
     obj.status = [arTokens objectAtIndex:4];
     return obj;
