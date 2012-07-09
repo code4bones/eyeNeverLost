@@ -16,13 +16,14 @@ UITabBarControllerDelegate,EventSinkDelegate,CLLocationManagerDelegate>
 {
     id<EventSinkDelegate> eventSink;
     CLLocationManager *locMgr;
-    UIBackgroundTaskIdentifier bgTask;
+    NSOperationQueue *nsQueue;
     BOOL    inBackground;
     NSTimer *alive;
+    NSLock *nsLock;
 }
 
-
-@property (strong, nonatomic) NSTimer *alive;
+@property (strong, nonatomic)    NSOperationQueue *nsQueue;
+@property (strong, nonatomic) NSLock *nsLock;
 @property (strong, nonatomic) CLLocationManager *locMgr;
 @property (strong, nonatomic) id eventSink;
 @property (strong, nonatomic) UIWindow *window;

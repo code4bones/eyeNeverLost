@@ -17,7 +17,7 @@
 
 @synthesize window = _window;
 @synthesize tabBarController = _tabBarController;
-@synthesize eventSink,locMgr,alive;
+@synthesize eventSink,locMgr,nsLock,nsQueue;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -37,7 +37,7 @@
     eyeFirstViewController *vc1 = (eyeFirstViewController*)vcLogin;
     eyeSecondViewController *vc2 = (eyeSecondViewController*)vcStats;
     vc1.eventSink = self;
-    eventSink = vc2;
+    self.eventSink = vc2;
     
     self.tabBarController = [[UITabBarController alloc] init];
     self.tabBarController.viewControllers = [NSArray arrayWithObjects:vcLogin, vcStats,vcMap, nil];
@@ -46,11 +46,13 @@
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     
-    locMgr = [[CLLocationManager alloc] init];
-    locMgr.delegate = self;
-    locMgr.desiredAccuracy = kCLLocationAccuracyBest;
-    locMgr.distanceFilter =  kCLDistanceFilterNone; 
+    self.locMgr = [[CLLocationManager alloc] init];
+    self.locMgr.delegate = self;
+    self.locMgr.desiredAccuracy = kCLLocationAccuracyBest;
+    self.locMgr.distanceFilter =  kCLDistanceFilterNone; 
 
+    self.nsLock = [[NSLock alloc] init];
+    self.nsQueue = [[NSOperationQueue alloc]init];
     
     
     return YES;
@@ -88,16 +90,28 @@
             return;
     } // Hybrid mode 
 
+    
     // дабы не блокироваться в [Gateway saveLocation] запускаемся в блоке
-    NSOperationQueue *queue = [[NSOperationQueue alloc]init];
     NSBlockOperation *block = [NSBlockOperation blockOperationWithBlock:^{
+
+        // не знаю, имеет ли смысл, но так спокойнее
+        // судя по временя в логе - без лока образуется каша
+        // может по этому часть данных не отослалась....блянах
+        netlog(@"send: Waiting for lock\n");
+        [nsLock lock]; 
+        netlog(@"send: Lock acquired\n");
         
         NSString *beaconID = [uDef stringForKey:@"beaconID"];
         NSString *sStatus = [self.eventSink getStatusString];
         GatewayUtil *gw = [[GatewayUtil alloc]init];
-        [gw saveLocation:beaconID longitude:newLocation.coordinate.longitude latitude:newLocation.coordinate.latitude precision:newLocation.horizontalAccuracy status:(sStatus == nil || [sStatus length] == 0 )? @"":sStatus];
-        netlog(@"Location are sent\n");
-
+        if ( [gw saveLocation:beaconID longitude:newLocation.coordinate.longitude latitude:newLocation.coordinate.latitude precision:newLocation.horizontalAccuracy status:(sStatus == nil || [sStatus length] == 0 )? @"":sStatus] ) {
+            netlog(@"Location are sent\n");
+        } else {
+            NSString *msg = [gw.response objectForKey:@"msg"];
+            netlog(@"Failed to sending location to server: %@\n",msg != nil?msg:@"unexpected");
+        }
+        [nsLock unlock];
+        netlog(@"send: lock released\n");
     }]; // block
         
     // и еще один блок для апдейта статистики
@@ -106,9 +120,21 @@
         netlog(@"Statistics updated\n");
     }]; // execution block update
     
+    
     // invoke !
-    [queue addOperation:block];
+    [nsQueue addOperation:block];
 }
+/*
+ dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+ // do your background work
+    dispatch_async(dispatch_get_main_queue(), ^{
+    // update UI, etc.
+    myLabel.text = @"Finished";
+    });
+ });
+ 
+ */
+
 
 /*
  метод-делегат из EventSinkDelegate для управлением LocationManager'om
@@ -198,47 +224,6 @@
         [locMgr startMonitoringSignificantLocationChanges];
 #endif 
     }
-
-#ifndef _GSM_    
-    inBackground = YES;
-    UIApplication *theApp = [UIApplication sharedApplication];
-    bgTask = [theApp beginBackgroundTaskWithExpirationHandler: ^{
-        netlog(@"beginBackgroundTaskWithExpirationHandler\n");
-        [theApp endBackgroundTask:bgTask];
-        bgTask = UIBackgroundTaskInvalid;
-    }]; // beginBackgroundTask....
-
-    /*
-    self.alive = [NSTimer scheduledTimerWithTimeInterval:60 target:self
-                                                selector:@selector(startLocationServices) userInfo:nil repeats:YES];
-
-    */
-    NSDateFormatter *df = [[NSDateFormatter alloc]init];
-    [df setDateStyle:NSDateFormatterMediumStyle];
-    [df setTimeStyle:NSDateFormatterMediumStyle];    
-         
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^{
-        int nCount = 0;
-        while ( inBackground == YES ) {
-            [NSThread sleepForTimeInterval:(1)];
-            NSDate *dtNow = [NSDate date];
-            netlog(@"background: %@ %d (%.f)\n",[df stringFromDate:dtNow],nCount,[application backgroundTimeRemaining]);
-            nCount++;
-            if ( [application backgroundTimeRemaining] <= 500 ) {
-                if ( fActive ) {
-                    [locMgr startUpdatingLocation];
-                    //[NSThread sleepForTimeInterval:(10)];
-
-                } else {
-                    [locMgr startUpdatingLocation];
-                    [locMgr stopUpdatingLocation];
-                }
-            }
-        } // while
-        [theApp endBackgroundTask:bgTask];
-        bgTask = UIBackgroundTaskInvalid;
-    }); // dispatch_async
-#endif    
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -256,10 +241,6 @@
     BOOL fActive = [uDef boolForKey:@"Active"];
     if ( fActive ) {
         netlog(@"Changing location update modes to GPS\n");
-#ifdef _GSM_ 
-        [locMgr stopMonitoringSignificantLocationChanges];
-        [locMgr startUpdatingLocation];
-#endif    
     }
     inBackground = NO;
 }
