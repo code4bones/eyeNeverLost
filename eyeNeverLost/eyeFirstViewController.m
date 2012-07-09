@@ -282,6 +282,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    alert(@"Title",@"Hello %@",@"World");
 }
 
 - (void)viewWillDisappear:(BOOL)animated

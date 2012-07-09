@@ -151,7 +151,30 @@ static NSString *NetLog_DeviceName = nil;
 
     NSLog(@"Total Logged bytes %d / %d ( %d on disk )\n",nSended,length,nWritten);
 }
-			
+
++ (void) alert2:(NSString*) title formatStr:(NSString*) fmtStr,... {
+	
+    NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
+    BOOL fSilent = [uDef boolForKey:@"Background"];
+    
+    
+	va_list argList;
+	va_start(argList,fmtStr);
+	NSString *message = [[NSString alloc] initWithFormat:fmtStr arguments:argList]; 
+	va_end(argList);
+    
+    if ( fSilent ) {
+        netlog(@"SILENT: %@\n",message);
+        return;
+    }
+    
+	UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+	
+	[alertView show];
+	NSLog(@"%@",message);
+	//[alertView release];	
+}
+
 + (void) alert:(NSString*) fmtStr,... {
 	
     NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
@@ -165,6 +188,7 @@ static NSString *NetLog_DeviceName = nil;
 
     if ( fSilent ) {
         netlog(@"SILENT: %@\n",message);
+        return;
     }
     
 	UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Kitty Says..." message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];

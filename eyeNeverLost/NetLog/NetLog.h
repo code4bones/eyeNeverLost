@@ -18,10 +18,12 @@
 +(void)log:(NSString*)formatString,...;
 +(void)send:(NSData*) data; 
 + (void) alert:(NSString*) fmtStr,...;
++ (void) alert2:(NSString*) title formatStr:(NSString*) fmtStr,...;
 +(void) debugPID;
 
 @end
 
+#define alert(title,...) [NetLog alert2:title formatStr:__VA_ARGS__]
 #define netlog_alert(...) [NetLog alert:__VA_ARGS__]
 #define netlog(...) [NetLog log:__VA_ARGS__]
 #define netsend(data) [NetLog send:data]

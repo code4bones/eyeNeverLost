@@ -40,6 +40,8 @@
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>LocationMode</key>
+	<string>gsm</string>
 	<key>Log</key>
 	<dict>
 		<key>Active</key>
@@ -78,7 +80,5 @@
 	</array>
 	<key>Version</key>
 	<string>Version v2.5.2</string>
-	<key>LocationMode</key>
-	<string>gsm</string>
 </dict>
 </plist>
