@@ -88,7 +88,8 @@
     GatewayUtil *gw = [[GatewayUtil alloc]init];
     BeaconObj *obj = [gw getLastBeaconLocation:seatMateID];
     if ( obj == nil ) {
-        netlog_alert(@"Нет записей о положении %@", seatMateName);
+        NSString *msg = [gw.response objectForKey:@"msg"];
+        alert(@"Внимание",@"Нет записей о положении %@ ( %@ ) %@", seatMateName,seatMateID,msg == nil?@"":msg);
         return;
     }
     

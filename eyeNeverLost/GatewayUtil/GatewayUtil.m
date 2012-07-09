@@ -124,11 +124,17 @@
     NSString *sURL = [NSString stringWithFormat:sRequest,beaconID];
     
     if ( [self sendRequestWithActivity:sURL] == NO ) {
+        netlog(@"Failed to request last beacon location\n");
         return nil;
     }
     
     // строка с координатами, датой и статусом для дружбана
     NSString *msg = [self.response objectForKey:@"msg"];
+    int rc = [[self.response objectForKey:@"rc"] intValue];
+    if ( rc < 0 ) {
+        //alert(@"Ошибка",@"Ошибка на уровне базы: %@",msg);
+        return nil;
+    }
     // парсится эта прелесть в конструкоторе
     BeaconObj *beaconObj = [BeaconObj createWithLocationString:msg];
     
@@ -300,7 +306,7 @@
  */
 -(BOOL) sendRequestWithActivity:(NSString*)sURL {
     if ( [GatewayUtil isConnected] == NO ) {
-        netlog_alert(@"Нет подключения к сети");
+        alert(@"Ошибка",@"Нет подключения к сети");
         return NO;
     }
   return [self sendRequest:sURL];
@@ -322,13 +328,11 @@
     NSData *xmlData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:sURL] options:NSDataReadingUncached error:&error];
     
     if ( xmlData == nil || [xmlData length] == 0 ) {
-        if ( error != nil ) {
+        if ( error != nil ) 
             [response setObject:[error description] forKey:@"msg"];
-            return NO;
-        } else {
+         else 
             [response setObject:@"Ошибка сети, повторите попытку позже" forKey:@"msg"];
-            return NO;
-        }
+        return NO;
     }
     
     netlog(@"response length = %d\n",[xmlData length]);

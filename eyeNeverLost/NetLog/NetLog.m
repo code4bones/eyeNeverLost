@@ -96,7 +96,7 @@ static NSString *NetLog_DeviceName = nil;
     if ( NetLog_File != nil ) {
         FILE *fd = fopen([NetLog_File UTF8String],"a+t");
         if ( fd ) {
-            nWritten = fwrite(pData,length,1,fd);
+            nWritten = fwrite(pData,1,length,fd);
             fclose(fd);
         }
     }
