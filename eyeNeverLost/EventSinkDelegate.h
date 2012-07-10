@@ -17,7 +17,7 @@
 -(void)updateStats:(CLLocation*)loc;
 
 //@required
--(NSMutableArray*) getBeacons;
+-(NSMutableArray*) getBeacons:(UIPickerView*)pickerView;
 -(void) beaconSelected:(BeaconObj*)beaconObj;
 -(NSString*)getStatusString;
 

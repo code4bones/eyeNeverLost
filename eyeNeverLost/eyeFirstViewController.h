@@ -10,8 +10,9 @@
 #import <CoreLocation/CoreLocation.h>
 #import "EventSinkDelegate.h"
 #import "NetLog/NetLog.h"
+#import "MBProgressHUD/MBProgressHUD.h"
 
-@interface eyeFirstViewController : UIViewController<UITextFieldDelegate,EventSinkDelegate>
+@interface eyeFirstViewController : UIViewController<MBProgressHUDDelegate,UITextFieldDelegate,EventSinkDelegate>
 
 {
     UITextField *txtLogin;
@@ -29,8 +30,11 @@
     UISwitch *onOff;
     int nBeaconIdx;
     id<EventSinkDelegate> eventSink;
+    UIActivityIndicatorView *acivityInd;
+    MBProgressHUD *HUD;
 }
 
+@property (strong,retain) UIActivityIndicatorView *activityInd;
 @property (strong,retain) id eventSink;
 @property (strong,retain) IBOutlet UISegmentedControl *segMode;
 @property (strong,retain) IBOutlet UILabel*  lbMode;

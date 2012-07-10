@@ -49,7 +49,7 @@
     return self;
 }
 
--(NSMutableArray*)getBeacons {
+-(NSMutableArray*)getBeacons:(UIPickerView*)pickerView {
     
     NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
     NSString *beaconID = [uDef stringForKey:@"beaconID"];

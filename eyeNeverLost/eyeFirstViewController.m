@@ -14,6 +14,7 @@
 @synthesize txtLogin,txtPassword,strBeaconID,btnSelectBeacon;
 @synthesize actionSheet,onOff,lbVersion,lbPhone;
 @synthesize eventSink,btnLink,lbMode,segMode,lbInterval;
+@synthesize activityInd;
 
 -(id)init {
     self = [super init];
@@ -84,7 +85,7 @@
  метод-делегат для получения списка телефонов для UIPickerView
  вызывается из вспомогательного класса выбора телефонов eyeSelectBeaconView
  */
--(NSMutableArray*)getBeacons {
+-(NSMutableArray*)getBeacons:(UIPickerView*)pickerView {
     
     NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
     NSString *sLogin = [uDef stringForKey:@"Login"];
@@ -105,6 +106,8 @@
         netlog_alert(@"У Вас нет зарегестрированных телефонов...");
         return nil;
     }
+        
+        
     return arBeacon;
 }
 
@@ -160,11 +163,12 @@
     [uDef setValue:sLogin forKey:@"Login"];
     [uDef setValue:sPassword forKey:@"Password"];
     [uDef synchronize];
-    
-    // показываем вьюху для выбора телефона, будут вызваны делегаты getBeacons и beaconSelected 
+
+    // зываем вьюху для выбора телефона, будут вызваны делегаты getBeacons иbeaconSelected 
     eyeSelectBeaconView *sb = [[eyeSelectBeaconView alloc] initWithFrameAndDataSource:CGRectMake(0,0,320,450) dataSource:self];
-    [[[[UIApplication sharedApplication] delegate] window] addSubview:sb];
+        [[[[UIApplication sharedApplication] delegate] window] addSubview:sb];
 }
+
 
 /*
  Устанавливаем режим мониторинга ( GPS,GSM Hybrid )

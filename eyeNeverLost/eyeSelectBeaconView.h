@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "EventSinkDelegate.h"
+#import "MBProgressHUD/MBProgressHUD.h"
 
 #define UIColorFromRGB(rgbValue) [UIColor \
 colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
@@ -21,9 +22,11 @@ UIPickerViewDelegate,UIPickerViewDataSource> {
     NSMutableArray *arBeacon;
     id<EventSinkDelegate> dataSource;
     int nBeaconIdx;
+    UIPickerView *pickerView;
+    MBProgressHUD *HUD;
 }
 
--(void)fetchBeacons;
+//-(void)fetchBeacons;
 - (id)initWithFrameAndDataSource:(CGRect)frame dataSource:(id)dataSrc;
 
 @property (strong,retain) UIActionSheet *actionSheet;

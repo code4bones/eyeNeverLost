@@ -20,16 +20,13 @@
     if (self) {
         
         
-        self.dataSource = dataSrc;
-        arBeacon = [self.dataSource getBeacons];
-        netlog(@"got mates %d\n",[arBeacon count]);
         
         UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Выберете Телефон" 
                                                            delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:@"Готово",nil];
         
         sheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
         CGRect pickerFrame = CGRectMake(0, 100, 320, 200);
-        UIPickerView *pickerView = [[UIPickerView alloc] initWithFrame:pickerFrame];
+        pickerView = [[UIPickerView alloc] initWithFrame:pickerFrame];
         pickerView.showsSelectionIndicator = YES;
         pickerView.dataSource = self;
         pickerView.delegate = self;
@@ -41,21 +38,51 @@
         [sheet setBounds:CGRectMake(0, 0, 320, 450)];//615
         [UIView commitAnimations];
         self.actionSheet = sheet; 
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-	
+        self.dataSource = dataSrc;
+
+	    HUD = [[MBProgressHUD alloc] initWithView:sheet.superview];
+        HUD.labelText = @"Подождите";
+        HUD.detailsLabelText = @"Идет обработка данных...";
+        HUD.mode = MBProgressHUDModeText; //Determinate;//MBProgressHUDModeAnnularDeterminate;
+        HUD.removeFromSuperViewOnHide = NO;
+        [sheet.superview addSubview:HUD];
+        
     }
     return self;
 }
 
--(void)fetchBeacons {
-    arBeacon = [self.dataSource getBeacons];
-    netlog(@"got mates %d\n",[arBeacon count]);
+- (void)didMoveToSuperview {
+    [HUD showAnimated:NO whileExecutingBlock:^{ 
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+        arBeacon = [self.dataSource getBeacons:pickerView];
+        if ( arBeacon != nil ) {
+            netlog(@"got mates %d\n",[arBeacon count]);
+        } else {
+            alert(@"Внимание !",@"Нет данных !");
+        }
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    } completionBlock: ^{
+        [HUD hide:YES];
+        if ( arBeacon != nil ) {
+            [pickerView reloadAllComponents];
+        }
+    }];
 }
+
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     BeaconObj *obj = [arBeacon objectAtIndex:nBeaconIdx];
-    [self.dataSource beaconSelected:obj];
-    [self removeFromSuperview];
+    //[HUD showAnimated:NO whileExecutingBlock:^{ 
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+        [self.dataSource beaconSelected:obj];
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        [self removeFromSuperview];
+
+    /*    
+} completionBlock: ^{
+        [HUD hide:YES];
+        [self removeFromSuperview];
+    }];*/
 }
 
 // returns the number of 'columns' to display.

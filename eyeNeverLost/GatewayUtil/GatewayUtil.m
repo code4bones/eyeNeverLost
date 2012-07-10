@@ -111,7 +111,10 @@
     }
 
     NSMutableArray *list = [[NSMutableArray alloc] init];
-    NSString *msg = [response objectForKey:@"msg"];    
+    NSString *msg = [response objectForKey:@"msg"]; 
+    if ( msg == nil  || [msg length] == 0 )
+        return nil;
+    
     return [self beaconParseResponse:msg outList:list];
 }
 

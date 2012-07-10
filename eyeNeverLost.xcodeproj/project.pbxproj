@@ -30,6 +30,7 @@
 		CE74E81015A4C22D0021912B /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = CE74E80915A4C22D0021912B /* TBXML.m */; };
 		CE74E81315A4C3A30021912B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE74E81115A4C3A30021912B /* CoreLocation.framework */; };
 		CE74E81415A4C3A30021912B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CE74E81215A4C3A30021912B /* libz.dylib */; };
+		CE8CC64815ACCC6F0015AC1A /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8CC64715ACCC6F0015AC1A /* MBProgressHUD.m */; };
 		CE93D55B15A8799200E00E7A /* MKMapView+ZoomLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE93D55A15A8799200E00E7A /* MKMapView+ZoomLevel.m */; };
 		CE93D55D15A9E00000E00E7A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE93D55C15A9DFFF00E00E7A /* SystemConfiguration.framework */; };
 		CEC8F45515A6D19A00DFFD0E /* eyeNeverLost.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC8F45415A6D19900DFFD0E /* eyeNeverLost.png */; };
@@ -75,6 +76,8 @@
 		CE74E81115A4C3A30021912B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		CE74E81215A4C3A30021912B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		CE74E82115A52D000021912B /* EventSinkDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventSinkDelegate.h; sourceTree = "<group>"; };
+		CE8CC64615ACCC6F0015AC1A /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		CE8CC64715ACCC6F0015AC1A /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		CE93D55915A8799200E00E7A /* MKMapView+ZoomLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKMapView+ZoomLevel.h"; sourceTree = "<group>"; };
 		CE93D55A15A8799200E00E7A /* MKMapView+ZoomLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKMapView+ZoomLevel.m"; sourceTree = "<group>"; };
 		CE93D55C15A9DFFF00E00E7A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -230,6 +233,15 @@
 			name = Interface;
 			sourceTree = "<group>";
 		};
+		CE8CC64515ACCC6F0015AC1A /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				CE8CC64615ACCC6F0015AC1A /* MBProgressHUD.h */,
+				CE8CC64715ACCC6F0015AC1A /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
 		CE93D55715A835B100E00E7A /* GUI Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,6 +305,7 @@
 		CEC8F47315A7445600DFFD0E /* 3rd Party Source */ = {
 			isa = PBXGroup;
 			children = (
+				CE8CC64515ACCC6F0015AC1A /* MBProgressHUD */,
 				CE74E80515A4C22D0021912B /* TBXML */,
 				CE74E80115A4C2180021912B /* GatewayUtil */,
 				CE74E7FD15A4C1EB0021912B /* NetLog */,
@@ -400,6 +413,7 @@
 				CEC8F46415A738E500DFFD0E /* eyeMapViewController.m in Sources */,
 				CEC8F47D15A8213500DFFD0E /* eyeSelectBeaconView.m in Sources */,
 				CE93D55B15A8799200E00E7A /* MKMapView+ZoomLevel.m in Sources */,
+				CE8CC64815ACCC6F0015AC1A /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
