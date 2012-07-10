@@ -19,6 +19,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         
+        
         self.dataSource = dataSrc;
         arBeacon = [self.dataSource getBeacons];
         netlog(@"got mates %d\n",[arBeacon count]);
@@ -40,7 +41,8 @@
         [sheet setBounds:CGRectMake(0, 0, 320, 450)];//615
         [UIView commitAnimations];
         self.actionSheet = sheet; 
-    
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+	
     }
     return self;
 }

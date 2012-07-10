@@ -13,11 +13,22 @@
 #import "eyeMapViewController.h"
 #import "eyeSecondViewController.h"
 
+@implementation KeepAliveDelegate
+
+- (void)locationManager:(CLLocationManager *)manager
+	didUpdateToLocation:(CLLocation *)newLocation
+           fromLocation:(CLLocation *)oldLocation {
+    
+    netlog(@"KeepAlive %@\n",[newLocation description]);
+}
+@end
+
 @implementation eyeAppDelegate
 
 @synthesize window = _window;
 @synthesize tabBarController = _tabBarController;
 @synthesize eventSink,locMgr,nsLock,nsQueue;
+@synthesize locMgrKeepAlive;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -50,10 +61,18 @@
     self.locMgr.delegate = self;
     self.locMgr.desiredAccuracy = kCLLocationAccuracyBest;
     self.locMgr.distanceFilter =  kCLDistanceFilterNone; 
+    [self.locMgr stopUpdatingLocation]; 
+    [self.locMgr stopMonitoringSignificantLocationChanges];
 
+    
     self.nsLock = [[NSLock alloc] init];
     self.nsQueue = [[NSOperationQueue alloc]init];
     
+    //queue = dispatch_queue_create("com.code4bones.eye",0);
+    
+    keepAlive = [[KeepAliveDelegate alloc]init];
+    self.locMgrKeepAlive = [[CLLocationManager alloc] init];
+    self.locMgrKeepAlive.delegate = keepAlive;
     
     return YES;
 }
@@ -63,8 +82,9 @@
            fromLocation:(CLLocation *)oldLocation {
     
     netlog(@"Updating location %@\n",[newLocation description]);
-
+    
     NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
+#if 0
     int nMode = [uDef integerForKey:@"LocationMode"];
     
     /*
@@ -89,7 +109,7 @@
         if ( isGSM == YES )
             return;
     } // Hybrid mode 
-
+#endif
     
     // дабы не блокироваться в [Gateway saveLocation] запускаемся в блоке
     NSBlockOperation *block = [NSBlockOperation blockOperationWithBlock:^{
@@ -123,6 +143,9 @@
     
     // invoke !
     [nsQueue addOperation:block];
+
+    // хорош бузить !
+    [locMgr stopUpdatingLocation];
 }
 /*
  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -141,8 +164,8 @@
  */
 - (void)controlLocation:(BOOL)doStart {
     NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
-    int nMode = [uDef integerForKey:@"LocationMode"];
-    NSString *sModeName = [uDef stringForKey:@"LocationModeString"];
+    //int nMode = [uDef integerForKey:@"LocationMode"];
+    //NSString *sModeName = [uDef stringForKey:@"LocationModeString"];
     
     //  флаг активного мониторинга
     [uDef setBool:doStart forKey:@"Active"];
@@ -152,11 +175,16 @@
     // для обнуления счетчика обновлений позиции
     [self.eventSink controlLocation:doStart];
    
+    netlog(@"GPS Monitor %@\n",doStart == YES?@"Started":@"Stopped");
+#if 1
+    if ( doStart == YES ) [locMgr startUpdatingLocation];
+    //else [locMgr stopUpdatingLocation];
+#else // теперь запуск апдейтов из фоновой джобы
     switch ( nMode ) {
         case kGPS:
             if ( doStart == YES ) [locMgr startUpdatingLocation];
             else [locMgr stopUpdatingLocation];
-            break;
+            break; 
         case kGSM:
             if ( doStart == YES ) [locMgr startMonitoringSignificantLocationChanges];
             else [locMgr stopMonitoringSignificantLocationChanges]; 
@@ -172,9 +200,7 @@
             }
             break;
     };
-
-    netlog(@"%@ Monitor %@\n",sModeName,doStart == YES?@"Started":@"Stopped");
-    
+#endif    
 }
 
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
@@ -196,34 +222,68 @@
 }
 
 
-//#define _GSM_
-#define _BATTERY_DRAIN_
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
     netlog(@"applicationDidEnterBackground\n");
-    
     NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
-    
+    int nInterval = 0;
+    BOOL fActive = [uDef boolForKey:@"Active"];
     // Скажем всем, что мы в ушли в тень
     [uDef setBool:YES forKey:@"Background"];
     [uDef synchronize];
 
-    // Дальше лучше не смотреть, - попытки сохранить батарейку в режиме GPS
-    //
-#ifdef _BATTERY_DRAIN_    
-    netlog(@"BG: Battery drain...\n");
-    return;
-#endif    
-    BOOL fActive = [uDef boolForKey:@"Active"];
-    
+    bgTask = [application beginBackgroundTaskWithExpirationHandler:^{
+        netlog(@"TASK ENDED\n");
+        [application endBackgroundTask:bgTask];
+        bgTask = UIBackgroundTaskInvalid;
+    }];
+
+    // Если активированы, инициализируем интервал 
     if ( fActive ) {
-        netlog(@"Changing location update modes to GSM\n");
-        [locMgr stopUpdatingLocation];
-#ifdef _GSM_
-        [locMgr startMonitoringSignificantLocationChanges];
-#endif 
+        nInterval = [uDef integerForKey:@"Interval"];
+        nInterval *= 60; // переводим в секунды
+        netlog(@"Interval is set to %d secs\n",nInterval);
     }
+    
+    inBackground = YES;
+    // Не допускаем повторного запуска джобы
+    //if ( jobStarted == NO ) {
+      //  jobStarted = YES;
+        netlog(@"Background job started\n");
+        // захренариваем фоновый тред
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            
+            // Используем свой таймер, а не [UIApplication backgroundTimeRemaining]
+            // потому как иногда ( незнаю почему ) в нем появляется запредельное значение ( потом снова все - ок )
+            int nDeadlineCounter = 0;
+            // счетчик для отсылки в БД
+            int nUpdateCounter = 0;
+            while ( inBackground == YES ) {
+                nDeadlineCounter++;
+                nUpdateCounter++;
+                NSTimeInterval nTimeRemaining = [application backgroundTimeRemaining];
+                netlog(@"thread %d/%d [%f]\n",nDeadlineCounter,nUpdateCounter,nTimeRemaining);
+                [NSThread sleepForTimeInterval:1.0];   
+                // не будем ждать 10-ти минут, передернем на минутку пораньше
+                if ( nDeadlineCounter > 540 ) { // 540
+                    netlog(@"Restarting Location Services to bybass 10 min restriction ( now %f )\n",nTimeRemaining);
+                    // сбрасываем счетчик
+                    [self.locMgrKeepAlive startUpdatingLocation];
+                    [self.locMgrKeepAlive stopUpdatingLocation]; 
+                    nDeadlineCounter = 0;
+                }
+                if ( fActive && nUpdateCounter >= nInterval ) {
+                     [locMgr startUpdatingLocation];
+                    nUpdateCounter = 0;
+                }
+            } // while in background
+            netlog(@"Background job finished\n");
+            // не очень то и надо
+            [application endBackgroundTask:bgTask];
+            bgTask = UIBackgroundTaskInvalid;
+        }); // dispatch
+   // } 
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -232,16 +292,6 @@
     NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
     [uDef setBool:NO forKey:@"Background"];
     [uDef synchronize];
-
-#ifdef _BATTERY_DRAIN_  
-    netlog(@"FG: Battery drain...\n");
-    return;
-#endif
-    
-    BOOL fActive = [uDef boolForKey:@"Active"];
-    if ( fActive ) {
-        netlog(@"Changing location update modes to GPS\n");
-    }
     inBackground = NO;
 }
 

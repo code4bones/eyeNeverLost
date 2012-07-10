@@ -41,7 +41,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>LocationMode</key>
-	<string>gsm</string>
+	<string>gps</string>
 	<key>Log</key>
 	<dict>
 		<key>Active</key>

@@ -424,7 +424,7 @@ AAgACAAIAAEAAQABAAE</bytes>
 					</object>
 					<object class="IBUISegmentedControl" id="881252237">
 						<reference key="NSNextResponder" ref="191373211"/>
-						<int key="NSvFlags">292</int>
+						<int key="NSvFlags">-2147483356</int>
 						<string key="NSFrame">{{143, 265}, {157, 44}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
@@ -462,7 +462,7 @@ AAgACAAIAAEAAQABAAE</bytes>
 					</object>
 					<object class="IBUILabel" id="747968585">
 						<reference key="NSNextResponder" ref="191373211"/>
-						<int key="NSvFlags">292</int>
+						<int key="NSvFlags">-2147483356</int>
 						<string key="NSFrame">{{20, 283}, {120, 25}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
