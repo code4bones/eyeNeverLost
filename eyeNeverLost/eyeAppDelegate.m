@@ -263,7 +263,7 @@
                 nDeadlineCounter++;
                 nUpdateCounter++;
                 NSTimeInterval nTimeRemaining = [application backgroundTimeRemaining];
-                netlog(@"thread %d/%d [%f]\n",nDeadlineCounter,nUpdateCounter,nTimeRemaining);
+                //netlog(@"thread %d/%d [%f]\n",nDeadlineCounter,nUpdateCounter,nTimeRemaining);
                 [NSThread sleepForTimeInterval:1.0];   
                 // не будем ждать 10-ти минут, передернем на минутку пораньше
                 if ( nDeadlineCounter > 540 ) { // 540
