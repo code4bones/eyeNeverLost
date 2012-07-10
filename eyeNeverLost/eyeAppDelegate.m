@@ -28,7 +28,7 @@
 @synthesize window = _window;
 @synthesize tabBarController = _tabBarController;
 @synthesize eventSink,locMgr,nsLock,nsQueue;
-@synthesize locMgrKeepAlive;
+@synthesize locMgrKeepAlive,keepAlive;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -70,9 +70,11 @@
     
     //queue = dispatch_queue_create("com.code4bones.eye",0);
     
-    keepAlive = [[KeepAliveDelegate alloc]init];
+    self.keepAlive = [[KeepAliveDelegate alloc]init];
     self.locMgrKeepAlive = [[CLLocationManager alloc] init];
-    self.locMgrKeepAlive.delegate = keepAlive;
+    self.locMgrKeepAlive.delegate = self.keepAlive;
+    
+    updateCounter = 0;
     
     return YES;
 }
@@ -227,63 +229,89 @@
 {
     netlog(@"applicationDidEnterBackground\n");
     NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
-    int nInterval = 0;
+    __block int nInterval = 0;
     BOOL fActive = [uDef boolForKey:@"Active"];
+    NSString *beaconID = [uDef stringForKey:@"beaconID"];
+    
     // Скажем всем, что мы в ушли в тень
     [uDef setBool:YES forKey:@"Background"];
     [uDef synchronize];
 
+    // Если не активированы, вываливаемся нах 
+    if ( fActive == NO ) 
+        return;
+
+    nInterval = [uDef integerForKey:@"Interval"];
+    nInterval *= 60; // переводим в секунды
+    netlog(@"Interval is set to %d secs\n",nInterval);
+    
     bgTask = [application beginBackgroundTaskWithExpirationHandler:^{
         netlog(@"TASK ENDED\n");
         [application endBackgroundTask:bgTask];
         bgTask = UIBackgroundTaskInvalid;
     }];
-
-    // Если активированы, инициализируем интервал 
-    if ( fActive ) {
-        nInterval = [uDef integerForKey:@"Interval"];
-        nInterval *= 60; // переводим в секунды
-        netlog(@"Interval is set to %d secs\n",nInterval);
-    }
     
     inBackground = YES;
-    // Не допускаем повторного запуска джобы
-    //if ( jobStarted == NO ) {
-      //  jobStarted = YES;
-        netlog(@"Background job started\n");
-        // захренариваем фоновый тред
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    netlog(@"Background job started\n");
+    // захренариваем фоновый тред
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        // Используем свой таймер, а не [UIApplication backgroundTimeRemaining]
+        // потому как иногда ( незнаю почему ) в нем появляется запредельное значение ( потом снова все - ок )
+        int nDeadlineCounter = 0;
+        // счетчик для отсылки в БД
+        while ( inBackground == YES ) {
+
+            [NSThread sleepForTimeInterval:1.0];   
             
-            // Используем свой таймер, а не [UIApplication backgroundTimeRemaining]
-            // потому как иногда ( незнаю почему ) в нем появляется запредельное значение ( потом снова все - ок )
-            int nDeadlineCounter = 0;
-            // счетчик для отсылки в БД
-            int nUpdateCounter = 0;
-            while ( inBackground == YES ) {
-                nDeadlineCounter++;
-                nUpdateCounter++;
-                NSTimeInterval nTimeRemaining = [application backgroundTimeRemaining];
-                //netlog(@"thread %d/%d [%f]\n",nDeadlineCounter,nUpdateCounter,nTimeRemaining);
-                [NSThread sleepForTimeInterval:1.0];   
-                // не будем ждать 10-ти минут, передернем на минутку пораньше
-                if ( nDeadlineCounter > 540 ) { // 540
-                    netlog(@"Restarting Location Services to bybass 10 min restriction ( now %f )\n",nTimeRemaining);
-                    // сбрасываем счетчик
-                    [self.locMgrKeepAlive startUpdatingLocation];
-                    [self.locMgrKeepAlive stopUpdatingLocation]; 
-                    nDeadlineCounter = 0;
-                }
-                if ( fActive && nUpdateCounter >= nInterval ) {
-                     [locMgr startUpdatingLocation];
-                    nUpdateCounter = 0;
-                }
-            } // while in background
-            netlog(@"Background job finished\n");
-            // не очень то и надо
-            [application endBackgroundTask:bgTask];
-            bgTask = UIBackgroundTaskInvalid;
-        }); // dispatch
-   // } 
+            nDeadlineCounter++;
+            updateCounter++;
+            NSTimeInterval nTimeRemaining = [application backgroundTimeRemaining];
+            
+            /*
+            dispatch_queue_t queue = dispatch_queue_create("com.code4bones.test",NULL);
+            dispatch_async(queue,^{
+                [uDef setDouble:nTimeRemaining forKey:@"timeRemaining"];
+                [uDef setInteger:nInterval - updateCounter forKey:@"timeUpdate"];
+                [uDef synchronize];
+                netlog(@"background job: update:%d [ remaining %f ]\n",nInterval - updateCounter,nTimeRemaining);
+            });
+             */
+            //if ( ( nUpdateCounter % 60 ) == 0 )
+            netlog(@"background job: update:%d [ remaining %f ]\n",nInterval - updateCounter,nTimeRemaining);
+            // не будем ждать 10-ти минут, передернем на минутку пораньше
+            // ( только если наш интервал меньше 10 минут, иначе нет смысла добавочно   
+            // перезапускать )
+            if ( nInterval >= 600 && nDeadlineCounter >= 540 ) { // 9 мин
+                netlog(@"Triggering Location Services to bybass 10 min restriction ( now %f )\n",nTimeRemaining);
+                // сбрасываем счетчик
+                // по идее можно юзать и locMgr и попутно апдейтить нашу позицию
+                // но пока оставим пустой обработчик
+                [self.locMgrKeepAlive startUpdatingLocation];
+                [self.locMgrKeepAlive stopUpdatingLocation]; 
+                nDeadlineCounter = 0;
+            }
+            
+            // апдейтим БД по интервалу
+            if ( updateCounter >= nInterval ) {
+                 [locMgr startUpdatingLocation];
+                updateCounter = 0;
+                nDeadlineCounter = 0;
+                //  после обновления, попробуем подтянуть новый интервал, или об был изменен
+                GatewayUtil *gw = [[GatewayUtil alloc] init];
+                nInterval = [gw getFrequency:beaconID];
+                if ( nInterval <= 0 )
+                    nInterval = 10; // минут
+                nInterval *= 60;
+                netlog(@"New Interval is set to %d\n",nInterval);
+               
+            }
+        } // while in background
+        netlog(@"Background job finished\n");
+        // не очень то и надо
+        [application endBackgroundTask:bgTask];
+        bgTask = UIBackgroundTaskInvalid;
+    }); // dispatch
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -292,6 +320,7 @@
     NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
     [uDef setBool:NO forKey:@"Background"];
     [uDef synchronize];
+    // что б выйти из фонового цикла
     inBackground = NO;
 }
 

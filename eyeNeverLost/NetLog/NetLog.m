@@ -60,6 +60,14 @@ static NSString *NetLog_DeviceName = nil;
     [NetLog_DateFormatter setDateStyle:NSDateFormatterShortStyle];
     [NetLog_DateFormatter setTimeStyle:NSDateFormatterMediumStyle]; 
     NetLog_DeviceName = [UIDevice currentDevice].name;
+
+    NSError *error = nil;
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if ([fileManager fileExistsAtPath:NetLog_File] == YES) {        
+        [fileManager removeItemAtPath:NetLog_File error:&error];
+    }
+     
 }
 
 +(void)log:(NSString*)formatString,... {

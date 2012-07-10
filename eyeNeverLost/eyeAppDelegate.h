@@ -28,9 +28,10 @@ UITabBarControllerDelegate,EventSinkDelegate,CLLocationManagerDelegate>
     NSLock *nsLock;
     //dispatch_queue_t queue;
     UIBackgroundTaskIdentifier bgTask;
+    int updateCounter;
 }
 
-
+@property (strong, nonatomic) KeepAliveDelegate* keepAlive;
 @property (strong, nonatomic) CLLocationManager *locMgrKeepAlive;
 @property (strong, nonatomic) NSOperationQueue *nsQueue;
 @property (strong, nonatomic) NSLock *nsLock;

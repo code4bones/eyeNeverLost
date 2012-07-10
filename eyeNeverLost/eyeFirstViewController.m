@@ -13,7 +13,7 @@
 @implementation eyeFirstViewController
 @synthesize txtLogin,txtPassword,strBeaconID,btnSelectBeacon;
 @synthesize actionSheet,onOff,lbVersion,lbPhone;
-@synthesize eventSink,btnLink,lbMode,segMode;
+@synthesize eventSink,btnLink,lbMode,segMode,lbInterval;
 
 -(id)init {
     self = [super init];
@@ -114,9 +114,7 @@
  */
 -(void)beaconSelected:(BeaconObj*)beaconObj {
     
-    lbPhone.text = [NSString stringWithFormat:@"Телефон: %@ [ID:%@]",beaconObj.name,beaconObj.uid];
     
-    // зачем-то получаем частоту обновления ( в коде она пока не юзается )
     GatewayUtil *gw = [[GatewayUtil alloc] init];
     int nInterval = [gw getFrequency:beaconObj.uid];
     if ( nInterval <= 0 )
@@ -127,6 +125,10 @@
     [uDef setValue:beaconObj.name forKey:@"beaconName"];
     [uDef setValue:beaconObj.uid  forKey:@"beaconID"];
     [uDef setInteger:nInterval forKey:@"Interval"];
+    
+    lbPhone.text = [NSString stringWithFormat:@"Телефон: %@ [ID:%@]",beaconObj.name,beaconObj.uid];
+    lbInterval.text = [NSString stringWithFormat:@"%d мин",nInterval];
+    
     // успешно выбрали телефон, считаем что мы активированы
     [uDef setBool:YES forKey:@"LoggedIn"];
     [uDef synchronize];

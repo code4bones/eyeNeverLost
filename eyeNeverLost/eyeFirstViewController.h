@@ -25,6 +25,7 @@
     UILabel *lbVersion;
     UILabel *lbPhone;
     UILabel *lbMode;
+    UILabel *lbInterval;
     UISwitch *onOff;
     int nBeaconIdx;
     id<EventSinkDelegate> eventSink;
@@ -41,6 +42,7 @@
 @property (strong,retain) IBOutlet UITextField *txtPassword;
 @property (strong,retain) IBOutlet UISwitch *onOff;
 @property (strong,retain) NSString *strBeaconID;
+@property (strong,retain) IBOutlet UILabel *lbInterval;
 @property (strong,retain) UIActionSheet *actionSheet;
 
 -(id)init;

@@ -17,7 +17,6 @@
     UILabel *lbAccuracy;
     UILabel *lbTime;
     UILabel *lbCount;
-    UILabel *lbInterval;
     NSDateFormatter *dateFormatter;
     UITextField *txtStatus;
     int nUpdateCount;
@@ -32,7 +31,6 @@
 @property (strong,retain) IBOutlet UILabel *lbAccuracy;
 @property (strong,retain) IBOutlet UILabel *lbTime;
 @property (strong,retain) IBOutlet UILabel *lbCount;
-@property (strong,retain) IBOutlet UILabel *lbInterval;
 
 
 -(void) update:(id)obj;

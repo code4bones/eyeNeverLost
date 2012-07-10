@@ -13,7 +13,7 @@
 @implementation eyeSecondViewController
 
 @synthesize lbLatitude,lbLongitude,lbAccuracy,lbTime,lbCount;
-@synthesize lbInterval,txtStatus,clLocation;
+@synthesize txtStatus,clLocation;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -92,21 +92,18 @@
 
     if ( self.clLocation == nil )
         return;
-    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
     
     NSString *sLat  = [NSString stringWithFormat:@"%.8f",self.clLocation.coordinate.latitude];
     NSString *sLng  = [NSString stringWithFormat:@"%.8f",self.clLocation.coordinate.longitude];
     NSString *sAcc  = [NSString stringWithFormat:@"%.2f м.",self.clLocation.horizontalAccuracy];
     NSString *sDate = [dateFormatter stringFromDate:self.clLocation.timestamp];
     NSString *sCount= [NSString stringWithFormat:@"%d",nUpdateCount];
-    NSString *sInterval = [NSString stringWithFormat:@"%d мин.",[def integerForKey:@"Interval"]];
     
     self.lbLatitude.text = sLat;
     self.lbLongitude.text = sLng;
     self.lbAccuracy.text = sAcc;
     self.lbTime.text = sDate;
     self.lbCount.text = sCount;
-    self.lbInterval.text = sInterval;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
