@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-//#import <MapKit/MapKit.h>
 #import "MKMapView+ZoomLevel.h"
 #import "EventSinkDelegate.h"
+#import "eyeSelectBeaconController.h"
 
 @interface eyeMapViewController : UIViewController<EventSinkDelegate,MKMapViewDelegate> {
 
@@ -20,6 +20,7 @@
 }
 
 
+@property (strong,retain) IBOutlet UILabel *lbTitle;
 @property (strong,retain) IBOutlet UIActionSheet *actionSheet;
 @property (strong,retain) IBOutlet MKMapView *mapView;
 @property (strong,retain) IBOutlet UIToolbar *tbTop;

@@ -8,7 +8,6 @@
 
 #import "eyeFirstViewController.h"
 #import "GatewayUtil/GatewayUtil.h"
-#import "eyeSelectBeaconView.h"
 
 @implementation eyeFirstViewController
 @synthesize txtLogin,txtPassword,strBeaconID,btnSelectBeacon;
@@ -85,7 +84,7 @@
  метод-делегат для получения списка телефонов для UIPickerView
  вызывается из вспомогательного класса выбора телефонов eyeSelectBeaconView
  */
--(NSMutableArray*)getBeacons:(UIPickerView*)pickerView {
+-(NSMutableArray*)getBeacons:(id)obj {
     
     NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
     NSString *sLogin = [uDef stringForKey:@"Login"];
@@ -156,7 +155,7 @@
         return;
     }
     if ( sPassword.length == 0 ) {
-        netlog_alert(@"Введите пароль...");
+        netlog_alert(@"Введите пароль...");	
         return;
     }
     
@@ -164,9 +163,19 @@
     [uDef setValue:sPassword forKey:@"Password"];
     [uDef synchronize];
 
-    // зываем вьюху для выбора телефона, будут вызваны делегаты getBeacons иbeaconSelected 
-    eyeSelectBeaconView *sb = [[eyeSelectBeaconView alloc] initWithFrameAndDataSource:CGRectMake(0,0,320,450) dataSource:self];
-        [[[[UIApplication sharedApplication] delegate] window] addSubview:sb];
+        
+    // Выбор маячины
+	eyeSelectBeaconController *selectBeacon = [[eyeSelectBeaconController alloc] initWithNibName:@"eyeSelectBeaconController" bundle:nil];
+	
+    selectBeacon.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    //UIModalTransitionStylePartialCurl;
+    //UIModalTransitionStyleCrossDissolve;
+    //UIModalTransitionStyleFlipHorizontal;
+	selectBeacon.dataSource = self;
+    selectBeacon.hudView = self.view;
+	
+	[self presentModalViewController:selectBeacon animated:YES];
+    
 }
 
 

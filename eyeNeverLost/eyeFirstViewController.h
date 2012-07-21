@@ -11,6 +11,7 @@
 #import "EventSinkDelegate.h"
 #import "NetLog/NetLog.h"
 #import "MBProgressHUD/MBProgressHUD.h"
+#import "eyeSelectBeaconController.h"
 
 @interface eyeFirstViewController : UIViewController<MBProgressHUDDelegate,UITextFieldDelegate,EventSinkDelegate>
 

@@ -42,7 +42,9 @@
                    @"eyeMapViewController" bundle:nil];
     } else {
         vcLogin = [[eyeFirstViewController alloc] initWithNibName:@"eyeFirstViewController_iPad" bundle:nil];
-        vcStats = [[eyeSecondViewController alloc] initWithNibName:@"eyeSecondViewController_iPad" bundle:nil];
+        vcStats = [[eyeSecondViewController alloc] initWithNibName:@"eyeSecondViewController_iPhone" bundle:nil];
+        vcMap   = [[eyeMapViewController alloc] initWithNibName:
+                   @"eyeMapViewController" bundle:nil];
     }
     
     eyeFirstViewController *vc1 = (eyeFirstViewController*)vcLogin;

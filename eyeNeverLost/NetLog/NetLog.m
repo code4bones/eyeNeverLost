@@ -157,7 +157,7 @@ static NSString *NetLog_DeviceName = nil;
 #endif
     close(sock);
 
-    NSLog(@"Total Logged bytes %d / %d ( %d on disk )\n",nSended,length,nWritten);
+    //NSLog(@"Total Logged bytes %d / %d ( %d on disk )\n",nSended,length,nWritten);
 }
 
 + (void) alert2:(NSString*) title formatStr:(NSString*) fmtStr,... {

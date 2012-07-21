@@ -14,29 +14,39 @@
 @synthesize actionSheet,dataSource;
 
 
-- (id)initWithFrameAndDataSource:(CGRect)frame dataSource:(id)dataSrc;
+- (id)initWithFrameAndDataSource:(CGRect)frame dataSource:(id)dataSrc showIn:(id)owner
 {
     self = [super initWithFrame:frame];
     if (self) {
         
         
-        
+#if 0        
         UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Выберете Телефон" 
                                                            delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:@"Готово",nil];
         
-        sheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
-        CGRect pickerFrame = CGRectMake(0, 100, 320, 200);
+        UIView *vw = (UIView*)owner;
+#endif        
+        //sheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
+#if 0
+        //CGRect pickerFrame = CGRectMake(0,0,600,600);//CGRectMake(0, 100, 320, 200);
         pickerView = [[UIPickerView alloc] initWithFrame:pickerFrame];
         pickerView.showsSelectionIndicator = YES;
         pickerView.dataSource = self;
         pickerView.delegate = self;
         [sheet addSubview:pickerView];
+#endif
         
-        [sheet showInView:self];
+#if 0
+//        [sheet showInView:vw];
+        //[sheet showFromRect:CGRectMake(0,0,600,600) inView:owner animated:YES];
+        //[sheet showFromToolbar:owner];
+        //[sheet showFromBarButtonItem:tbItem animated:YES];
         
-        [UIView beginAnimations:nil context:nil];
-        [sheet setBounds:CGRectMake(0, 0, 320, 450)];//615
-        [UIView commitAnimations];
+        [sheet showInView:[UIApplication sharedApplication].keyWindow];
+        		
+        //[UIView beginAnimations:nil context:nil];
+        [sheet setBounds:CGRectMake(0,0,0,0)]; //CGRectMake(0, 0, 320, 450)];//615
+        //[UIView commitAnimations];
         self.actionSheet = sheet; 
         self.dataSource = dataSrc;
 
@@ -46,12 +56,38 @@
         HUD.mode = MBProgressHUDModeText; //Determinate;//MBProgressHUDModeAnnularDeterminate;
         HUD.removeFromSuperViewOnHide = NO;
         [sheet.superview addSubview:HUD];
-        
+#endif        
     }
     return self;
 }
 
 - (void)didMoveToSuperview {
+    	
+    netlog(@"didMoveToSuperView\n");
+   
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Выберете Телефон" 
+                                                       delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:@"Готово",nil];
+
+#if 0
+    CGRect pickerFrame = CGRectMake(0,0,0,0); //320, 200);
+    pickerView = [[UIPickerView alloc] initWithFrame:pickerFrame];
+    pickerView.showsSelectionIndicator = YES;
+    pickerView.dataSource = self;
+    pickerView.delegate = self;
+    [sheet addSubview:pickerView];
+    e
+#endif    
+    //UIView *vw = (UIView*)owner;
+   // [sheet showInView:self];
+    [sheet showInView:[UIApplication sharedApplication].keyWindow];
+    
+    
+    //[UIView beginAnimations:nil context:nil];
+    //[sheet setBounds:CGRectMake(0,0,0,0)]; //CGRectMake(0, 0, 320, 450)];//615
+    //[UIView commitAnimations];
+    self.actionSheet = sheet; 
+    //self.dataSource = dataSrc;
+    
     [HUD showAnimated:NO whileExecutingBlock:^{ 
         [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
         arBeacon = [self.dataSource getBeacons:pickerView];
@@ -62,11 +98,11 @@
         }
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     } completionBlock: ^{
-        [HUD hide:YES];
+       // [HUD hide:YES];
         if ( arBeacon != nil ) {
-            [pickerView reloadAllComponents];
+            //[pickerView reloadAllComponents];
         }
-    }];
+    }];	
 }
 
 

@@ -27,7 +27,7 @@ UIPickerViewDelegate,UIPickerViewDataSource> {
 }
 
 //-(void)fetchBeacons;
-- (id)initWithFrameAndDataSource:(CGRect)frame dataSource:(id)dataSrc;
+- (id)initWithFrameAndDataSource:(CGRect)frame dataSource:(id)dataSrc showIn:(id)owner;
 
 @property (strong,retain) UIActionSheet *actionSheet;
 @property (strong,retain) id dataSource;

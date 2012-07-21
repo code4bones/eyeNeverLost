@@ -12,7 +12,7 @@
 #import "eyeSelectBeaconView.h"
 
 @implementation eyeMapViewController
-@synthesize mapView,tbTop,actionSheet;
+@synthesize mapView,tbTop,actionSheet,lbTitle;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -20,23 +20,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = @"Друг";
-        tbTop = [[UIToolbar alloc] initWithFrame:CGRectMake(0,0,320,40)];
-        
-        	
-        UIBarButtonItem *tbiSelect = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(onSelectBuddie:)];    
-
-        UIBarButtonItem *tbiRefresh = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(onRefreshBuddie:)];
-                                       
-        lbTitle = [[UILabel alloc] initWithFrame:CGRectMake(0,0,250,23)];
-        lbTitle.textAlignment = UITextAlignmentRight;
-        lbTitle.backgroundColor = [UIColor clearColor];
-
-        lbTitle.font = [UIFont italicSystemFontOfSize:15.0];
-        UIBarButtonItem *toolBarTitle = [[UIBarButtonItem alloc] initWithCustomView:lbTitle];
-        
-        NSArray *arButtons = [NSArray arrayWithObjects: tbiSelect,tbiRefresh,toolBarTitle,nil];
-        [tbTop setItems:arButtons];
-        [self.view addSubview:tbTop];
         
         mapView.showsUserLocation = NO;
    
@@ -150,9 +133,17 @@
         return;
     }
     
-    eyeSelectBeaconView *sb = [[eyeSelectBeaconView alloc] initWithFrameAndDataSource:CGRectMake(0,0,320,450) dataSource:self];
-    
-    [[[[UIApplication sharedApplication] delegate] window] addSubview:sb];
+    // Выбор маячины
+	eyeSelectBeaconController *selectBeacon = [[eyeSelectBeaconController alloc] initWithNibName:@"eyeSelectBeaconController" bundle:nil];
+	
+    selectBeacon.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    //UIModalTransitionStylePartialCurl;
+    //UIModalTransitionStyleCrossDissolve;
+    //UIModalTransitionStyleFlipHorizontal;
+	selectBeacon.dataSource = self;
+    selectBeacon.hudView = self.view;
+	
+	[self presentModalViewController:selectBeacon animated:YES];
 }	
 
 

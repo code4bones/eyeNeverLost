@@ -30,6 +30,8 @@
 		CE74E81015A4C22D0021912B /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = CE74E80915A4C22D0021912B /* TBXML.m */; };
 		CE74E81315A4C3A30021912B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE74E81115A4C3A30021912B /* CoreLocation.framework */; };
 		CE74E81415A4C3A30021912B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CE74E81215A4C3A30021912B /* libz.dylib */; };
+		CE874C6115BB0C5200F65127 /* eyeSelectBeaconController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE874C5F15BB0C5200F65127 /* eyeSelectBeaconController.m */; };
+		CE874C6215BB0C5200F65127 /* eyeSelectBeaconController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE874C6015BB0C5200F65127 /* eyeSelectBeaconController.xib */; };
 		CE8CC64815ACCC6F0015AC1A /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8CC64715ACCC6F0015AC1A /* MBProgressHUD.m */; };
 		CE93D55B15A8799200E00E7A /* MKMapView+ZoomLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE93D55A15A8799200E00E7A /* MKMapView+ZoomLevel.m */; };
 		CE93D55D15A9E00000E00E7A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE93D55C15A9DFFF00E00E7A /* SystemConfiguration.framework */; };
@@ -37,7 +39,6 @@
 		CEC8F46415A738E500DFFD0E /* eyeMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC8F46215A738E400DFFD0E /* eyeMapViewController.m */; };
 		CEC8F46515A738E500DFFD0E /* eyeMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC8F46315A738E500DFFD0E /* eyeMapViewController.xib */; };
 		CEC8F46715A73E6F00DFFD0E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC8F46615A73E6E00DFFD0E /* MapKit.framework */; };
-		CEC8F47D15A8213500DFFD0E /* eyeSelectBeaconView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC8F47C15A8213500DFFD0E /* eyeSelectBeaconView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,9 @@
 		CE74E81115A4C3A30021912B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		CE74E81215A4C3A30021912B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		CE74E82115A52D000021912B /* EventSinkDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventSinkDelegate.h; sourceTree = "<group>"; };
+		CE874C5E15BB0C5200F65127 /* eyeSelectBeaconController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eyeSelectBeaconController.h; sourceTree = "<group>"; };
+		CE874C5F15BB0C5200F65127 /* eyeSelectBeaconController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = eyeSelectBeaconController.m; sourceTree = "<group>"; };
+		CE874C6015BB0C5200F65127 /* eyeSelectBeaconController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = eyeSelectBeaconController.xib; sourceTree = "<group>"; };
 		CE8CC64615ACCC6F0015AC1A /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		CE8CC64715ACCC6F0015AC1A /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		CE93D55915A8799200E00E7A /* MKMapView+ZoomLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKMapView+ZoomLevel.h"; sourceTree = "<group>"; };
@@ -86,8 +90,6 @@
 		CEC8F46215A738E400DFFD0E /* eyeMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = eyeMapViewController.m; sourceTree = "<group>"; };
 		CEC8F46315A738E500DFFD0E /* eyeMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = eyeMapViewController.xib; sourceTree = "<group>"; };
 		CEC8F46615A73E6E00DFFD0E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		CEC8F47B15A8213400DFFD0E /* eyeSelectBeaconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eyeSelectBeaconView.h; sourceTree = "<group>"; };
-		CEC8F47C15A8213500DFFD0E /* eyeSelectBeaconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = eyeSelectBeaconView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,8 +247,9 @@
 		CE93D55715A835B100E00E7A /* GUI Views */ = {
 			isa = PBXGroup;
 			children = (
-				CEC8F47B15A8213400DFFD0E /* eyeSelectBeaconView.h */,
-				CEC8F47C15A8213500DFFD0E /* eyeSelectBeaconView.m */,
+				CE874C5E15BB0C5200F65127 /* eyeSelectBeaconController.h */,
+				CE874C5F15BB0C5200F65127 /* eyeSelectBeaconController.m */,
+				CE874C6015BB0C5200F65127 /* eyeSelectBeaconController.xib */,
 			);
 			name = "GUI Views";
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				CE74E7F315A4C04F0021912B /* eyeSecondViewController_iPad.xib in Resources */,
 				CEC8F45515A6D19A00DFFD0E /* eyeNeverLost.png in Resources */,
 				CEC8F46515A738E500DFFD0E /* eyeMapViewController.xib in Resources */,
+				CE874C6215BB0C5200F65127 /* eyeSelectBeaconController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,7 +396,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = ../x.sh;
+			shellScript = "# ../x.sh";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -411,9 +415,9 @@
 				CE74E80F15A4C22D0021912B /* TBXML+HTTP.m in Sources */,
 				CE74E81015A4C22D0021912B /* TBXML.m in Sources */,
 				CEC8F46415A738E500DFFD0E /* eyeMapViewController.m in Sources */,
-				CEC8F47D15A8213500DFFD0E /* eyeSelectBeaconView.m in Sources */,
 				CE93D55B15A8799200E00E7A /* MKMapView+ZoomLevel.m in Sources */,
 				CE8CC64815ACCC6F0015AC1A /* MBProgressHUD.m in Sources */,
+				CE874C6115BB0C5200F65127 /* eyeSelectBeaconController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
