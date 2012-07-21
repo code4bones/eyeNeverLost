@@ -135,10 +135,11 @@
     // строка с координатами, датой и статусом для дружбана
     NSString *msg = [self.response objectForKey:@"msg"];
     int rc = [[self.response objectForKey:@"rc"] intValue];
-    if ( rc < 0 ) {
+    if ( rc != 0 ) {
         //alert(@"Ошибка",@"Ошибка на уровне базы: %@",msg);
         return nil;
     }
+    netlog(@"getBeaconLocation(%@)=>%d[%@]\n",beaconID,rc,msg);
     // парсится эта прелесть в конструкоторе
     BeaconObj *beaconObj = [BeaconObj createWithLocationString:msg];
     

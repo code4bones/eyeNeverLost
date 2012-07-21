@@ -169,6 +169,8 @@
 	
     selectBeacon.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     //UIModalTransitionStylePartialCurl;
+    //UIModalTransitionStyleCoverVertical;
+    //UIModalTransitionStylePartialCurl;
     //UIModalTransitionStyleCrossDissolve;
     //UIModalTransitionStyleFlipHorizontal;
 	selectBeacon.dataSource = self;

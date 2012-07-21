@@ -35,10 +35,12 @@
 -(NSMutableArray*)getBeacons:(UIPickerView*)pickerView {
     
     NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
-    NSString *beaconID = [uDef stringForKey:@"beaconID"];
-    netlog(@"Fetching seatmates for %@\n",beaconID);
+    //NSString *beaconID  = [uDef stringForKey:@"beaconID"];
+    NSString *sLogin    = [uDef stringForKey:@"Login"];
+    NSString *sPassword = [uDef stringForKey:@"Password"];
+    netlog(@"Fetching seatmates for %@/%@\n",sLogin,sPassword);
     GatewayUtil *gw = [[ GatewayUtil alloc]init];
-    return [gw getSeatMates:beaconID];
+    return [gw getBeaconList:sLogin password:sPassword];//[gw getSeatMates:beaconID];
 }
 
 -(void)beaconSelected:(BeaconObj*)beaconObj {
@@ -129,7 +131,7 @@
     NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
     BOOL fLoggedIn = [uDef boolForKey:@"LoggedIn"];
     if ( fLoggedIn == NO ) {
-        netlog_alert(@"Вы не авторизированны !");
+        alert(@"Ошибка",@"Вы не авторизированны !");
         return;
     }
     
