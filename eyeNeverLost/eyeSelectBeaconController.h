@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "EventSinkDelegate.h"
 #import "MBProgressHUD/MBProgressHUD.h"
+#import "addBeaconController.h"
 
-@interface eyeSelectBeaconController : UIViewController<UITableViewDelegate>	
+@interface eyeSelectBeaconController : UIViewController<UITableViewDelegate,MBProgressHUDDelegate>	
 {
     NSMutableArray *arBeacon;
     BeaconObj *currentBeacon;
@@ -19,6 +20,8 @@
     UITableView *tbView;
     UIToolbar *toolBar; 
     UIView *hudView;
+    //NSOperationQueue *opQueue;
+    BOOL isMapMode;
 }
 
 @property (strong,retain) UIView *hudView;
@@ -26,6 +29,9 @@
 @property (strong,retain) IBOutlet UITableView* tbView;
 @property (strong,retain) id dataSource;
 
--(IBAction)onToolbarButtonClicked:(id)sender;
+- (id)initWithNibName:(NSString *)nibNameOrNil isMap:(BOOL)mapMode;
+-(IBAction)onBeaconSelected:(id)sender;
+-(IBAction)onAddBeacon:(id)sender;
+-(IBAction)onCancel:(id)seneder;
 
 @end

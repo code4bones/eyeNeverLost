@@ -70,11 +70,11 @@
     NSString *sURL = nil;
     
     if ( beaconID == nil ) {
-        sRequest = [NSString stringWithString:@"http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG.phone_authorization</name><index></index><param>%@^%@</param></function></request>"];
+        sRequest = [NSString stringWithString:@"http://atlant-inform.dyndns.org/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG.phone_authorization</name><index></index><param>%@^%@</param></function></request>"];
         sURL = [NSString stringWithFormat:sRequest,login,pass];
    }
     else {
-        sRequest = @"http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG.phone_authorization</name><index></index><param>%@^%@^%@^-%@</param></function></request>";
+        sRequest = @"http://atlant-inform.dyndns.org/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG.phone_authorization</name><index></index><param>%@^%@^%@^-%@</param></function></request>";
         sURL = [NSString stringWithFormat:sRequest,login,pass,beaconID,self.deviceID];
     }
     			
@@ -95,8 +95,37 @@
     return nRes >= 0;
 }
 
+-(BOOL)addBeacon:(NSString*)login password:(NSString*)pass beaconName:(NSString*)name {
 
-/*
+    NSString* sRequest = @"http://atlant-inform.dyndns.org/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG.add_beacon</name><index>1</index><param>%@^%@^%@^%@</param></function></request>";
+    
+    NSString* sURL = [NSString stringWithFormat:sRequest,login,pass,name,self.deviceID]; 
+    //sURL = String.format(sRequest, newLogin , newPassword , newBeaconName,GatewayUtil.md5(GatewayUtil.deviceID));
+    
+    if ( [self sendRequest:sURL] == NO )
+        return NO;
+    
+    // проверка на результат
+    NSString *rc = [self.response objectForKey:@"rc"];
+    int nRes = [rc intValue];
+    
+    return nRes >= 0;
+}
+
+-(BOOL)fastRegistration:(NSString*)sLogin password:(NSString*)sPassword beaconName:(NSString*)sName {
+    
+    NSString* sRequest = @"http://atlant-inform.dyndns.org/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG.user_registration</name><index>1</index><param>%@^%@^%@^%@</param></function></request>";
+    NSString *sURL = [NSString stringWithFormat:sRequest,sLogin , sPassword , sName,self.deviceID];
+    
+    if ( [self sendRequest:sURL] == NO ) 
+        return NO;
+
+    NSString *rc = [self.response objectForKey:@"rc"];
+    int nRes = [rc intValue];
+    
+    return nRes >= 0;
+}
+ /*
  Возвращает список дружбанов для телефона с данным beaconID
  юзается в eyeMapViewController
  */
@@ -123,7 +152,7 @@
     юзается из eyeMapViewController
  */
 -(BeaconObj*)getLastBeaconLocation:(NSString*)beaconID {
-    NSString *sRequest = @"http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG_2.get_last_beacon_location</name><index>1</index><param>%@</param></function></request>";
+    NSString *sRequest = @"http://atlant-inform.dyndns.org/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG_2.get_last_beacon_location</name><index>1</index><param>%@</param></function></request>";
     
     NSString *sURL = [NSString stringWithFormat:sRequest,beaconID];
     
@@ -153,7 +182,7 @@
  */
 -(NSMutableArray*)getBeaconList:(NSString *)login password:(NSString*)pass {
     
-    NSString *sRequest = @"http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG_2.list_beacons</name><index>1</index><param>%@^%@</param></function></request>";
+    NSString *sRequest = @"http://atlant-inform.dyndns.org/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG.list_beacons</name><index>1</index><param>%@^%@</param></function></request>";
  
     
     NSString *sURL = [NSString stringWithFormat:sRequest,login,pass];
@@ -177,7 +206,7 @@
     netlog(@"Sending history file\n");
     NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
     
-    NSURL *cgiUrl = [NSURL URLWithString:@"http://shluz.tygdenakarte.ru:60080/cgi-bin/LocationFromFile_02"];
+    NSURL *cgiUrl = [NSURL URLWithString:@"http://atlant-inform.dyndns.org/cgi-bin/LocationFromFile_02"];
     NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:cgiUrl];
     
     [postRequest setHTTPMethod:@"POST"];
@@ -240,7 +269,7 @@
     NSString *docsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSString *offlineFile = [docsPath stringByAppendingPathComponent:@"LocationHistory.log"];
     
-    NSString *sRequest = @"http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG.saveLocation_Phone_IPhnone</name><index>1</index><param>%@^%f^%f^%f^-%@^%@</param></function></request>";
+    NSString *sRequest = @"http://atlant-inform.dyndns.org/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG.saveLocation_Phone_IPhnone</name><index>1</index><param>%@^%f^%f^%f^-%@^%@</param></function></request>";
     
     NSString *sURL = [NSString stringWithFormat:sRequest,beaconID,lng,lat,prec,self.deviceID,stat];
  
@@ -293,7 +322,7 @@
  */
 -(int)getFrequency:(NSString*)beaconID {
     
-    NSString *sRequest = @"http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG.get_frequency</name><index>1</index><param>%@</param></function></request>";    
+    NSString *sRequest = @"http://atlant-inform.dyndns.org/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG.get_frequency</name><index>1</index><param>%@</param></function></request>";    
 
     NSString *sURL = [NSString stringWithFormat:sRequest,beaconID];
     

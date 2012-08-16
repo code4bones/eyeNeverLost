@@ -11,14 +11,16 @@
 #import "GatewayUtil/GatewayUtil.h"
 
 @protocol EventSinkDelegate <NSObject>
+
 @optional
 
 -(void)controlLocation:(BOOL)doStart;
 -(void)updateStats:(CLLocation*)loc;
 
-//@required
 -(NSMutableArray*) getBeacons:(id)obj;
 -(void) beaconSelected:(BeaconObj*)beaconObj;
 -(NSString*)getStatusString;
+-(void)addBeacon;
+-(void)registrationComplete:(id)sender;
 
 @end

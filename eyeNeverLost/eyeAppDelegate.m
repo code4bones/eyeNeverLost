@@ -28,24 +28,24 @@
 @synthesize window = _window;
 @synthesize tabBarController = _tabBarController;
 @synthesize eventSink,locMgr,nsLock,nsQueue;
-@synthesize locMgrKeepAlive,keepAlive;
+@synthesize keepAlive,locMgrKeepAlive;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     UIViewController *vcLogin, *vcStats,*vcMap;
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+   // if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         vcLogin = [[eyeFirstViewController alloc] initWithNibName:@"eyeFirstViewController_iPhone" bundle:nil];
         vcStats = [[eyeSecondViewController alloc] initWithNibName:@"eyeSecondViewController_iPhone" bundle:nil];
         vcMap   = [[eyeMapViewController alloc] initWithNibName:
                    @"eyeMapViewController" bundle:nil];
-    } else {
+    /* }  else {
         vcLogin = [[eyeFirstViewController alloc] initWithNibName:@"eyeFirstViewController_iPad" bundle:nil];
         vcStats = [[eyeSecondViewController alloc] initWithNibName:@"eyeSecondViewController_iPhone" bundle:nil];
         vcMap   = [[eyeMapViewController alloc] initWithNibName:
                    @"eyeMapViewController" bundle:nil];
-    }
+    }*/
     
     eyeFirstViewController *vc1 = (eyeFirstViewController*)vcLogin;
     eyeSecondViewController *vc2 = (eyeSecondViewController*)vcStats;
@@ -70,97 +70,21 @@
     self.nsLock = [[NSLock alloc] init];
     self.nsQueue = [[NSOperationQueue alloc]init];
     
-    //queue = dispatch_queue_create("com.code4bones.eye",0);
     
     self.keepAlive = [[KeepAliveDelegate alloc]init];
     self.locMgrKeepAlive = [[CLLocationManager alloc] init];
     self.locMgrKeepAlive.delegate = self.keepAlive;
     
+    gwUtil = [[GatewayUtil alloc] init];
+    
     updateCounter = 0;
+    locationCount = 0;
+    firstUpdate = 0;
+    lastLocation = nil;
+    isUpdating = NO;
     
     return YES;
 }
-
-- (void)locationManager:(CLLocationManager *)manager
-	didUpdateToLocation:(CLLocation *)newLocation
-           fromLocation:(CLLocation *)oldLocation {
-    
-    netlog(@"Updating location %@\n",[newLocation description]);
-    
-    NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
-#if 0
-    int nMode = [uDef integerForKey:@"LocationMode"];
-    
-    /*
-     В режиме гибрида, сперва мы получаем события от GSM модуля,
-     не выключая его и не отправляя его координаты, 
-     включаем GPS, когда придет события от GPS - вырубам апдейты от GPS и отсылаем его координаты
-     и снова ждем события от GSM...
-     */
-    if ( nMode == kHYBRID ) {
-        BOOL isGSM = [uDef boolForKey:@"isGSM"];
-        if ( isGSM ) { // событие от GSM, не отсылаем координаты, в врубаем GPS
-            netlog(@"Changing to GPS...(Location aren't sent)\n");
-            [manager startUpdatingLocation];
-        } else { // событие от GPS, вырубаем GPS и отсылаем координаты,снова ждем события от GSM
-            netlog(@"Changing to GSM...(GPS coordinates is about to be sent)\n");
-            [manager stopUpdatingLocation];
-        }
-        // триггер режима
-        [uDef setBool:!isGSM forKey:@"isGSM"];
-        [uDef synchronize];
-        // если событие от GSM - вываливаемся, скоро должно придти событие от GPS
-        if ( isGSM == YES )
-            return;
-    } // Hybrid mode 
-#endif
-    
-    // дабы не блокироваться в [Gateway saveLocation] запускаемся в блоке
-    NSBlockOperation *block = [NSBlockOperation blockOperationWithBlock:^{
-
-        // не знаю, имеет ли смысл, но так спокойнее
-        // судя по временя в логе - без лока образуется каша
-        // может по этому часть данных не отослалась....блянах
-        netlog(@"send: Waiting for lock\n");
-        [nsLock lock]; 
-        netlog(@"send: Lock acquired\n");
-        
-        NSString *beaconID = [uDef stringForKey:@"beaconID"];
-        NSString *sStatus = [self.eventSink getStatusString];
-        GatewayUtil *gw = [[GatewayUtil alloc]init];
-        if ( [gw saveLocation:beaconID longitude:newLocation.coordinate.longitude latitude:newLocation.coordinate.latitude precision:newLocation.horizontalAccuracy status:(sStatus == nil || [sStatus length] == 0 )? @"":sStatus] ) {
-            netlog(@"Location are sent\n");
-        } else {
-            NSString *msg = [gw.response objectForKey:@"msg"];
-            netlog(@"Failed to sending location to server: %@\n",msg != nil?msg:@"unexpected");
-        }
-        [nsLock unlock];
-        netlog(@"send: lock released\n");
-    }]; // block
-        
-    // и еще один блок для апдейта статистики
-    [block addExecutionBlock:^{
-        [self.eventSink updateStats:newLocation];
-        netlog(@"Statistics updated\n");
-    }]; // execution block update
-    
-    
-    // invoke !
-    [nsQueue addOperation:block];
-
-    // хорош бузить !
-    [locMgr stopUpdatingLocation];
-}
-/*
- dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
- // do your background work
-    dispatch_async(dispatch_get_main_queue(), ^{
-    // update UI, etc.
-    myLabel.text = @"Finished";
-    });
- });
- 
- */
 
 
 /*
@@ -168,52 +92,35 @@
  */
 - (void)controlLocation:(BOOL)doStart {
     NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
-    //int nMode = [uDef integerForKey:@"LocationMode"];
-    //NSString *sModeName = [uDef stringForKey:@"LocationModeString"];
+    
+    beaconID = [NSString stringWithString:[uDef stringForKey:@"beaconID"]];
+    [self initUpdateInterval];
     
     //  флаг активного мониторинга
     [uDef setBool:doStart forKey:@"Active"];
     [uDef synchronize];
     
-    // вызов eyeSecondViewController
-    // для обнуления счетчика обновлений позиции
-    [self.eventSink controlLocation:doStart];
-   
     netlog(@"GPS Monitor %@\n",doStart == YES?@"Started":@"Stopped");
-#if 1
-    if ( doStart == YES ) [locMgr startUpdatingLocation];
-    //else [locMgr stopUpdatingLocation];
-#else // теперь запуск апдейтов из фоновой джобы
-    switch ( nMode ) {
-        case kGPS:
-            if ( doStart == YES ) [locMgr startUpdatingLocation];
-            else [locMgr stopUpdatingLocation];
-            break; 
-        case kGSM:
-            if ( doStart == YES ) [locMgr startMonitoringSignificantLocationChanges];
-            else [locMgr stopMonitoringSignificantLocationChanges]; 
-            break;
-        default: //  режим гибрида, врубаем сперва режим GSM,
-            if ( doStart == YES ) {
-                [uDef setBool:YES forKey:@"isGSM"];
-                [locMgr startMonitoringSignificantLocationChanges ];
-            } else {
-                // на всякий случай, чем черт не шутит,,,
-                [locMgr stopUpdatingLocation];
-                [locMgr stopMonitoringSignificantLocationChanges ];
-            }
-            break;
-    };
-#endif    
+
+    locationCount = 0;
+    firstUpdate = 0;
+    lastLocation = nil;
+    updateCounter = 0;
+    
+    if ( doStart == YES )  { 
+        isUpdating = YES;
+        isFirstStart = YES;
+        [locMgr startUpdatingLocation];
+    }
 }
 
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
     NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
     // Если мы не активировали свой телефон, то где находится дружбан посмотреть не возможно
     // т.к дружбан привязан к одному из телефонов пользователя
-    BOOL fLoggedIn = [uDef boolForKey:@"LoggedIn"];
-        if ( [viewController isKindOfClass: [eyeMapViewController class]] && fLoggedIn == NO ) {
-        netlog_alert(@"Вы не авторезированы,выберете активный телефон...");
+    BOOL fActive = [uDef boolForKey:@"Active"];
+    if ( [viewController isKindOfClass: [eyeMapViewController class]] && fActive == NO ) {
+        alert(@"Ошибка",@"Вы не авторезированы,выберете активный телефон...");
         return NO;
     }
     
@@ -231,9 +138,8 @@
 {
     netlog(@"applicationDidEnterBackground\n");
     NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
-    __block int nInterval = 0;
     BOOL fActive = [uDef boolForKey:@"Active"];
-    NSString *beaconID = [uDef stringForKey:@"beaconID"];
+    int sendTimeout = 15; // seconds  //[uDef integerForKey:@"sendTimeout"];
     
     // Скажем всем, что мы в ушли в тень
     [uDef setBool:YES forKey:@"Background"];
@@ -242,10 +148,8 @@
     // Если не активированы, вываливаемся нах 
     if ( fActive == NO ) 
         return;
-
-    nInterval = [uDef integerForKey:@"Interval"];
-    nInterval *= 60; // переводим в секунды
-    netlog(@"Interval is set to %d secs\n",nInterval);
+    
+    netlog(@"Interval is set to %d secs\n",updateInterval);
     
     bgTask = [application beginBackgroundTaskWithExpirationHandler:^{
         netlog(@"TASK ENDED\n");
@@ -270,21 +174,11 @@
             updateCounter++;
             NSTimeInterval nTimeRemaining = [application backgroundTimeRemaining];
             
-            /*
-            dispatch_queue_t queue = dispatch_queue_create("com.code4bones.test",NULL);
-            dispatch_async(queue,^{
-                [uDef setDouble:nTimeRemaining forKey:@"timeRemaining"];
-                [uDef setInteger:nInterval - updateCounter forKey:@"timeUpdate"];
-                [uDef synchronize];
-                netlog(@"background job: update:%d [ remaining %f ]\n",nInterval - updateCounter,nTimeRemaining);
-            });
-             */
-            //if ( ( nUpdateCounter % 60 ) == 0 )
-            netlog(@"background job: update:%d [ remaining %f ]\n",nInterval - updateCounter,nTimeRemaining);
+            //netlog(@"background job: update:%d [ remaining %f ]\n",nInterval - updateCounter,nTimeRemaining);
             // не будем ждать 10-ти минут, передернем на минутку пораньше
             // ( только если наш интервал меньше 10 минут, иначе нет смысла добавочно   
             // перезапускать )
-            if ( nInterval >= 600 && nDeadlineCounter >= 540 ) { // 9 мин
+            if ( updateInterval >= 600 && nDeadlineCounter >= 540 ) { // 9 мин
                 netlog(@"Triggering Location Services to bybass 10 min restriction ( now %f )\n",nTimeRemaining);
                 // сбрасываем счетчик
                 // по идее можно юзать и locMgr и попутно апдейтить нашу позицию
@@ -294,26 +188,93 @@
                 nDeadlineCounter = 0;
             }
             
-            // апдейтим БД по интервалу
-            if ( updateCounter >= nInterval ) {
-                 [locMgr startUpdatingLocation];
+            // запрашиваем падейт по интервалу
+            if ( updateCounter >= updateInterval && isUpdating == NO) {
+                isUpdating = YES;
                 updateCounter = 0;
+                [locMgr startUpdatingLocation];
                 nDeadlineCounter = 0;
-                //  после обновления, попробуем подтянуть новый интервал, или об был изменен
-                GatewayUtil *gw = [[GatewayUtil alloc] init];
-                nInterval = [gw getFrequency:beaconID];
-                if ( nInterval <= 0 )
-                    nInterval = 10; // минут
-                nInterval *= 60;
-                netlog(@"New Interval is set to %d\n",nInterval);
-               
             }
+            
+            // Если есть число локаций и прошло достаточно времяни для отсылки - отсылаем
+            if ( locationCount > 0  ) {
+                NSTimeInterval diff = [[NSDate date]timeIntervalSince1970] - firstUpdate;
+                // в течении этого времени будем слушать 
+                if ( diff >= sendTimeout ) {
+                    isUpdating = NO;
+                    [self sendLocation];
+                    locationCount = 0;
+                }
+            }
+            
         } // while in background
         netlog(@"Background job finished\n");
-        // не очень то и надо
         [application endBackgroundTask:bgTask];
         bgTask = UIBackgroundTaskInvalid;
     }); // dispatch
+}
+
+- (void)sendLocation {
+    
+    netlog(@"****** SENDING LOCATION ( %d )******\n",locationCount);
+   
+    [locMgr stopUpdatingLocation];
+    [self.eventSink updateStats:lastLocation];
+    
+    // дабы не блокироваться в [Gateway saveLocation] запускаемся в блоке
+    NSBlockOperation *block = [NSBlockOperation blockOperationWithBlock:^{
+        
+        [nsLock lock]; 
+        NSString *sStatus = [self.eventSink getStatusString];
+        if ( [gwUtil saveLocation:beaconID longitude:lastLocation.coordinate.longitude latitude:lastLocation.coordinate.latitude precision:lastLocation.horizontalAccuracy status:(sStatus == nil || [sStatus length] == 0 )? @"":sStatus] ) {
+            netlog(@"Location are sent\n");
+        } else {
+            NSString *msg = [gwUtil.response objectForKey:@"msg"];
+            netlog(@"Failed to sending location to server: %@\n",msg != nil?msg:@"unexpected");
+        }
+
+        
+        [self initUpdateInterval];
+        [nsLock unlock];
+    }]; // block
+    
+    [nsQueue addOperation:block];
+}
+
+- (void)locationManager:(CLLocationManager *)manager
+	didUpdateToLocation:(CLLocation *)newLocation
+           fromLocation:(CLLocation *)oldLocation {
+        
+    if ( isUpdating == NO ) {
+        return;
+    }
+    
+    if ( locationCount == 0  ) {
+        firstUpdate = [[NSDate date] timeIntervalSince1970];
+        lastLocation = newLocation;
+    } else {
+        if ( newLocation.horizontalAccuracy < lastLocation.horizontalAccuracy ) 
+            lastLocation = newLocation;
+    }
+    
+    locationCount++;
+    
+    netlog(@"%d | Updating location %@\n",locationCount,[lastLocation description]);
+    
+    if ( isFirstStart == YES ) {
+        [self.locMgr stopUpdatingLocation];
+        isFirstStart = NO;
+        [self.eventSink updateStats:newLocation];
+        isUpdating = NO;
+    }
+}
+
+
+- (void) initUpdateInterval {
+    updateInterval = [gwUtil getFrequency:beaconID];
+    if ( updateInterval <= 0 ) updateInterval = 10; // минут
+    updateInterval *= 60;
+    //updateInterval = 30;
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -322,6 +283,12 @@
     NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
     [uDef setBool:NO forKey:@"Background"];
     [uDef synchronize];
+    [self.locMgr stopUpdatingLocation];
+    
+    if ( locationCount > 0 ) {
+        [self.eventSink updateStats:lastLocation];
+        [self sendLocation];
+    }
     // что б выйти из фонового цикла
     inBackground = NO;
 }

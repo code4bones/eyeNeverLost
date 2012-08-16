@@ -10,10 +10,11 @@
 #import "GatewayUtil/GatewayUtil.h"
 
 @implementation eyeFirstViewController
-@synthesize txtLogin,txtPassword,strBeaconID,btnSelectBeacon;
-@synthesize actionSheet,onOff,lbVersion,lbPhone;
-@synthesize eventSink,btnLink,lbMode,segMode,lbInterval;
+@synthesize txtLogin,txtPassword,strBeaconID,btnActivate;
+@synthesize actionSheet,lbVersion;
+@synthesize eventSink,btnLink;
 @synthesize activityInd;
+@synthesize lbLogin,btnRegister;
 
 -(id)init {
     self = [super init];
@@ -29,7 +30,7 @@
     if (self) {
         //self.tabBarItem.image = [UIImage imageNamed:@"first"];
         //self.tabBarItem.title = @"СТАРТ";
-        self.title = @"СТАРТ";
+        self.title = @"АКТИВАЦИЯ";
         
         NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
         // Запустили мониторинг позиции ?
@@ -46,20 +47,6 @@
         // режим - ушли в тень или нет
         [uDef setBool:NO forKey:@"Background"];
         
-        // по умолчанию режим мониторинга берется из plist
-        NSDictionary *info = [[NSBundle mainBundle] infoDictionary];
-        NSString *sMode = [info objectForKey:@"LocationMode"];
-        int nMode = kGPS;
-        if ( sMode != nil ) {
-            if ( [sMode isEqualToString:@"gsm"] )
-                nMode = kGSM;
-            else if ( [sMode isEqualToString:@"hybrid"] )
-                nMode = kHYBRID;
-        }
-        
-        // режим мониторинга ( изменяется переключателем из интерфейса )
-        [uDef setInteger:nMode forKey:@"LocationMode"];
-        [uDef setValue:sMode  forKey:@"LocationModeString"];
         [uDef synchronize];
     }
     return self;
@@ -77,7 +64,6 @@
 -(IBAction) onLinkClicked:(id)sender {
     NSString *sURL = [NSString stringWithFormat:@"http://%@",[btnLink currentTitle]];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:sURL]];
-    netlog(@"Visiting the %@\n",sURL);
 }
 
 /*
@@ -95,14 +81,14 @@
     if ( [gw Authorization:sLogin password:sPassword beaconID:nil] == NO ) {
         NSString *msg = [gw.response objectForKey:@"msg"];
         if ( msg == nil ) msg = @"";
-        netlog_alert(@"Ошибка авторизации...\n%@",msg);
+        alert(@"Ошибка",@"Ошибка авторизации...\n%@",msg);
         return nil;
     }
     
     arBeacon = [gw getBeaconList:sLogin password:sPassword];
     
     if ( [arBeacon count] == 0 ) {
-        netlog_alert(@"У Вас нет зарегестрированных телефонов...");
+        alert(@"Ошибка",@"У Вас нет зарегестрированных телефонов...");
         return nil;
     }
         
@@ -122,40 +108,34 @@
     if ( nInterval <= 0 )
         nInterval = 10; // минут
 
-    // хуячим бикун в свойтва
+    // хуячим свойтва
     NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
     [uDef setValue:beaconObj.name forKey:@"beaconName"];
     [uDef setValue:beaconObj.uid  forKey:@"beaconID"];
     [uDef setInteger:nInterval forKey:@"Interval"];
-    
-    lbPhone.text = [NSString stringWithFormat:@"Телефон: %@ [ID:%@]",beaconObj.name,beaconObj.uid];
-    lbInterval.text = [NSString stringWithFormat:@"%d мин",nInterval];
-    
-    // успешно выбрали телефон, считаем что мы активированы
-    [uDef setBool:YES forKey:@"LoggedIn"];
+        
     [uDef synchronize];
+        
+    // вызвать  
+    [self startTracking];
 }
 
 /*
  Вызывает eyeSelectBeaconView для выбора активного телефона
  */
--(IBAction) onSelectBeacon:(id)sender {
+-(IBAction) onActivate:(id)sender {
     
     NSString *sLogin = [txtLogin text];
     NSString *sPassword = [txtPassword text];
     
     NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
-    [uDef setValue:nil forKey:@"Login"];
-    [uDef setValue:nil forKey:@"Password"];
-    [uDef setBool:NO forKey:@"LoggedIn"];
-    [uDef synchronize];
     
     if ( sLogin.length == 0 ) {
-        netlog_alert(@"Введите логин...");
+        alert(@"Ошибка",@"Введите логин...");
         return;
     }
     if ( sPassword.length == 0 ) {
-        netlog_alert(@"Введите пароль...");	
+        alert(@"Ошбка",@"Введите пароль...");	
         return;
     }
     
@@ -163,39 +143,47 @@
     [uDef setValue:sPassword forKey:@"Password"];
     [uDef synchronize];
 
-        
+    BOOL fActive = [uDef boolForKey:@"Active"];
+    if ( fActive ==YES )
+    {
+        [self stopTracking];
+    } else {
     // Выбор маячины
-	eyeSelectBeaconController *selectBeacon = [[eyeSelectBeaconController alloc] initWithNibName:@"eyeSelectBeaconController" bundle:nil];
-	
-    selectBeacon.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-    //UIModalTransitionStylePartialCurl;
-    //UIModalTransitionStyleCoverVertical;
-    //UIModalTransitionStylePartialCurl;
-    //UIModalTransitionStyleCrossDissolve;
-    //UIModalTransitionStyleFlipHorizontal;
-	selectBeacon.dataSource = self;
-    selectBeacon.hudView = self.view;
-	
-	[self presentModalViewController:selectBeacon animated:YES];
+        eyeSelectBeaconController *selectBeacon = [[eyeSelectBeaconController alloc] initWithNibName:@"eyeSelectBeaconController" isMap:NO];
+        selectBeacon.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+        selectBeacon.dataSource = self;
+        selectBeacon.hudView = self.view;
+        [self presentModalViewController:selectBeacon animated:YES];
+    }
+}
+
+-(void)addBeacon {
+    netlog(@"Adding beacon\n");
+    addBeaconController *addBeacon = [[addBeaconController alloc] initWithNibName:@"addBeaconController" bundle:nil];
+    addBeacon.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+	[self presentModalViewController:addBeacon animated:YES];
     
 }
 
-
-/*
- Устанавливаем режим мониторинга ( GPS,GSM Hybrid )
- */
--(IBAction) onLocationModeChanged:(id)sender {
-    // выбранный режим
-    int nIdx = segMode.selectedSegmentIndex; 
-
-    NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
-    // режимы начинаются с 1
-    [uDef setInteger:nIdx+1 forKey:@"LocationMode"];
-    [uDef synchronize];
+-(void)registrationComplete:(id)sender {
+    UIViewController *fastReg = sender;
     
-    NSString *sTitle = [segMode titleForSegmentAtIndex:nIdx]; 
-    lbMode.text = sTitle;    
-    [uDef setValue:sTitle forKey:@"LocationModeString"];
+    NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
+    
+    alert(@"Успешно",@"Регистрация завершена");
+    [fastReg dismissModalViewControllerAnimated:YES];
+        
+    txtLogin.text = [uDef stringForKey:@"Login"];
+    txtPassword.text = [uDef stringForKey:@"Password"];
+}
+
+-(IBAction)onRegisterBeacon {
+    fastRegistrationController *fastRegistration = [[fastRegistrationController alloc] initWithNibName:@"fastRegistrationController" bundle:nil];
+    fastRegistration.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    fastRegistration.eventSink = self;
+    fastRegistration.modalPresentationStyle = UIModalPresentationPageSheet;
+
+    [self presentModalViewController:fastRegistration animated:YES];
 }
 
 /*
@@ -211,77 +199,79 @@
     NSString *sPassword = [uDef stringForKey:@"Password"];
     NSString *beaconID  = [uDef stringForKey:@"beaconID"];
     
-    // Активация выбранного телефона
-    if ( [gw Authorization:sLogin password:sPassword beaconID:beaconID] == NO )
-    {
+    [uDef setBool:NO forKey:@"Active"];
+    [uDef synchronize];
+    
+    BOOL fOk = [gw Authorization:sLogin password:sPassword beaconID:beaconID];
+    if ( fOk == YES ) {
+        // отсылаем запрос на вкючение мониторинга в eyeAppDelegate
+        [self.eventSink controlLocation:YES];
+        [self setStateLabel];
+        alert(@"Успешно",@"Сервис запущен");
+    } else {
         NSString *msg = [gw.response objectForKey:@"msg"];
         if ( msg == nil )
             msg = [NSString stringWithFormat:@"%@",[gw.response objectForKey:@"rc"]];
-        netlog_alert(@"Ошибка Активации: %@",msg);                                                
-        return;
+        alert(@"Ошибка",@"Ошибка активации",@"%@",msg);                                                
     }
     
-    // отсылаем запрос на вкючение мониторинга в eyeAppDelegate
-    [self.eventSink controlLocation:YES];
-    
-    // нефиг ничего менять пока мониторим
-    [btnSelectBeacon setEnabled:NO];
-    [txtLogin setEnabled:NO];
-    [txtPassword setEnabled:NO];
-    [segMode setEnabled:NO];
 }
 
 
 -(void) stopTracking {
     netlog(@"Deactivate tracking...\n");
+    
+ 
+    NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
+    NSString *sLogin    = [uDef stringForKey:@"Login"];
+    NSString *sPassword = [uDef stringForKey:@"Password"];
+    
+    GatewayUtil *gw = [[GatewayUtil alloc]init];
+   // Активация выбранного телефона
+    if ( [gw Authorization:sLogin password:sPassword beaconID:nil] == NO )
+	    {
+        NSString *msg = [gw.response objectForKey:@"msg"];
+        if ( msg == nil )
+            msg = [NSString stringWithFormat:@"%@",[gw.response objectForKey:@"rc"]];
+        alert(@"Ошибка деактивации",@"%@",msg);                                                
+        return;
+    }
+    
+    
     // отсылаем запрос на выкючение мониторинга в eyeAppDelegate
     [self.eventSink controlLocation:NO];
+    [self setStateLabel];
+}
+
+- (void)setStateLabel {
+    NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
+    NSString *sLabel;
+    NSString *sTitle;
     
-    [btnSelectBeacon setEnabled:YES];
-    [txtLogin setEnabled:YES];
-    [txtPassword setEnabled:YES];
-    [segMode setEnabled:YES];
-}
-
-/*
- Триггер включения-выключения мониторинга
- + проверка на валидность введенных логинпароля
- */
--(IBAction) onActivateChanged:(id)sender {
-   
-    if ( onOff.on == YES ) {
-        NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
-        if ( [uDef stringForKey:@"beaconID"] == nil ) {
-            netlog_alert(@"Не выбран телефон...");
-            onOff.on = NO;
-        } else if ( [uDef stringForKey:@"Login"] == nil ) {
-            netlog_alert(@"Введите логин...");
-            onOff.on = NO;
-        } else if ( [uDef stringForKey:@"Password"] == nil ) {
-            netlog_alert(@"Введите пароль...");
-            onOff.on = NO;
-        }
-        
-        if ( onOff.on == YES )
-            [self startTracking];
-        
+    BOOL fActive = [uDef boolForKey:@"Active"];
+    if ( fActive == NO ) {
+        sLabel = @"Логин";
+        sTitle = @"Активировать";
+        self.title = @"АКТИВАЦИЯ";
     } else {
-        [self stopTracking];
+        self.title = @"ДЕАКТИВАЦИЯ";
+        NSString *sName  = [uDef stringForKey:@"beaconName"];
+        sLabel = [NSString stringWithFormat:@"Логин / %@ - %@",sName,fActive == YES?@"Активирован":@"Деактивирован"]; 
+        sTitle = fActive == YES?@"Деактивировать":@"Активировать";
     }
+    [btnActivate setTitle:sTitle forState:0];
+    [lbLogin setText:sLabel];
 }
-
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
     
     NSDictionary *info = [[NSBundle mainBundle] infoDictionary];
     NSString *sVersion = [info objectForKey:@"Version"];
     lbVersion.text = sVersion;
-    // Режим мониторинга по умолчанию
-    lbMode.text = [info objectForKey:@"LocationMode"];    
-    segMode.selectedSegmentIndex = [uDef integerForKey:@"LocationMode"] - 1;
+
+    [self setStateLabel];
 }
 
 - (void)viewDidUnload

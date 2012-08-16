@@ -69,7 +69,14 @@
 						<array class="NSMutableArray" key="IBUIItems">
 							<object class="IBUIBarButtonItem" id="62007010">
 								<int key="IBUITag">1</int>
-								<string key="IBUITitle">Выбрать</string>
+								<string key="IBUITitle">Старт</string>
+								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+								<int key="IBUIStyle">1</int>
+								<reference key="IBUIToolbar" ref="352483683"/>
+							</object>
+							<object class="IBUIBarButtonItem" id="979042571">
+								<int key="IBUITag">2</int>
+								<string key="IBUITitle">Добавить пользователя</string>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIStyle">1</int>
 								<reference key="IBUIToolbar" ref="352483683"/>
@@ -147,19 +154,27 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">onToolbarButtonClicked:</string>
+						<string key="label">onBeaconSelected:</string>
 						<reference key="source" ref="62007010"/>
 						<reference key="destination" ref="372490531"/>
 					</object>
-					<int key="connectionID">16</int>
+					<int key="connectionID">20</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">onToolbarButtonClicked:</string>
+						<string key="label">onCancel:</string>
 						<reference key="source" ref="980894576"/>
 						<reference key="destination" ref="372490531"/>
 					</object>
-					<int key="connectionID">17</int>
+					<int key="connectionID">21</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">onAddBeacon:</string>
+						<reference key="source" ref="979042571"/>
+						<reference key="destination" ref="372490531"/>
+					</object>
+					<int key="connectionID">19</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -202,6 +217,7 @@
 							<reference ref="62007010"/>
 							<reference ref="980894576"/>
 							<reference ref="571573860"/>
+							<reference ref="979042571"/>
 						</array>
 						<reference key="parent" ref="191373211"/>
 					</object>
@@ -220,6 +236,11 @@
 						<reference key="object" ref="571573860"/>
 						<reference key="parent" ref="352483683"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">18</int>
+						<reference key="object" ref="979042571"/>
+						<reference key="parent" ref="352483683"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -230,6 +251,7 @@
 				<string key="1.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="11.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="15.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="18.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="4.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="5.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="6.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -238,7 +260,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">17</int>
+			<int key="maxID">21</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>

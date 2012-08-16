@@ -19,7 +19,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = @"Друг";
+        self.title = @"КАРТА";
         
         mapView.showsUserLocation = NO;
    
@@ -128,15 +128,8 @@
 -(IBAction) onSelectBuddie:(id)sender {
 
     
-    NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
-    BOOL fLoggedIn = [uDef boolForKey:@"LoggedIn"];
-    if ( fLoggedIn == NO ) {
-        alert(@"Ошибка",@"Вы не авторизированны !");
-        return;
-    }
-    
     // Выбор маячины
-	eyeSelectBeaconController *selectBeacon = [[eyeSelectBeaconController alloc] initWithNibName:@"eyeSelectBeaconController" bundle:nil];
+	eyeSelectBeaconController *selectBeacon = [[eyeSelectBeaconController alloc] initWithNibName:@"eyeSelectBeaconController" isMap:YES];
 	
     selectBeacon.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     //UIModalTransitionStylePartialCurl;

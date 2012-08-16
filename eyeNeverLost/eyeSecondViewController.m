@@ -55,7 +55,7 @@
 - (void) updateStats:(CLLocation*)loc {
     self.clLocation = loc;
     nUpdateCount++;
-    [self update:nil];
+    //[self update:nil];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
@@ -80,30 +80,30 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self update:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    [self update:nil];
 }
 
 - (void) update:(id)obj {
 
-    if ( self.clLocation == nil )
+    if ( self.clLocation == nil ) {
+        netlog(@"Statistic is null !");
         return;
+    }
     
     NSString *sLat  = [NSString stringWithFormat:@"%.8f",self.clLocation.coordinate.latitude];
     NSString *sLng  = [NSString stringWithFormat:@"%.8f",self.clLocation.coordinate.longitude];
     NSString *sAcc  = [NSString stringWithFormat:@"%.2f м.",self.clLocation.horizontalAccuracy];
     NSString *sDate = [dateFormatter stringFromDate:self.clLocation.timestamp];
-    NSString *sCount= [NSString stringWithFormat:@"%d",nUpdateCount];
     
-    self.lbLatitude.text = sLat;
-    self.lbLongitude.text = sLng;
-    self.lbAccuracy.text = sAcc;
-    self.lbTime.text = sDate;
-    self.lbCount.text = sCount;
+    [self.lbLatitude setText:sLat];
+    [self.lbLongitude setText: sLng];
+    [self.lbAccuracy setText: sAcc];
+    [self.lbTime setText:sDate];
 }
 
 - (void)viewWillDisappear:(BOOL)animated

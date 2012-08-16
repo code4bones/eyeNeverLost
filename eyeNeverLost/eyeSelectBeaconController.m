@@ -11,32 +11,37 @@
 @implementation eyeSelectBeaconController
 @synthesize tbView,toolBar,dataSource,hudView;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithNibName:(NSString *)nibNameOrNil isMap:(BOOL)mapMode
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithNibName:nibNameOrNil bundle:nil];
     if (self) {
+        isMapMode = mapMode;
     }
     return self;
 }
 
--(IBAction)onToolbarButtonClicked:(id)sender {
-    UIBarButtonItem *button = (UIBarButtonItem*)sender;
-    netlog(@"Clicked %d\n",button.tag);
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    // "Select" button clicked
-    if ( button.tag == 1 )
-        [self.dataSource beaconSelected:currentBeacon];
-    
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    
+-(IBAction)onAddBeacon:(id)sender {
+    netlog(@"select - Adding beacon\n");
+    addBeaconController *addBeacon = [[addBeaconController alloc] initWithNibName:@"addBeaconController" bundle:nil];
+    addBeacon.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+	[self presentModalViewController:addBeacon animated:YES];
+}
+
+-(IBAction)onBeaconSelected:(id)sender {
+    [self.dataSource beaconSelected:currentBeacon];
     [self dismissModalViewControllerAnimated:YES];
 }
+
+-(IBAction)onCancel:(id)seneder {
+    [self dismissModalViewControllerAnimated:YES];
+}
+
 // tell our table how many rows it will have, in 	our case the size of our menuList
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 	return [arBeacon count];
 }
-
 
 // tell our table what kind of cell to use and its title for the given row
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -94,20 +99,20 @@
 - (void)viewDidAppear:(BOOL)animated {    // Called when the view is about to made visible. 
     [super viewWillAppear:animated];
 
-    //UIModalTransitionStylePartialCurl
-    //UIView *vw = (UIView*)dataSource;
-    HUD = [[MBProgressHUD alloc] initWithView:tbView];
+    netlog(@"Selecting beacons...\n");
+    
+    HUD = [[MBProgressHUD alloc] initWithWindow:[UIApplication sharedApplication].keyWindow];
     HUD.labelText = @"Подождите";
     HUD.detailsLabelText = @"Идет обработка данных...";
     HUD.mode = MBProgressHUDModeText; //Determinate;//MBProgressHUDModeAnnularDeterminate;
-    HUD.removeFromSuperViewOnHide = NO;
-    
-    [HUD showAnimated:NO whileExecutingBlock:^{ 
+    HUD.delegate = self;
+    [self.view.window addSubview:HUD];
+    [HUD showAnimated:YES whileExecutingBlock:^{ 
         [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
         arBeacon = [self.dataSource getBeacons:nil];
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     } completionBlock: ^{
-        [HUD hide:YES];
+        [HUD removeFromSuperview];
         if ( arBeacon != nil && [arBeacon count] > 0 ) {
             [tbView reloadData];
             NSIndexPath *np = [NSIndexPath indexPathForRow:0 inSection:0];
@@ -117,11 +122,46 @@
             alert(@"Информация",@"Нет зарегистрированных телефонов...");
         }
     }];	    
+
+    
+    /*
+    dispatch_queue_t q = dispatch_queue_create("load",NULL);
+	dispatch_async(q,^{
+       
+        arBeacon = [self.dataSource getBeacons:nil];
+
+        dispatch_sync(dispatch_get_main_queue(),^{
+            if ( arBeacon != nil && [arBeacon count] > 0 ) {
+                [tbView reloadData];
+                NSIndexPath *np = [NSIndexPath indexPathForRow:0 inSection:0];
+                [tbView selectRowAtIndexPath:np animated:NO scrollPosition:UITableViewScrollPositionNone];
+                currentBeacon = [arBeacon objectAtIndex:0];
+            } else {
+                alert(@"Информация",@"Нет зарегистрированных телефонов...");
+            }
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            [HUD show:NO];
+        });
+    });
+    dispatch_release(q);
+  */
+    
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    if ( isMapMode == NO )
+        return;
+    
+    UIBarButtonItem *item;
+    NSMutableArray *items  = [[toolBar items] mutableCopy]; 
+    item = (UIBarButtonItem*)[items objectAtIndex:0];
+    item.title = @"Выбрать";
+
+    [items removeObjectAtIndex:1];
+    [toolBar setItems:items];
     // Do any additional setup after loading the view from its nib.
 }
 
