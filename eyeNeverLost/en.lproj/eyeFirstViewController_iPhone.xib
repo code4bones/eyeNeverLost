@@ -42,7 +42,7 @@
 						<int key="NSvFlags">290</int>
 						<string key="NSFrame">{{54, 25}, {212, 43}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
-						<reference key="NSNextKeyView" ref="1055743687"/>
+						<reference key="NSNextKeyView" ref="983025700"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
@@ -85,7 +85,7 @@
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentVerticalAlignment">0</int>
-						<string key="IBUIText">bada</string>
+						<string key="IBUIText">pete@ut4.ru</string>
 						<int key="IBUIBorderStyle">3</int>
 						<string key="IBUIPlaceholder">Логин</string>
 						<object class="NSColor" key="IBUITextColor">
@@ -115,7 +115,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{20, 101}, {280, 26}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
-						<reference key="NSNextKeyView" ref="983025700"/>
+						<reference key="NSNextKeyView" ref="149432852"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
@@ -165,7 +165,7 @@
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentVerticalAlignment">0</int>
-						<string key="IBUIText">bada</string>
+						<string key="IBUIText">123</string>
 						<int key="IBUIBorderStyle">3</int>
 						<string key="IBUIPlaceholder">Пароль</string>
 						<object class="NSColor" key="IBUITextColor">
@@ -308,7 +308,7 @@ AAgACAAIAAEAAQABAAE</bytes>
 						<int key="NSvFlags">291</int>
 						<string key="NSFrame">{{139, 75}, {162, 18}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
-						<reference key="NSNextKeyView" ref="149432852"/>
+						<reference key="NSNextKeyView" ref="1055743687"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>

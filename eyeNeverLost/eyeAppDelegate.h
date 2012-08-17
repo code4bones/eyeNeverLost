@@ -55,5 +55,6 @@ UITabBarControllerDelegate,EventSinkDelegate,CLLocationManagerDelegate>
 
 -(void)sendLocation;
 - (void) initUpdateInterval;
+- (void)batteryChanged:(NSNotification *)notification;
 
 @end

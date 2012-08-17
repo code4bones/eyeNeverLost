@@ -12,16 +12,13 @@
 
 @implementation eyeSecondViewController
 
-@synthesize lbLatitude,lbLongitude,lbAccuracy,lbTime,lbCount;
+@synthesize lbLatitude,lbLongitude,lbTime;
 @synthesize txtStatus,clLocation;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        //self.title = NSLocalizedString(@"Second", @"Second");
-        //self.tabBarItem.image = [UIImage imageNamed:@"second"];
-        //self.tabBarItem.title = @"
         self.title = @"СТАТУС";
         self.clLocation = nil;
         
@@ -52,10 +49,11 @@
     return [self.txtStatus text];
 }
 
-- (void) updateStats:(CLLocation*)loc {
+- (void) updateStats:(CLLocation*)loc updateView:(BOOL)updateView {
     self.clLocation = loc;
     nUpdateCount++;
-    //[self update:nil];
+    if ( updateView == YES )
+        [self update:nil];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
@@ -80,12 +78,12 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self update:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self update:nil];
 }
 
 - (void) update:(id)obj {
@@ -97,12 +95,10 @@
     
     NSString *sLat  = [NSString stringWithFormat:@"%.8f",self.clLocation.coordinate.latitude];
     NSString *sLng  = [NSString stringWithFormat:@"%.8f",self.clLocation.coordinate.longitude];
-    NSString *sAcc  = [NSString stringWithFormat:@"%.2f м.",self.clLocation.horizontalAccuracy];
     NSString *sDate = [dateFormatter stringFromDate:self.clLocation.timestamp];
     
     [self.lbLatitude setText:sLat];
     [self.lbLongitude setText: sLng];
-    [self.lbAccuracy setText: sAcc];
     [self.lbTime setText:sDate];
 }
 

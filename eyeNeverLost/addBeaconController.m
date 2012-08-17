@@ -9,7 +9,8 @@
 #import "addBeaconController.h"
 
 @implementation addBeaconController
-@synthesize btnAdd,btnInfo,swAccept,txtName,btnCancel;
+@synthesize btnAdd,txtName,btnCancel,eventSink;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -57,14 +58,6 @@
     }];
 }
 
--(IBAction) onInfo:(id)sender {
-    NSString *sURL = @"http://www.tygdenakarte.ru/oferta.html";
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:sURL]];
-}
-
--(IBAction) onAccept:(id)sender {
-    [btnAdd setEnabled:[swAccept isOn]];
-}
 
 -(IBAction) onCancel:(id)sender {
     [self dismissModalViewControllerAnimated:YES];
@@ -82,9 +75,6 @@
 {
     [super viewDidLoad];
     
-    [btnAdd setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
-    [swAccept setOn:NO];
-    [btnAdd setEnabled:NO];
     // Do any additional setup after loading the view from its nib.
 }
 

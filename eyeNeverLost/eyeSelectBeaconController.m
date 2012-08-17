@@ -25,7 +25,8 @@
     netlog(@"select - Adding beacon\n");
     addBeaconController *addBeacon = [[addBeaconController alloc] initWithNibName:@"addBeaconController" bundle:nil];
     addBeacon.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-	[self presentModalViewController:addBeacon animated:YES];
+    addBeacon.eventSink = dataSource;
+    [self presentModalViewController:addBeacon animated:YES];
 }
 
 -(IBAction)onBeaconSelected:(id)sender {

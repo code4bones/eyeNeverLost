@@ -10,26 +10,23 @@
 #import "NetLog/NetLog.h"
 #import "GatewayUtil.h"
 #import "MBProgressHUD/MBProgressHUD.h"
+#import "EventSinkDelegate.h"
 
 @interface addBeaconController : UIViewController<UITextFieldDelegate,MBProgressHUDDelegate> {
     UIButton *btnAdd;
-    UISwitch *swAccept;
     UITextField *txtName;
-    UIButton *btnInfo;
     UIButton *btnCancel;
     MBProgressHUD *HUD;
+    id<EventSinkDelegate> eventSink;
     
 }
 
+@property(strong,retain) id eventSink;
 @property(strong,retain) IBOutlet UIButton *btnCancel;
 @property(strong,retain) IBOutlet UIButton *btnAdd;
-@property(strong,retain) IBOutlet UIButton *btnInfo;
-@property(strong,retain) IBOutlet UISwitch *swAccept;
 @property(strong,retain) IBOutlet UITextField *txtName;
 
 -(IBAction) onAdd:(id)sender;
--(IBAction) onInfo:(id)sender;
--(IBAction) onAccept:(id)sender;
 -(IBAction) onCancel:(id)sender;
 
 @end

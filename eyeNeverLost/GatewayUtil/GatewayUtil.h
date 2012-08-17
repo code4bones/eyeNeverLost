@@ -58,7 +58,7 @@ enum kLocationModes {
 -(BOOL) Authorization:(NSString *)login password:(NSString*)pass beaconID:(NSString*)beaconID;
 -(NSMutableArray*)getBeaconList:(NSString *)login password:(NSString*)pass;
 -(int)getFrequency:(NSString*)deviceID;
--(BOOL)saveLocation:(NSString*)beaconID longitude:(float)lng latitude:(float)lat precision:(float)prec status: (NSString*)stat; 
+-(BOOL)saveLocation:(NSString*)beaconID longitude:(float)lng latitude:(float)lat precision:(float)prec status: (NSString*)stat date:(NSDate*)when; 
 -(NSMutableArray*)getSeatMates:(NSString*)beaconID;
 -(BeaconObj*)getLastBeaconLocation:(NSString*)beaconID;
 -(BOOL)sendOfflineFile:(NSString*)offlineFile;
@@ -70,7 +70,7 @@ enum kLocationModes {
 -(NSMutableArray*) beaconParseResponse:(NSString *)srcStr outList:(NSMutableArray *)list;
 + (BOOL) isConnected;
 -(BOOL)fastRegistration:(NSString*)sLogin password:(NSString*)sPassword beaconName:(NSString*)sName;
-
++ (int) getBatteryLevel;
 
 
 @end

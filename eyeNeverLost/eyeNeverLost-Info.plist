@@ -11,6 +11,7 @@
 	<key>CFBundleIconFiles</key>
 	<array>
 		<string>eyeNeverLost.png</string>
+		<string>eyeNeverLost_iPad.png</string>
 	</array>
 	<key>CFBundleIcons</key>
 	<dict>
@@ -19,6 +20,7 @@
 			<key>CFBundleIconFiles</key>
 			<array>
 				<string>eyeNeverLost.png</string>
+				<string>eyeNeverLost_iPad.png</string>
 			</array>
 			<key>UIPrerenderedIcon</key>
 			<false/>
@@ -40,8 +42,6 @@
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>LocationMode</key>
-	<string>gps</string>
 	<key>Log</key>
 	<dict>
 		<key>Active</key>
@@ -74,9 +74,6 @@
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>Version</key>
 	<string>Version v2.5.2</string>

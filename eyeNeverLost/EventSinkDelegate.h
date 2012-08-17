@@ -15,12 +15,13 @@
 @optional
 
 -(void)controlLocation:(BOOL)doStart;
--(void)updateStats:(CLLocation*)loc;
+-(void)updateStats:(CLLocation*)loc updateView:(BOOL)updateView;
 
 -(NSMutableArray*) getBeacons:(id)obj;
 -(void) beaconSelected:(BeaconObj*)beaconObj;
 -(NSString*)getStatusString;
 -(void)addBeacon;
 -(void)registrationComplete:(id)sender;
+-(void)selectTab:(int)index;
 
 @end

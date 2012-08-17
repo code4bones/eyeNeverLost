@@ -6,6 +6,9 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+
+#define AVK_HOST "atlant-inform.dyndns.org"
+
 #import "GatewayUtil.h"
 
 @implementation BeaconObj
@@ -55,7 +58,7 @@
         // при парсинге ответа сюда упадут значения из <msg> и <rc>
         self.response = [[NSMutableDictionary alloc]init];
         self.deviceID = [UIDevice currentDevice].uniqueIdentifier;
-        netlog(@"GatewayUtil Initialized: UID = %@\n",self.deviceID);
+        //netlog(@"GatewayUtil Initialized: UID = %@\n",self.deviceID);
     }
     return self;
 }
@@ -70,11 +73,11 @@
     NSString *sURL = nil;
     
     if ( beaconID == nil ) {
-        sRequest = [NSString stringWithString:@"http://atlant-inform.dyndns.org/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG.phone_authorization</name><index></index><param>%@^%@</param></function></request>"];
+        sRequest = [NSString stringWithString:@"http://" AVK_HOST "/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG.phone_authorization</name><index></index><param>%@^%@</param></function></request>"];
         sURL = [NSString stringWithFormat:sRequest,login,pass];
    }
     else {
-        sRequest = @"http://atlant-inform.dyndns.org/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG.phone_authorization</name><index></index><param>%@^%@^%@^-%@</param></function></request>";
+        sRequest = @"http://" AVK_HOST "/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG.phone_authorization</name><index></index><param>%@^%@^%@^-%@</param></function></request>";
         sURL = [NSString stringWithFormat:sRequest,login,pass,beaconID,self.deviceID];
     }
     			
@@ -97,7 +100,7 @@
 
 -(BOOL)addBeacon:(NSString*)login password:(NSString*)pass beaconName:(NSString*)name {
 
-    NSString* sRequest = @"http://atlant-inform.dyndns.org/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG.add_beacon</name><index>1</index><param>%@^%@^%@^%@</param></function></request>";
+    NSString* sRequest = @"http://" AVK_HOST "/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG.add_beacon</name><index>1</index><param>%@^%@^%@^%@</param></function></request>";
     
     NSString* sURL = [NSString stringWithFormat:sRequest,login,pass,name,self.deviceID]; 
     //sURL = String.format(sRequest, newLogin , newPassword , newBeaconName,GatewayUtil.md5(GatewayUtil.deviceID));
@@ -114,7 +117,7 @@
 
 -(BOOL)fastRegistration:(NSString*)sLogin password:(NSString*)sPassword beaconName:(NSString*)sName {
     
-    NSString* sRequest = @"http://atlant-inform.dyndns.org/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG.user_registration</name><index>1</index><param>%@^%@^%@^%@</param></function></request>";
+    NSString* sRequest = @"http://" AVK_HOST "/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG.user_registration</name><index>1</index><param>%@^%@^%@^%@</param></function></request>";
     NSString *sURL = [NSString stringWithFormat:sRequest,sLogin , sPassword , sName,self.deviceID];
     
     if ( [self sendRequest:sURL] == NO ) 
@@ -131,7 +134,7 @@
  */
 -(NSMutableArray*)getSeatMates:(NSString*)beaconID {
  
-    NSString *sRequest = @"http://shluz.tygdenakarte.ru:60080/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG_2.get_seatmates</name><index>1</index><param>%@</param></function></request>";
+    NSString *sRequest = @"http://" AVK_HOST "/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG_2.get_seatmates</name><index>1</index><param>%@</param></function></request>";
     
     NSString *sURL = [NSString stringWithFormat:sRequest,beaconID];
     
@@ -152,7 +155,7 @@
     юзается из eyeMapViewController
  */
 -(BeaconObj*)getLastBeaconLocation:(NSString*)beaconID {
-    NSString *sRequest = @"http://atlant-inform.dyndns.org/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG_2.get_last_beacon_location</name><index>1</index><param>%@</param></function></request>";
+    NSString *sRequest = @"http://" AVK_HOST "/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG_2.get_last_beacon_location</name><index>1</index><param>%@</param></function></request>";
     
     NSString *sURL = [NSString stringWithFormat:sRequest,beaconID];
     
@@ -182,7 +185,7 @@
  */
 -(NSMutableArray*)getBeaconList:(NSString *)login password:(NSString*)pass {
     
-    NSString *sRequest = @"http://atlant-inform.dyndns.org/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG.list_beacons</name><index>1</index><param>%@^%@</param></function></request>";
+    NSString *sRequest = @"http://" AVK_HOST "/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG.list_beacons</name><index>1</index><param>%@^%@</param></function></request>";
  
     
     NSString *sURL = [NSString stringWithFormat:sRequest,login,pass];
@@ -206,7 +209,7 @@
     netlog(@"Sending history file\n");
     NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
     
-    NSURL *cgiUrl = [NSURL URLWithString:@"http://atlant-inform.dyndns.org/cgi-bin/LocationFromFile_02"];
+    NSURL *cgiUrl = [NSURL URLWithString:@"http://" AVK_HOST "/cgi-bin/LocationFromFile_02"];
     NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:cgiUrl];
     
     [postRequest setHTTPMethod:@"POST"];
@@ -263,15 +266,21 @@
 /*
  Отсылает позицию на сервак либо дампит ее в офф-лайн файл
  */
--(BOOL)saveLocation:(NSString*)beaconID longitude:(float)lng latitude:(float)lat precision:(float)prec status:(NSString*)stat 
+-(BOOL)saveLocation:(NSString*)beaconID longitude:(float)lng latitude:(float)lat precision:(float)prec status:(NSString*)stat date:(NSDate*)when 
 {
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:@"dd-MM-YYYY_HH:mm:ss"];
     
     NSString *docsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSString *offlineFile = [docsPath stringByAppendingPathComponent:@"LocationHistory.log"];
     
-    NSString *sRequest = @"http://atlant-inform.dyndns.org/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG.saveLocation_Phone_IPhnone</name><index>1</index><param>%@^%f^%f^%f^-%@^%@</param></function></request>";
+    NSString *sRequest = @"http://" AVK_HOST "/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG.saveLocation_Phone_IPhnone</name><index>1</index><param>%@^%f^%f^%f^-%@^%@^D%@^E%d</param></function></request>";
     
-    NSString *sURL = [NSString stringWithFormat:sRequest,beaconID,lng,lat,prec,self.deviceID,stat];
+    int battLevel = [GatewayUtil getBatteryLevel];
+    NSString *sDate = [dateFormatter stringFromDate:when]; 
+    netlog(@"GPS Timestamp %@, charge %d\n",sDate,battLevel);
+    NSString *sURL = [NSString stringWithFormat:sRequest,beaconID,lng,lat,prec,self.deviceID,stat,sDate,battLevel];
  
     if ( [ GatewayUtil isConnected ] == YES ) {
         // Если законнектились, пытаемся отослать офф-лайновый файлик
@@ -286,9 +295,6 @@
         // Нету интернету...дампим позицию в офф-лайн файлик
         netlog(@"Dumping location to file: %@\n",offlineFile);
         
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-        [dateFormatter setDateFormat:@"dd-MM-YYYY HH:mm:ss"];
-        NSDate *currentDate = [NSDate date];
         
         NSError *error = nil;
         NSString *sData = @"";
@@ -300,7 +306,7 @@
             sData = [NSString stringWithContentsOfFile:offlineFile usedEncoding:&encoding error:&error];
         } 
         
-        sData = [sData stringByAppendingFormat:@"-1^%@^%f^%f^%f^-%@^%@^%@\n",beaconID,lng,lat,prec,self.deviceID,stat,[dateFormatter stringFromDate:currentDate]];
+        sData = [sData stringByAppendingFormat:@"-1^%@^%f^%f^%f^-%@^%@^%@\n",beaconID,lng,lat,prec,self.deviceID,stat,[dateFormatter stringFromDate:when]];
 
         // Перезаписываем файло
         if ([sData writeToFile:offlineFile atomically:YES encoding:NSUTF8StringEncoding error:&error] == NO )
@@ -322,7 +328,7 @@
  */
 -(int)getFrequency:(NSString*)beaconID {
     
-    NSString *sRequest = @"http://atlant-inform.dyndns.org/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG.get_frequency</name><index>1</index><param>%@</param></function></request>";    
+    NSString *sRequest = @"http://" AVK_HOST "/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG.get_frequency</name><index>1</index><param>%@</param></function></request>";    
 
     NSString *sURL = [NSString stringWithFormat:sRequest,beaconID];
     
@@ -442,6 +448,14 @@
 
     return nil;
 }
+
++(int) getBatteryLevel {
+    UIDevice *device = [UIDevice currentDevice];
+    device.batteryMonitoringEnabled = YES;
+    float level = [[UIDevice currentDevice] batteryLevel];
+    return (int)(level * 100);
+}
+
 
 + (BOOL) isConnected  {
     

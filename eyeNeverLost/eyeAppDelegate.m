@@ -83,7 +83,30 @@
     lastLocation = nil;
     isUpdating = NO;
     
+    
+    UIDevice *device = [UIDevice currentDevice];
+    [device setBatteryMonitoringEnabled:YES];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(batteryChanged:) name:@"UIDeviceBatteryLevelDidChangeNotification" object:device];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(batteryChanged:) name:@"UIDeviceBatteryStateDidChangeNotification" object:device];
+    
+    netlog(@"Battery State: %i Charge: %f [%d]", device.batteryState, device.batteryLevel,device.batteryMonitoringEnabled);
+    
     return YES;
+}
+
+-(void)selectTab:(int)index {
+    netlog(@"Selecting %d\n",index);
+    [self.tabBarController setSelectedIndex:index];
+}
+
+- (void)batteryChanged:(NSNotification *)notification
+{
+    UIDevice *device = [UIDevice currentDevice];
+    netlog(@"State: %i Charge: %f", device.batteryState, device.batteryLevel);
+    NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
+    [uDef setFloat:device.batteryLevel forKey:@"batteryLevel"];        
+    [uDef synchronize];
 }
 
 
@@ -217,16 +240,16 @@
 - (void)sendLocation {
     
     netlog(@"****** SENDING LOCATION ( %d )******\n",locationCount);
-   
+    
     [locMgr stopUpdatingLocation];
-    [self.eventSink updateStats:lastLocation];
+    [self.eventSink updateStats:lastLocation updateView:NO];
     
     // дабы не блокироваться в [Gateway saveLocation] запускаемся в блоке
     NSBlockOperation *block = [NSBlockOperation blockOperationWithBlock:^{
         
         [nsLock lock]; 
         NSString *sStatus = [self.eventSink getStatusString];
-        if ( [gwUtil saveLocation:beaconID longitude:lastLocation.coordinate.longitude latitude:lastLocation.coordinate.latitude precision:lastLocation.horizontalAccuracy status:(sStatus == nil || [sStatus length] == 0 )? @"":sStatus] ) {
+        if ( [gwUtil saveLocation:beaconID longitude:lastLocation.coordinate.longitude latitude:lastLocation.coordinate.latitude precision:lastLocation.horizontalAccuracy status:(sStatus == nil || [sStatus length] == 0 )? @"":sStatus date:lastLocation.timestamp ]  ) {
             netlog(@"Location are sent\n");
         } else {
             NSString *msg = [gwUtil.response objectForKey:@"msg"];
@@ -262,10 +285,10 @@
     netlog(@"%d | Updating location %@\n",locationCount,[lastLocation description]);
     
     if ( isFirstStart == YES ) {
-        [self.locMgr stopUpdatingLocation];
+        [self sendLocation];
         isFirstStart = NO;
-        [self.eventSink updateStats:newLocation];
         isUpdating = NO;
+        [self.eventSink updateStats:lastLocation updateView:YES];
     }
 }
 
@@ -273,8 +296,8 @@
 - (void) initUpdateInterval {
     updateInterval = [gwUtil getFrequency:beaconID];
     if ( updateInterval <= 0 ) updateInterval = 10; // минут
-    updateInterval *= 60;
-    //updateInterval = 30;
+    //updateInterval *= 60;
+    updateInterval = 30;
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -286,7 +309,7 @@
     [self.locMgr stopUpdatingLocation];
     
     if ( locationCount > 0 ) {
-        [self.eventSink updateStats:lastLocation];
+        [self.eventSink updateStats:lastLocation updateView:NO];
         [self sendLocation];
     }
     // что б выйти из фонового цикла

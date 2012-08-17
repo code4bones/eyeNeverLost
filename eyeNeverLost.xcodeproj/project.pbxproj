@@ -32,6 +32,9 @@
 		CE74E81415A4C3A30021912B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CE74E81215A4C3A30021912B /* libz.dylib */; };
 		CE874C6115BB0C5200F65127 /* eyeSelectBeaconController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE874C5F15BB0C5200F65127 /* eyeSelectBeaconController.m */; };
 		CE874C6215BB0C5200F65127 /* eyeSelectBeaconController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE874C6015BB0C5200F65127 /* eyeSelectBeaconController.xib */; };
+		CE8AF29715DDC40600EBEAD0 /* 2012-08-17.1 in Resources */ = {isa = PBXBuildFile; fileRef = CE8AF29615DDC40500EBEAD0 /* 2012-08-17.1 */; };
+		CE8AF29915DDCD3E00EBEAD0 /* eyeNeverLost.png in Resources */ = {isa = PBXBuildFile; fileRef = CE8AF29815DDCD3E00EBEAD0 /* eyeNeverLost.png */; };
+		CE8AF29B15DDCDDA00EBEAD0 /* eyeNeverLost_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = CE8AF29A15DDCDDA00EBEAD0 /* eyeNeverLost_iPad.png */; };
 		CE8CC64815ACCC6F0015AC1A /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8CC64715ACCC6F0015AC1A /* MBProgressHUD.m */; };
 		CE8DB86015DBBBAD00389C41 /* addBeaconController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8DB85E15DBBBAD00389C41 /* addBeaconController.m */; };
 		CE8DB86115DBBBAD00389C41 /* addBeaconController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8DB85F15DBBBAD00389C41 /* addBeaconController.xib */; };
@@ -40,7 +43,6 @@
 		CE8DB86915DC838100389C41 /* addBeaconController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8DB86815DC838100389C41 /* addBeaconController_iPad.xib */; };
 		CE93D55B15A8799200E00E7A /* MKMapView+ZoomLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE93D55A15A8799200E00E7A /* MKMapView+ZoomLevel.m */; };
 		CE93D55D15A9E00000E00E7A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE93D55C15A9DFFF00E00E7A /* SystemConfiguration.framework */; };
-		CEC8F45515A6D19A00DFFD0E /* eyeNeverLost.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC8F45415A6D19900DFFD0E /* eyeNeverLost.png */; };
 		CEC8F46415A738E500DFFD0E /* eyeMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC8F46215A738E400DFFD0E /* eyeMapViewController.m */; };
 		CEC8F46515A738E500DFFD0E /* eyeMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC8F46315A738E500DFFD0E /* eyeMapViewController.xib */; };
 		CEC8F46715A73E6F00DFFD0E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC8F46615A73E6E00DFFD0E /* MapKit.framework */; };
@@ -85,6 +87,9 @@
 		CE874C5E15BB0C5200F65127 /* eyeSelectBeaconController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eyeSelectBeaconController.h; sourceTree = "<group>"; };
 		CE874C5F15BB0C5200F65127 /* eyeSelectBeaconController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = eyeSelectBeaconController.m; sourceTree = "<group>"; };
 		CE874C6015BB0C5200F65127 /* eyeSelectBeaconController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = eyeSelectBeaconController.xib; sourceTree = "<group>"; };
+		CE8AF29615DDC40500EBEAD0 /* 2012-08-17.1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.man; path = "2012-08-17.1"; sourceTree = "<group>"; };
+		CE8AF29815DDCD3E00EBEAD0 /* eyeNeverLost.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eyeNeverLost.png; sourceTree = "<group>"; };
+		CE8AF29A15DDCDDA00EBEAD0 /* eyeNeverLost_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eyeNeverLost_iPad.png; sourceTree = "<group>"; };
 		CE8CC64615ACCC6F0015AC1A /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		CE8CC64715ACCC6F0015AC1A /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		CE8DB85D15DBBBAD00389C41 /* addBeaconController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addBeaconController.h; sourceTree = "<group>"; };
@@ -97,7 +102,6 @@
 		CE93D55915A8799200E00E7A /* MKMapView+ZoomLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKMapView+ZoomLevel.h"; sourceTree = "<group>"; };
 		CE93D55A15A8799200E00E7A /* MKMapView+ZoomLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKMapView+ZoomLevel.m"; sourceTree = "<group>"; };
 		CE93D55C15A9DFFF00E00E7A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		CEC8F45415A6D19900DFFD0E /* eyeNeverLost.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eyeNeverLost.png; sourceTree = SOURCE_ROOT; };
 		CEC8F46115A738E400DFFD0E /* eyeMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eyeMapViewController.h; sourceTree = "<group>"; };
 		CEC8F46215A738E400DFFD0E /* eyeMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = eyeMapViewController.m; sourceTree = "<group>"; };
 		CEC8F46315A738E500DFFD0E /* eyeMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = eyeMapViewController.xib; sourceTree = "<group>"; };
@@ -125,6 +129,8 @@
 		CE74E7B915A4C04E0021912B = {
 			isa = PBXGroup;
 			children = (
+				CE8AF29A15DDCDDA00EBEAD0 /* eyeNeverLost_iPad.png */,
+				CE8AF29815DDCD3E00EBEAD0 /* eyeNeverLost.png */,
 				CE74E7CE15A4C04E0021912B /* eyeNeverLost */,
 				CE74E7C715A4C04E0021912B /* Frameworks */,
 				CE74E7C515A4C04E0021912B /* Products */,
@@ -156,6 +162,7 @@
 		CE74E7CE15A4C04E0021912B /* eyeNeverLost */ = {
 			isa = PBXGroup;
 			children = (
+				CE8AF29515DDC3B700EBEAD0 /* Tickets */,
 				CEC8F47315A7445600DFFD0E /* 3rd Party Source */,
 				CEC8F47215A7440400DFFD0E /* Source */,
 				CE74E81615A4CA7B0021912B /* Interface */,
@@ -226,7 +233,6 @@
 		CE74E81515A4CA500021912B /* Icons */ = {
 			isa = PBXGroup;
 			children = (
-				CEC8F45415A6D19900DFFD0E /* eyeNeverLost.png */,
 				CE74E7DD15A4C04E0021912B /* first.png */,
 				CE74E7DF15A4C04E0021912B /* first@2x.png */,
 				CE74E7E415A4C04E0021912B /* second.png */,
@@ -238,13 +244,18 @@
 		CE74E81615A4CA7B0021912B /* Interface */ = {
 			isa = PBXGroup;
 			children = (
-				CEC8F46315A738E500DFFD0E /* eyeMapViewController.xib */,
-				CE74E7E815A4C04E0021912B /* eyeFirstViewController_iPhone.xib */,
 				CE74E7EB15A4C04E0021912B /* eyeFirstViewController_iPad.xib */,
-				CE74E7EE15A4C04E0021912B /* eyeSecondViewController_iPhone.xib */,
 				CE74E7F115A4C04F0021912B /* eyeSecondViewController_iPad.xib */,
 			);
 			name = Interface;
+			sourceTree = "<group>";
+		};
+		CE8AF29515DDC3B700EBEAD0 /* Tickets */ = {
+			isa = PBXGroup;
+			children = (
+				CE8AF29615DDC40500EBEAD0 /* 2012-08-17.1 */,
+			);
+			name = Tickets;
 			sourceTree = "<group>";
 		};
 		CE8CC64515ACCC6F0015AC1A /* MBProgressHUD */ = {
@@ -277,19 +288,20 @@
 			name = FastRegistration;
 			sourceTree = "<group>";
 		};
-		CE93D55715A835B100E00E7A /* GUI Views */ = {
+		CE93D55715A835B100E00E7A /* Select Beacon */ = {
 			isa = PBXGroup;
 			children = (
 				CE874C5E15BB0C5200F65127 /* eyeSelectBeaconController.h */,
 				CE874C5F15BB0C5200F65127 /* eyeSelectBeaconController.m */,
 				CE874C6015BB0C5200F65127 /* eyeSelectBeaconController.xib */,
 			);
-			name = "GUI Views";
+			name = "Select Beacon";
 			sourceTree = "<group>";
 		};
 		CEC8F46E15A7437F00DFFD0E /* Login( FirstViewController ) */ = {
 			isa = PBXGroup;
 			children = (
+				CE74E7E815A4C04E0021912B /* eyeFirstViewController_iPhone.xib */,
 				CE74E7DA15A4C04E0021912B /* eyeFirstViewController.h */,
 				CE74E7DB15A4C04E0021912B /* eyeFirstViewController.m */,
 			);
@@ -300,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				CE74E7E115A4C04E0021912B /* eyeSecondViewController.h */,
+				CE74E7EE15A4C04E0021912B /* eyeSecondViewController_iPhone.xib */,
 				CE74E7E215A4C04E0021912B /* eyeSecondViewController.m */,
 			);
 			name = "Status ( SecondViewController )";
@@ -309,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				CEC8F46115A738E400DFFD0E /* eyeMapViewController.h */,
+				CEC8F46315A738E500DFFD0E /* eyeMapViewController.xib */,
 				CEC8F46215A738E400DFFD0E /* eyeMapViewController.m */,
 				CE93D55915A8799200E00E7A /* MKMapView+ZoomLevel.h */,
 				CE93D55A15A8799200E00E7A /* MKMapView+ZoomLevel.m */,
@@ -331,7 +345,7 @@
 			children = (
 				CE8DB86215DC3BED00389C41 /* FastRegistration */,
 				CE8DB85B15DBBB5800389C41 /* Add Beacon ( AddBeaconController ) */,
-				CE93D55715A835B100E00E7A /* GUI Views */,
+				CE93D55715A835B100E00E7A /* Select Beacon */,
 				CEC8F47115A743DE00DFFD0E /* Delegates */,
 				CEC8F46E15A7437F00DFFD0E /* Login( FirstViewController ) */,
 				CEC8F46F15A7439B00DFFD0E /* Status ( SecondViewController ) */,
@@ -411,12 +425,14 @@
 				CE74E7ED15A4C04E0021912B /* eyeFirstViewController_iPad.xib in Resources */,
 				CE74E7F015A4C04F0021912B /* eyeSecondViewController_iPhone.xib in Resources */,
 				CE74E7F315A4C04F0021912B /* eyeSecondViewController_iPad.xib in Resources */,
-				CEC8F45515A6D19A00DFFD0E /* eyeNeverLost.png in Resources */,
 				CEC8F46515A738E500DFFD0E /* eyeMapViewController.xib in Resources */,
 				CE874C6215BB0C5200F65127 /* eyeSelectBeaconController.xib in Resources */,
 				CE8DB86115DBBBAD00389C41 /* addBeaconController.xib in Resources */,
 				CE8DB86715DC3C3F00389C41 /* fastRegistrationController.xib in Resources */,
 				CE8DB86915DC838100389C41 /* addBeaconController_iPad.xib in Resources */,
+				CE8AF29715DDC40600EBEAD0 /* 2012-08-17.1 in Resources */,
+				CE8AF29915DDCD3E00EBEAD0 /* eyeNeverLost.png in Resources */,
+				CE8AF29B15DDCDDA00EBEAD0 /* eyeNeverLost_iPad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

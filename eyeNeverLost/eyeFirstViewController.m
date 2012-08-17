@@ -48,6 +48,7 @@
         [uDef setBool:NO forKey:@"Background"];
         
         [uDef synchronize];
+        [GatewayUtil getBatteryLevel];
     }
     return self;
 }
@@ -101,18 +102,10 @@
  устанавливаем флаг активации и остальные параметры телефона в NSUserDefauts
  */
 -(void)beaconSelected:(BeaconObj*)beaconObj {
-    
-    
-    GatewayUtil *gw = [[GatewayUtil alloc] init];
-    int nInterval = [gw getFrequency:beaconObj.uid];
-    if ( nInterval <= 0 )
-        nInterval = 10; // минут
-
     // хуячим свойтва
     NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
     [uDef setValue:beaconObj.name forKey:@"beaconName"];
     [uDef setValue:beaconObj.uid  forKey:@"beaconID"];
-    [uDef setInteger:nInterval forKey:@"Interval"];
         
     [uDef synchronize];
         
@@ -170,7 +163,8 @@
     
     NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
     
-    alert(@"Успешно",@"Регистрация завершена");
+    alert(@"Успешно",@"Информация о местоположении доступна в ЛК по адресу http://cabeenet.tygdenakarte.ru");
+    
     [fastReg dismissModalViewControllerAnimated:YES];
         
     txtLogin.text = [uDef stringForKey:@"Login"];
@@ -214,7 +208,7 @@
             msg = [NSString stringWithFormat:@"%@",[gw.response objectForKey:@"rc"]];
         alert(@"Ошибка",@"Ошибка активации",@"%@",msg);                                                
     }
-    
+    [self.eventSink selectTab:1];
 }
 
 

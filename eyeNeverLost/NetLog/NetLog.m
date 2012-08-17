@@ -60,24 +60,20 @@ static NSString *NetLog_DeviceName = nil;
     [NetLog_DateFormatter setDateStyle:NSDateFormatterShortStyle];
     [NetLog_DateFormatter setTimeStyle:NSDateFormatterMediumStyle]; 
     NetLog_DeviceName = [UIDevice currentDevice].name;
-
+    /*
     NSError *error = nil;
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
     if ([fileManager fileExistsAtPath:NetLog_File] == YES) {        
         [fileManager removeItemAtPath:NetLog_File error:&error];
     }
+     */
      
 }
 
 +(void)log:(NSString*)formatString,... {
 
-	if (NetLog_Initialized == NO || NetLog_Active == NO ) {
-		return;
-	}
-	if ( NetLog_Host == nil ) {
-		[NSException raise:@"NetLog logger IP is not set" format:@"%@",@"Call the +(void)setup method at first..."];  
-	}
+
 	va_list argList;
 	va_start(argList,formatString);
 	NSString *message = [[NSString alloc] initWithFormat:formatString arguments:argList]; 
@@ -87,10 +83,23 @@ static NSString *NetLog_DeviceName = nil;
     NSString *dt  = [NetLog_DateFormatter stringFromDate:now];
     NSString *msg = [[NSString alloc] initWithFormat:@"%@ | [%@] %@",dt,NetLog_DeviceName,message];
     
-	NSData *data = [msg dataUsingEncoding:NSUTF8StringEncoding];
+	if ( NetLog_Initialized == YES && NetLog_Active == YES ) {
+		//[NSException raise:@"NetLog logger IP is not set" format:@"%@",@"Call the +(void)setup method at first..."];  
+        NSData *data = [msg dataUsingEncoding:NSUTF8StringEncoding];
+        [NetLog send:data];
+    }
+    
+    NSError *error = nil;
+    NSStringEncoding encoding;
+    NSString *docsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *offlineFile = [docsPath stringByAppendingPathComponent:@"eyeNeverLost-log.txt"];
+    NSString *sData = [NSString stringWithContentsOfFile:offlineFile usedEncoding:&encoding error:&error];
 
-    [NetLog send:data];
-     
+    sData = [sData stringByAppendingString:msg];
+
+    [sData writeToFile:offlineFile atomically:YES encoding:NSUTF8StringEncoding error:&error];
+        
+    
 	NSLog(@"%@",msg);
 }
 

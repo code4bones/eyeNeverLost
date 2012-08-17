@@ -14,9 +14,7 @@
 {
     UILabel *lbLatitude;
     UILabel *lbLongitude;
-    UILabel *lbAccuracy;
     UILabel *lbTime;
-    UILabel *lbCount;
     NSDateFormatter *dateFormatter;
     UITextField *txtStatus;
     int nUpdateCount;
@@ -28,9 +26,7 @@
 @property (strong,retain) IBOutlet UITextField *txtStatus;
 @property (strong,retain) IBOutlet UILabel *lbLatitude;
 @property (strong,retain) IBOutlet UILabel *lbLongitude;
-@property (strong,retain) IBOutlet UILabel *lbAccuracy;
 @property (strong,retain) IBOutlet UILabel *lbTime;
-@property (strong,retain) IBOutlet UILabel *lbCount;
 
 
 -(void) update:(id)obj;
