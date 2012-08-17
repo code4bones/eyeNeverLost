@@ -239,29 +239,26 @@
 
 - (void)sendLocation {
     
-    netlog(@"****** SENDING LOCATION ( %d )******\n",locationCount);
-    
     [locMgr stopUpdatingLocation];
     [self.eventSink updateStats:lastLocation updateView:NO];
     
-    // дабы не блокироваться в [Gateway saveLocation] запускаемся в блоке
-    NSBlockOperation *block = [NSBlockOperation blockOperationWithBlock:^{
-        
-        [nsLock lock]; 
-        NSString *sStatus = [self.eventSink getStatusString];
-        if ( [gwUtil saveLocation:beaconID longitude:lastLocation.coordinate.longitude latitude:lastLocation.coordinate.latitude precision:lastLocation.horizontalAccuracy status:(sStatus == nil || [sStatus length] == 0 )? @"":sStatus date:lastLocation.timestamp ]  ) {
-            netlog(@"Location are sent\n");
-        } else {
-            NSString *msg = [gwUtil.response objectForKey:@"msg"];
-            netlog(@"Failed to sending location to server: %@\n",msg != nil?msg:@"unexpected");
+    NSString *sStatus = [self.eventSink getStatusString];
+    NSString *error  = nil;
+    if ( [gwUtil saveLocation:beaconID longitude:lastLocation.coordinate.longitude latitude:lastLocation.coordinate.latitude precision:lastLocation.horizontalAccuracy status:(sStatus == nil || [sStatus length] == 0 )? @"":sStatus date:lastLocation.timestamp error:&error] == YES ) {
+        netlog(@"%@ Locations(%d) are sent: %@\n",inBackground==YES?@"Background":@"Foreground",locationCount,error);
+        if ( error != nil && inBackground == NO ) {
+            alert(@"Ошибка",@"Ошибка записи позиции в базу: %@",error);
+            
         }
+    } else {
+        NSString *msg = [gwUtil.response objectForKey:@"msg"];
+        if ( inBackground == NO )
+            alert(@"Ошибка",@"Ошибка отправки запроса %@",msg);
+        netlog(@"Failed to sending location to server: %@\n",msg != nil?msg:@"unexpected");
+    }
 
-        
-        [self initUpdateInterval];
-        [nsLock unlock];
-    }]; // block
     
-    [nsQueue addOperation:block];
+    [self initUpdateInterval];
 }
 
 - (void)locationManager:(CLLocationManager *)manager

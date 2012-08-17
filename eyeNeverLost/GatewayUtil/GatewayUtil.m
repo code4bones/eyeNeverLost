@@ -282,9 +282,9 @@
 /*
  Отсылает позицию на сервак либо дампит ее в офф-лайн файл
  */
--(BOOL)saveLocation:(NSString*)beaconID longitude:(float)lng latitude:(float)lat precision:(float)prec status:(NSString*)stat date:(NSDate*)when 
+-(BOOL)saveLocation:(NSString*)beaconID longitude:(float)lng latitude:(float)lat precision:(float)prec status:(NSString*)stat date:(NSDate*)when error:(NSString**)error
 {
-    
+    *error = nil;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     [dateFormatter setDateFormat:@"dd-MM-YYYY_HH:mm:ss"];
     
@@ -307,6 +307,14 @@
         // и отправляем обычный запрос на апдейт позиции
         if ( [self sendRequest:sURL] == NO )
             return NO;
+            
+        NSString *rc = [self.response objectForKey:@"rc"];
+        NSString *msg = [self.response objectForKey:@"msg"];
+        int rcVal = [rc intValue];
+        if ( rcVal < 0 ) {
+            *error = [NSString stringWithString:msg];
+            netlog(@"Logic Error: %@\n",msg);
+        }
     } else { 
         // Нету интернету...дампим позицию в офф-лайн файлик
         netlog(@"Dumping location to file: %@\n",offlineFile);
