@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "NetLog/NetLog.h"
 #import "GatewayUtil/GatewayUtil.h"
-#import "MBProgressHUD/MBProgressHUD.h"
+#import "Toast.h"
 #import "EventSinkDelegate.h"
 
-@interface fastRegistrationController : UIViewController<UITextFieldDelegate,MBProgressHUDDelegate> {
+@interface fastRegistrationController : UIViewController<UITextFieldDelegate> {
     UITextField *txtLogin;
     UITextField *txtPassword;
     UITextField *txtPassword2;
@@ -21,7 +21,6 @@
     UIButton    *btnRegister;
     UIButton    *btnCancel;
     UISwitch    *swAccept;
-    MBProgressHUD *HUD;
     id<EventSinkDelegate> eventSink;
 }
 

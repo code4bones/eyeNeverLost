@@ -35,6 +35,7 @@
 		CE8AF29715DDC40600EBEAD0 /* 2012-08-17.1 in Resources */ = {isa = PBXBuildFile; fileRef = CE8AF29615DDC40500EBEAD0 /* 2012-08-17.1 */; };
 		CE8AF29915DDCD3E00EBEAD0 /* eyeNeverLost.png in Resources */ = {isa = PBXBuildFile; fileRef = CE8AF29815DDCD3E00EBEAD0 /* eyeNeverLost.png */; };
 		CE8AF29B15DDCDDA00EBEAD0 /* eyeNeverLost_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = CE8AF29A15DDCDDA00EBEAD0 /* eyeNeverLost_iPad.png */; };
+		CE8AF29F15DE630900EBEAD0 /* Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8AF29E15DE630900EBEAD0 /* Toast.m */; };
 		CE8CC64815ACCC6F0015AC1A /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8CC64715ACCC6F0015AC1A /* MBProgressHUD.m */; };
 		CE8DB86015DBBBAD00389C41 /* addBeaconController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8DB85E15DBBBAD00389C41 /* addBeaconController.m */; };
 		CE8DB86115DBBBAD00389C41 /* addBeaconController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8DB85F15DBBBAD00389C41 /* addBeaconController.xib */; };
@@ -89,6 +90,8 @@
 		CE8AF29615DDC40500EBEAD0 /* 2012-08-17.1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.man; path = "2012-08-17.1"; sourceTree = "<group>"; };
 		CE8AF29815DDCD3E00EBEAD0 /* eyeNeverLost.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eyeNeverLost.png; sourceTree = "<group>"; };
 		CE8AF29A15DDCDDA00EBEAD0 /* eyeNeverLost_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eyeNeverLost_iPad.png; sourceTree = "<group>"; };
+		CE8AF29D15DE630900EBEAD0 /* Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Toast.h; sourceTree = "<group>"; };
+		CE8AF29E15DE630900EBEAD0 /* Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Toast.m; sourceTree = "<group>"; };
 		CE8CC64615ACCC6F0015AC1A /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		CE8CC64715ACCC6F0015AC1A /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		CE8DB85D15DBBBAD00389C41 /* addBeaconController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addBeaconController.h; sourceTree = "<group>"; };
@@ -256,6 +259,15 @@
 			name = Tickets;
 			sourceTree = "<group>";
 		};
+		CE8AF29C15DE62A300EBEAD0 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				CE8AF29D15DE630900EBEAD0 /* Toast.h */,
+				CE8AF29E15DE630900EBEAD0 /* Toast.m */,
+			);
+			name = Toast;
+			sourceTree = "<group>";
+		};
 		CE8CC64515ACCC6F0015AC1A /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -340,6 +352,7 @@
 		CEC8F47215A7440400DFFD0E /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				CE8AF29C15DE62A300EBEAD0 /* Toast */,
 				CE8DB86215DC3BED00389C41 /* FastRegistration */,
 				CE8DB85B15DBBB5800389C41 /* Add Beacon ( AddBeaconController ) */,
 				CE93D55715A835B100E00E7A /* Select Beacon */,
@@ -470,6 +483,7 @@
 				CE874C6115BB0C5200F65127 /* eyeSelectBeaconController.m in Sources */,
 				CE8DB86015DBBBAD00389C41 /* addBeaconController.m in Sources */,
 				CE8DB86615DC3C3F00389C41 /* fastRegistrationController.m in Sources */,
+				CE8AF29F15DE630900EBEAD0 /* Toast.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

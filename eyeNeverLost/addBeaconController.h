@@ -9,14 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "NetLog/NetLog.h"
 #import "GatewayUtil.h"
-#import "MBProgressHUD/MBProgressHUD.h"
+#import "Toast.h"
 #import "EventSinkDelegate.h"
 
-@interface addBeaconController : UIViewController<UITextFieldDelegate,MBProgressHUDDelegate> {
+@interface addBeaconController : UIViewController<UITextFieldDelegate> {
     UIButton *btnAdd;
     UITextField *txtName;
     UIButton *btnCancel;
-    MBProgressHUD *HUD;
     id<EventSinkDelegate> eventSink;
     
 }

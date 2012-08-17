@@ -8,6 +8,7 @@
 
 #import "eyeFirstViewController.h"
 #import "GatewayUtil/GatewayUtil.h"
+#import "Toast.h"
 
 @implementation eyeFirstViewController
 @synthesize txtLogin,txtPassword,strBeaconID,btnActivate;
@@ -77,19 +78,12 @@
     NSString *sLogin = [uDef stringForKey:@"Login"];
     NSString *sPassword = [uDef stringForKey:@"Password"];
     
-    // проверка на существавание пользователя
-    GatewayUtil *gw = [[GatewayUtil alloc] init];
-    if ( [gw Authorization:sLogin password:sPassword beaconID:nil] == NO ) {
-        NSString *msg = [gw.response objectForKey:@"msg"];
-        if ( msg == nil ) msg = @"";
-        alert(@"Ошибка",@"Ошибка авторизации...\n%@",msg);
-        return nil;
-    }
     
+    GatewayUtil *gw = [[GatewayUtil alloc] init];
     arBeacon = [gw getBeaconList:sLogin password:sPassword];
     
     if ( [arBeacon count] == 0 ) {
-        alert(@"Ошибка",@"У Вас нет зарегестрированных телефонов...");
+        toast(@"Ошибка",@"У Вас нет зарегестрированных телефонов...");
         return nil;
     }
         
@@ -127,11 +121,11 @@
     NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
     
     if ( sLogin.length == 0 ) {
-        alert(@"Ошибка",@"Введите логин...");
+    toast(@"Введите логин...",@"");
         return;
     }
     if ( sPassword.length == 0 ) {
-        alert(@"Ошбка",@"Введите пароль...");	
+        toast(@"Введите пароль...",@"");	
         return;
     }
     
@@ -144,12 +138,27 @@
     {
         [self stopTracking];
     } else {
-    // Выбор маячины
-        eyeSelectBeaconController *selectBeacon = [[eyeSelectBeaconController alloc] initWithNibName:@"eyeSelectBeaconController" isMap:NO];
-        selectBeacon.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-        selectBeacon.dataSource = self;
-        selectBeacon.hudView = self.view;
-        [self presentModalViewController:selectBeacon animated:YES];
+    
+        __block BOOL fOk;
+        GatewayUtil *gw = [[GatewayUtil alloc] init];
+        
+        exec_progress(@"",@"",^{
+            // проверка на существавание пользователя
+            fOk =[gw Authorization:sLogin password:sPassword beaconID:nil];
+        },^{
+            if ( fOk == NO ) {
+                NSString *msg = [gw.response objectForKey:@"msg"];
+                if ( msg == nil ) msg = @"";
+                toast(@"Ошибка",@"Ошибка авторизации...\n%@",msg);
+            } else {
+                // Выбор маячины
+                eyeSelectBeaconController *selectBeacon = [[eyeSelectBeaconController alloc] initWithNibName:@"eyeSelectBeaconController" isMap:NO];
+                selectBeacon.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+                selectBeacon.dataSource = self;
+                selectBeacon.hudView = self.view;
+                [self presentModalViewController:selectBeacon animated:YES];
+            }
+        });
     }
 }
 
@@ -181,7 +190,6 @@
  Начинаем мониторить позицию
  */
 -(void) startTracking {
-    netlog(@"Activating tracking...\n");
     
     NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
     
@@ -193,19 +201,25 @@
     [uDef setBool:NO forKey:@"Active"];
     [uDef synchronize];
     
-    BOOL fOk = [gw Authorization:sLogin password:sPassword beaconID:beaconID];
-    if ( fOk == YES ) {
-        // отсылаем запрос на вкючение мониторинга в eyeAppDelegate
-        [self.eventSink controlLocation:YES];
-        [self setStateLabel];
-        alert(@"Успешно",@"Сервис запущен");
-    } else {
-        NSString *msg = [gw.response objectForKey:@"msg"];
-        if ( msg == nil )
-            msg = [NSString stringWithFormat:@"%@",[gw.response objectForKey:@"rc"]];
-        alert(@"Ошибка",@"Ошибка активации",@"%@",msg);                                                
-    }
-    [self.eventSink selectTab:1];
+    __block BOOL fOk = NO;
+    exec_progress(@"Запуск Сервиса",@"",^{
+        fOk = [gw Authorization:sLogin password:sPassword beaconID:beaconID];
+    },^{
+        
+        if ( fOk == YES ) {
+            // отсылаем запрос на вкючение мониторинга в eyeAppDelegate
+            [self.eventSink controlLocation:YES];
+            [self setStateLabel];
+            [self.eventSink selectTab:1];
+            toast(@"Сервис запущен",@"");
+            //alert(@"Успешно",@"Сервис запущен");
+        } else {
+            NSString *msg = [gw.response objectForKey:@"msg"];
+            NSString *rc  = [gw.response objectForKey:@"rc"];
+            if ( msg == nil ) msg = rc;
+            alert(@"Ошибка",@"Ошибка активации",@"%@",msg);                                                
+        }
+    });
 }
 
 
@@ -216,22 +230,27 @@
     NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
     NSString *sLogin    = [uDef stringForKey:@"Login"];
     NSString *sPassword = [uDef stringForKey:@"Password"];
+    __block BOOL fOk;
     
     GatewayUtil *gw = [[GatewayUtil alloc]init];
+    
+    exec_progress(@"Деактивация",@"",^{
    // Активация выбранного телефона
-    if ( [gw Authorization:sLogin password:sPassword beaconID:nil] == NO )
-	    {
-        NSString *msg = [gw.response objectForKey:@"msg"];
-        if ( msg == nil )
-            msg = [NSString stringWithFormat:@"%@",[gw.response objectForKey:@"rc"]];
-        alert(@"Ошибка деактивации",@"%@",msg);                                                
-        return;
-    }
+        fOk = [gw Authorization:sLogin password:sPassword beaconID:nil];
+    },^{
+	    if ( fOk == YES ) {
+            // отсылаем запрос на выкючение мониторинга в eyeAppDelegate
+            [self.eventSink controlLocation:NO];
+            [self setStateLabel];
+        } else {
+            NSString *msg = [gw.response objectForKey:@"msg"];
+            //if ( msg == nil )
+              //  msg = [NSString stringWithFormat:@"%@",[gw.response objectForKey:@"rc"]];
+            toast(@"Ошибка деактивации",@"%@",msg);                                                
+        }
+    });
     
     
-    // отсылаем запрос на выкючение мониторинга в eyeAppDelegate
-    [self.eventSink controlLocation:NO];
-    [self setStateLabel];
 }
 
 - (void)setStateLabel {
@@ -263,6 +282,9 @@
     lbVersion.text = sVersion;
 
     [self setStateLabel];
+
+
+
 }
 
 - (void)viewDidUnload

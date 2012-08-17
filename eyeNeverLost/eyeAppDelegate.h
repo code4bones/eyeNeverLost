@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "EventSinkDelegate.h"
 #import <CoreLocation/CoreLocation.h>
+#import "Toast.h"
 
 // Может он не так уж и нужен, но пусть будет
 @interface KeepAliveDelegate : NSObject <CLLocationManagerDelegate>

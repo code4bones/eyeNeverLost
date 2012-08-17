@@ -96,7 +96,6 @@
 }
 
 -(void)selectTab:(int)index {
-    netlog(@"Selecting %d\n",index);
     [self.tabBarController setSelectedIndex:index];
 }
 
@@ -143,7 +142,7 @@
     // т.к дружбан привязан к одному из телефонов пользователя
     BOOL fActive = [uDef boolForKey:@"Active"];
     if ( [viewController isKindOfClass: [eyeMapViewController class]] && fActive == NO ) {
-        alert(@"Ошибка",@"Вы не авторезированы,выберете активный телефон...");
+        toast(@"Вы не авторезированы",@"");
         return NO;
     }
     
@@ -246,7 +245,7 @@
     NSString *sStatus = [self.eventSink getStatusString];
     NSString *error  = nil;
     if ( [gwUtil saveLocation:beaconID longitude:lastLocation.coordinate.longitude latitude:lastLocation.coordinate.latitude precision:lastLocation.horizontalAccuracy status:(sStatus == nil || [sStatus length] == 0 )? @"":sStatus date:lastLocation.timestamp error:&error] == YES ) {
-        netlog(@"%@ Locations(%d) are sent: %@\n",inBackground==YES?@"Background":@"Foreground",locationCount,error);
+        netlog(@"%@ Locations(%d) are sent: %@\n",inBackground==YES?@"Background":		@"Foreground",locationCount,error);
         if ( error != nil && inBackground == NO ) {
             alert(@"Ошибка",@"Ошибка записи позиции в базу: %@",error);
             

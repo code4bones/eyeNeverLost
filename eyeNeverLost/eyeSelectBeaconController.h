@@ -11,6 +11,7 @@
 #import "MBProgressHUD/MBProgressHUD.h"
 #import "addBeaconController.h"
 #import "EventSinkDelegate.h"
+#import "Toast.h"
 
 @interface eyeSelectBeaconController : UIViewController<EventSinkDelegate,UITableViewDelegate,MBProgressHUDDelegate>	
 {

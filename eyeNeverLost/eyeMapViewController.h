@@ -10,6 +10,7 @@
 #import "MKMapView+ZoomLevel.h"
 #import "EventSinkDelegate.h"
 #import "eyeSelectBeaconController.h"
+#import "Toast.h"
 
 @interface eyeMapViewController : UIViewController<EventSinkDelegate,MKMapViewDelegate> {
 
@@ -17,6 +18,8 @@
     UIToolbar *tbTop;  
     UIActionSheet *actionSheet;        
     UILabel *lbTitle;
+    BeaconObj* beaconObj;
+    GatewayUtil *gw;
 }
 
 
@@ -27,5 +30,6 @@
 
 -(IBAction) onSelectBuddie:(id)sender;
 -(IBAction) onRefreshBuddie:(id)sender;
-    
+-(void)showBeacon:(BeaconObj*)beacon;    
+
 @end

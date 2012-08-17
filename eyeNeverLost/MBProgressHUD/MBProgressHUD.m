@@ -261,6 +261,15 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 	[self performSelector:@selector(hideDelayed:) withObject:[NSNumber numberWithBool:animated] afterDelay:delay];
 }
 
+- (void)hide:(BOOL)animated afterDelay:(NSTimeInterval)delay block:(dispatch_block_t) block 
+{
+    //dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+	//dispatch_async(queue,^{
+        block();
+        [self performSelector:@selector(hideDelayed:) withObject:[NSNumber numberWithBool:animated] afterDelay:delay];
+    //});
+}
+
 - (void)hideDelayed:(NSNumber *)animated {
 	[self hide:[animated boolValue]];
 }

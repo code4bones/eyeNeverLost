@@ -106,53 +106,20 @@
 - (void)viewDidAppear:(BOOL)animated {    // Called when the view is about to made visible. 
     [super viewWillAppear:animated];
 
-    netlog(@"Selecting beacons...\n");
-    
-    HUD = [[MBProgressHUD alloc] initWithWindow:[UIApplication sharedApplication].keyWindow];
-    HUD.labelText = @"Подождите";
-    HUD.detailsLabelText = @"Идет обработка данных...";
-    HUD.mode = MBProgressHUDModeText; //Determinate;//MBProgressHUDModeAnnularDeterminate;
-    HUD.delegate = self;
-    [self.view.window addSubview:HUD];
-    [HUD showAnimated:YES whileExecutingBlock:^{ 
+    exec_progress(@"Получение телефонов",@"", ^{ 
         [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
         arBeacon = [self.dataSource getBeacons:nil];
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    } completionBlock: ^{
-        [HUD removeFromSuperview];
+    },^{
         if ( arBeacon != nil && [arBeacon count] > 0 ) {
             [tbView reloadData];
             NSIndexPath *np = [NSIndexPath indexPathForRow:0 inSection:0];
             [tbView selectRowAtIndexPath:np animated:NO scrollPosition:UITableViewScrollPositionNone];
             currentBeacon = [arBeacon objectAtIndex:0];
         } else {
-            alert(@"Информация",@"Нет зарегистрированных телефонов...");
+            //[self dismissModalViewControllerAnimated:YES];
         }
-    }];	    
-
-    
-    /*
-    dispatch_queue_t q = dispatch_queue_create("load",NULL);
-	dispatch_async(q,^{
-       
-        arBeacon = [self.dataSource getBeacons:nil];
-
-        dispatch_sync(dispatch_get_main_queue(),^{
-            if ( arBeacon != nil && [arBeacon count] > 0 ) {
-                [tbView reloadData];
-                NSIndexPath *np = [NSIndexPath indexPathForRow:0 inSection:0];
-                [tbView selectRowAtIndexPath:np animated:NO scrollPosition:UITableViewScrollPositionNone];
-                currentBeacon = [arBeacon objectAtIndex:0];
-            } else {
-                alert(@"Информация",@"Нет зарегистрированных телефонов...");
-            }
-            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-            [HUD show:NO];
-        });
     });
-    dispatch_release(q);
-  */
-    
 }
 
 - (void)viewDidLoad

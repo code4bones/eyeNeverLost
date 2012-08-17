@@ -28,7 +28,7 @@
     
     *val = [NSString stringWithString:[textField text]];
     if ( [*val length] == 0 ) {
-        alert(@"Ошибка",@"Не заполнено поле %@",msg);
+        toast(@"Ошибка",@"Не заполнено поле %@",msg);
         return NO;
     }
     return YES;
@@ -53,9 +53,16 @@
         return;
     if ( [self checkValue:txtName value:&sName message:@"Имя телефона"] == NO )
         return;
-        
+     
+    int passLen = 5;
+    if ( [sPassword length] < passLen )
+    {
+        toast(@"Ошибка",@"Минимальная длина пароля %d символов",passLen	);
+        return;
+    }
+    
     if ( [ sPassword compare:sPassword2 ] != 0 ) {
-        alert(@"Ошибка",@"Пароли не совпадают");
+        toast(@"Пароли не совпадают",@"");
         return;
     }
 
@@ -68,20 +75,13 @@
     GatewayUtil *gw = [[GatewayUtil alloc]init];
     
     __block BeaconObj *beacon;
-    HUD = [[MBProgressHUD alloc] initWithWindow:[UIApplication sharedApplication].keyWindow];
-    HUD.labelText = @"Подождите";
-    HUD.detailsLabelText = @"Идет обработка данных...";
-    HUD.mode = MBProgressHUDModeText; //Determinate;//MBProgressHUDModeAnnularDeterminate;
-    HUD.delegate = self;
-    [self.view.window addSubview:HUD];
-    [HUD showAnimated:YES whileExecutingBlock:^{ 
+    exec_progress(@"Регистрация",@"Обработка запроса на регистрацию", ^{ 
         beacon = [gw fastRegistration:sLogin password:sPassword beaconName:sName];
-    } completionBlock:^{
-        [HUD removeFromSuperview];
+    } , ^{
         if ( beacon == nil ) alert(@"Ошибка",@"Ошибка регистрации %@",[gw.response objectForKey:@"msg"]);
         else  
             [self.eventSink registrationComplete:beacon];
-    }];
+    });
 }
 
 -(IBAction) onAcceptChanged:(id)sender {

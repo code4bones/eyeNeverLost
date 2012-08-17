@@ -19,35 +19,35 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        gw = [[ GatewayUtil alloc]init];
+
         self.title = @"КАРТА";
         
         mapView.showsUserLocation = NO;
    
-        NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
-        [uDef setValue:nil forKey:@"seatMateID"];
-        [uDef setValue:nil forKey:@"seatMateName"];
-        [uDef synchronize];
+        //NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
+        //[uDef setValue:nil forKey:@"seatMateID"];
+        //[uDef setValue:nil forKey:@"seatMateName"];
+        //[uDef synchronize];
     }
     
     return self;
 }
 
--(NSMutableArray*)getBeacons:(UIPickerView*)pickerView {
+-(NSMutableArray*)getBeacons:(id)sender {
     
     NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
-    //NSString *beaconID  = [uDef stringForKey:@"beaconID"];
     NSString *sLogin    = [uDef stringForKey:@"Login"];
     NSString *sPassword = [uDef stringForKey:@"Password"];
-    netlog(@"Fetching seatmates for %@/%@\n",sLogin,sPassword);
-    GatewayUtil *gw = [[ GatewayUtil alloc]init];
-    return [gw getBeaconList:sLogin password:sPassword];//[gw getSeatMates:beaconID];
+    return [gw getBeaconList:sLogin password:sPassword];
 }
 
--(void)beaconSelected:(BeaconObj*)beaconObj {
+-(void)beaconSelected:(BeaconObj*)beacon {
     
     NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
-    [uDef setValue:beaconObj.uid forKey:@"seatMateID"];
-    [uDef setValue:beaconObj.name forKey:@"seatMateName"];
+    beaconObj = beacon;
+    //[uDef setValue:beaconObj.uid forKey:@"seatMateID"];
+    //[uDef setValue:beaconObj.name forKey:@"seatMateName"];
     [uDef synchronize];
     [self onRefreshBuddie: nil];               
 }
@@ -71,47 +71,38 @@
     return annView;
 }
 
--(IBAction) onRefreshBuddie:(id)sender {
-    
-    NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
-    NSString *seatMateID = [uDef stringForKey:@"seatMateID"];
-    if ( seatMateID == nil )
-        return;
-    
-    NSString *seatMateName = [uDef stringForKey:@"seatMateName"];
-    
-    GatewayUtil *gw = [[GatewayUtil alloc]init];
-    BeaconObj *obj = [gw getLastBeaconLocation:seatMateID];
-    if ( obj == nil ) {
+-(void)showBeacon:(BeaconObj*)beacon {
+   
+    if ( beacon == nil ) {
         NSString *msg = [gw.response objectForKey:@"msg"];
-        alert(@"Внимание",@"Нет записей о положении %@ ( %@ ) %@", seatMateName,seatMateID,msg == nil?@"":msg);
+        toast(@"Внимание",@"Нет записей о положении %@ ( %@ ) %@", beaconObj.name,beaconObj.uid,msg == nil?@"":msg);
         return;
     }
     
-    lbTitle.text = [NSString stringWithFormat:@"%@ // %@",seatMateName,obj.date];
+    lbTitle.text = [NSString stringWithFormat:@"%@ // %@",beaconObj.name,beacon.date];
     
     
     NSMutableArray *annotationsToRemove = [[NSMutableArray alloc] initWithArray: mapView.annotations]; 
     [annotationsToRemove removeObject: mapView.userLocation]; 
     [mapView removeAnnotations: annotationsToRemove];
-
+    
     NSMutableArray *overlaysToRemove = [[NSMutableArray alloc] initWithArray: mapView.overlays]; 
     [mapView removeOverlays: overlaysToRemove];
     
     
     CLLocationCoordinate2D coord; 
-    coord.latitude =  [obj.latitude doubleValue];
-    coord.longitude = [obj.longitude doubleValue];
-    double accuracy = [obj.accuracy doubleValue];
+    coord.latitude =  [beacon.latitude doubleValue];
+    coord.longitude = [beacon.longitude doubleValue];
+    double accuracy = [beacon.accuracy doubleValue];
     
     MKPointAnnotation *annotationPoint = [[MKPointAnnotation alloc] init];
     annotationPoint.coordinate = coord;
-    annotationPoint.title = seatMateName;
-    annotationPoint.subtitle = [NSString stringWithFormat:@"%@ // %@",obj.status,obj.date];
+    annotationPoint.title = beacon.name;
+    annotationPoint.subtitle = [NSString stringWithFormat:@"%@ // %@",beacon.status,beacon.date];
     
     
     [mapView addAnnotation:annotationPoint]; 
-
+    
     // иногда в базу попадает отрицательна, целочисленная точнонсть - хз что это такое...
     if ( accuracy > 0 ) {
         MKCircle *circle = [MKCircle circleWithCenterCoordinate:coord radius:accuracy];
@@ -121,23 +112,32 @@
     
     CLLocationCoordinate2D centerCoord = coord; 
     [mapView setCenterCoordinate:centerCoord zoomLevel:15 animated:YES];    
+}
 
+-(IBAction) onRefreshBuddie:(id)sender {
     
+    NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
+    //NSString *seatMateID = [uDef stringForKey:@"seatMateID"];
+    //if ( seatMateID == nil )
+    //    return;
+    
+    __block BeaconObj *beacon;
+    
+    exec_progress(@"Запрос положения",@"Получение последнего местоположения с сервера",^{
+        beacon = [gw getLastBeaconLocation:beaconObj.uid];
+    },^{
+        [self showBeacon:beacon];
+    });
 }
 
 -(IBAction) onSelectBuddie:(id)sender {
 
-    
     // Выбор маячины
 	eyeSelectBeaconController *selectBeacon = [[eyeSelectBeaconController alloc] initWithNibName:@"eyeSelectBeaconController" isMap:YES];
 	
     selectBeacon.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-    //UIModalTransitionStylePartialCurl;
-    //UIModalTransitionStyleCrossDissolve;
-    //UIModalTransitionStyleFlipHorizontal;
-	selectBeacon.dataSource = self;
-    selectBeacon.hudView = self.view;
-	
+ 	selectBeacon.dataSource = self;
+ 	
 	[self presentModalViewController:selectBeacon animated:YES];
 }	
 
