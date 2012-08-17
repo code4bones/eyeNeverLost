@@ -40,7 +40,6 @@
 		CE8DB86115DBBBAD00389C41 /* addBeaconController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8DB85F15DBBBAD00389C41 /* addBeaconController.xib */; };
 		CE8DB86615DC3C3F00389C41 /* fastRegistrationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8DB86415DC3C3F00389C41 /* fastRegistrationController.m */; };
 		CE8DB86715DC3C3F00389C41 /* fastRegistrationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8DB86515DC3C3F00389C41 /* fastRegistrationController.xib */; };
-		CE8DB86915DC838100389C41 /* addBeaconController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8DB86815DC838100389C41 /* addBeaconController_iPad.xib */; };
 		CE93D55B15A8799200E00E7A /* MKMapView+ZoomLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE93D55A15A8799200E00E7A /* MKMapView+ZoomLevel.m */; };
 		CE93D55D15A9E00000E00E7A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE93D55C15A9DFFF00E00E7A /* SystemConfiguration.framework */; };
 		CEC8F46415A738E500DFFD0E /* eyeMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC8F46215A738E400DFFD0E /* eyeMapViewController.m */; };
@@ -98,7 +97,6 @@
 		CE8DB86315DC3C3F00389C41 /* fastRegistrationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fastRegistrationController.h; sourceTree = "<group>"; };
 		CE8DB86415DC3C3F00389C41 /* fastRegistrationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fastRegistrationController.m; sourceTree = "<group>"; };
 		CE8DB86515DC3C3F00389C41 /* fastRegistrationController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = fastRegistrationController.xib; sourceTree = "<group>"; };
-		CE8DB86815DC838100389C41 /* addBeaconController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = addBeaconController_iPad.xib; sourceTree = "<group>"; };
 		CE93D55915A8799200E00E7A /* MKMapView+ZoomLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKMapView+ZoomLevel.h"; sourceTree = "<group>"; };
 		CE93D55A15A8799200E00E7A /* MKMapView+ZoomLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKMapView+ZoomLevel.m"; sourceTree = "<group>"; };
 		CE93D55C15A9DFFF00E00E7A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -273,7 +271,6 @@
 				CE8DB85D15DBBBAD00389C41 /* addBeaconController.h */,
 				CE8DB85E15DBBBAD00389C41 /* addBeaconController.m */,
 				CE8DB85F15DBBBAD00389C41 /* addBeaconController.xib */,
-				CE8DB86815DC838100389C41 /* addBeaconController_iPad.xib */,
 			);
 			name = "Add Beacon ( AddBeaconController )";
 			sourceTree = "<group>";
@@ -429,7 +426,6 @@
 				CE874C6215BB0C5200F65127 /* eyeSelectBeaconController.xib in Resources */,
 				CE8DB86115DBBBAD00389C41 /* addBeaconController.xib in Resources */,
 				CE8DB86715DC3C3F00389C41 /* fastRegistrationController.xib in Resources */,
-				CE8DB86915DC838100389C41 /* addBeaconController_iPad.xib in Resources */,
 				CE8AF29715DDC40600EBEAD0 /* 2012-08-17.1 in Resources */,
 				CE8AF29915DDCD3E00EBEAD0 /* eyeNeverLost.png in Resources */,
 				CE8AF29B15DDCDDA00EBEAD0 /* eyeNeverLost_iPad.png in Resources */,

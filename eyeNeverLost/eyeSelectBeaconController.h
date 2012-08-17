@@ -10,8 +10,9 @@
 #import "EventSinkDelegate.h"
 #import "MBProgressHUD/MBProgressHUD.h"
 #import "addBeaconController.h"
+#import "EventSinkDelegate.h"
 
-@interface eyeSelectBeaconController : UIViewController<UITableViewDelegate,MBProgressHUDDelegate>	
+@interface eyeSelectBeaconController : UIViewController<EventSinkDelegate,UITableViewDelegate,MBProgressHUDDelegate>	
 {
     NSMutableArray *arBeacon;
     BeaconObj *currentBeacon;

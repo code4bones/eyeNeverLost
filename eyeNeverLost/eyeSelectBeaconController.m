@@ -11,6 +11,7 @@
 @implementation eyeSelectBeaconController
 @synthesize tbView,toolBar,dataSource,hudView;
 
+
 //- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 - (id)initWithNibName:(NSString *)nibNameOrNil isMap:(BOOL)mapMode
 {
@@ -21,17 +22,20 @@
     return self;
 }
 
+-(void)beaconAdded:(BeaconObj*)beacon sender:(id)obj {
+    [self.dataSource beaconSelected:beacon];
+}
+
 -(IBAction)onAddBeacon:(id)sender {
     netlog(@"select - Adding beacon\n");
     addBeaconController *addBeacon = [[addBeaconController alloc] initWithNibName:@"addBeaconController" bundle:nil];
-    addBeacon.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-    addBeacon.eventSink = dataSource;
+    addBeacon.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    addBeacon.eventSink = self; 
     [self presentModalViewController:addBeacon animated:YES];
 }
 
 -(IBAction)onBeaconSelected:(id)sender {
     [self.dataSource beaconSelected:currentBeacon];
-    [self dismissModalViewControllerAnimated:YES];
 }
 
 -(IBAction)onCancel:(id)seneder {

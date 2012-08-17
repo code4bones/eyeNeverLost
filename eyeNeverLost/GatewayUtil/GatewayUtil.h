@@ -62,14 +62,14 @@ enum kLocationModes {
 -(NSMutableArray*)getSeatMates:(NSString*)beaconID;
 -(BeaconObj*)getLastBeaconLocation:(NSString*)beaconID;
 -(BOOL)sendOfflineFile:(NSString*)offlineFile;
--(BOOL)addBeacon:(NSString*)login password:(NSString*)pass beaconName:(NSString*)name;
+-(BeaconObj*)addBeacon:(NSString*)login password:(NSString*)pass beaconName:(NSString*)name;
 // Utility / Common
 -(TBXMLElement*) xmlGetElement:(NSString*)sName parentNode:(TBXMLElement*)parent;
 -(BOOL) sendRequest:(NSString*)sURL;
 -(BOOL) sendRequestWithActivity:(NSString*)sURL;
 -(NSMutableArray*) beaconParseResponse:(NSString *)srcStr outList:(NSMutableArray *)list;
 + (BOOL) isConnected;
--(BOOL)fastRegistration:(NSString*)sLogin password:(NSString*)sPassword beaconName:(NSString*)sName;
+-(BeaconObj*)fastRegistration:(NSString*)sLogin password:(NSString*)sPassword beaconName:(NSString*)sName;
 + (int) getBatteryLevel;
 
 

@@ -102,6 +102,9 @@
  устанавливаем флаг активации и остальные параметры телефона в NSUserDefauts
  */
 -(void)beaconSelected:(BeaconObj*)beaconObj {
+    
+    [self dismissModalViewControllerAnimated:YES];
+
     // хуячим свойтва
     NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
     [uDef setValue:beaconObj.name forKey:@"beaconName"];
@@ -143,32 +146,26 @@
     } else {
     // Выбор маячины
         eyeSelectBeaconController *selectBeacon = [[eyeSelectBeaconController alloc] initWithNibName:@"eyeSelectBeaconController" isMap:NO];
-        selectBeacon.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+        selectBeacon.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
         selectBeacon.dataSource = self;
         selectBeacon.hudView = self.view;
         [self presentModalViewController:selectBeacon animated:YES];
     }
 }
 
--(void)addBeacon {
-    netlog(@"Adding beacon\n");
-    addBeaconController *addBeacon = [[addBeaconController alloc] initWithNibName:@"addBeaconController" bundle:nil];
-    addBeacon.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-	[self presentModalViewController:addBeacon animated:YES];
-    
-}
 
--(void)registrationComplete:(id)sender {
-    UIViewController *fastReg = sender;
+-(void)registrationComplete:(BeaconObj*)beacon {
+
+    [self dismissModalViewControllerAnimated:YES];
     
     NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
     
     alert(@"Успешно",@"Информация о местоположении доступна в ЛК по адресу http://cabeenet.tygdenakarte.ru");
     
-    [fastReg dismissModalViewControllerAnimated:YES];
         
     txtLogin.text = [uDef stringForKey:@"Login"];
     txtPassword.text = [uDef stringForKey:@"Password"];
+    [self beaconSelected:beacon];
 }
 
 -(IBAction)onRegisterBeacon {

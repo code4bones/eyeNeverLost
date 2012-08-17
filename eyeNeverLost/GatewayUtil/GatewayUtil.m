@@ -7,7 +7,9 @@
 //
 
 
-#define AVK_HOST "atlant-inform.dyndns.org"
+
+//#define AVK_HOST "atlant-inform.dyndns.org"
+#define AVK_HOST "shluz.tygdenakarte.ru:60080"
 
 #import "GatewayUtil.h"
 
@@ -44,6 +46,15 @@
     return obj;
 }
   
++(BeaconObj*) createWithNameAndId:(NSString*)src {
+    BeaconObj *obj = [[BeaconObj alloc]init];
+    netlog(@"addBeacon reasponse %@\n",src);
+    NSArray *arTokens = [src componentsSeparatedByString:@"^"];
+    obj.name = [arTokens objectAtIndex:0];
+    obj.uid  = [arTokens objectAtIndex:1];
+    return obj;
+}
+
 @end
 
 
@@ -98,35 +109,40 @@
     return nRes >= 0;
 }
 
--(BOOL)addBeacon:(NSString*)login password:(NSString*)pass beaconName:(NSString*)name {
+-(BeaconObj*)addBeacon:(NSString*)login password:(NSString*)pass beaconName:(NSString*)name {
 
     NSString* sRequest = @"http://" AVK_HOST "/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG.add_beacon</name><index>1</index><param>%@^%@^%@^%@</param></function></request>";
     
     NSString* sURL = [NSString stringWithFormat:sRequest,login,pass,name,self.deviceID]; 
-    //sURL = String.format(sRequest, newLogin , newPassword , newBeaconName,GatewayUtil.md5(GatewayUtil.deviceID));
     
     if ( [self sendRequest:sURL] == NO )
-        return NO;
+        return nil;
     
     // проверка на результат
     NSString *rc = [self.response objectForKey:@"rc"];
+    NSString *msg = [self.response objectForKey:@"msg"];
     int nRes = [rc intValue];
+    if ( nRes >= 0 ) 
+        return [BeaconObj createWithNameAndId:msg];
     
-    return nRes >= 0;
+    return nil;
 }
 
--(BOOL)fastRegistration:(NSString*)sLogin password:(NSString*)sPassword beaconName:(NSString*)sName {
+-(BeaconObj*)fastRegistration:(NSString*)sLogin password:(NSString*)sPassword beaconName:(NSString*)sName {
     
     NSString* sRequest = @"http://" AVK_HOST "/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG.user_registration</name><index>1</index><param>%@^%@^%@^%@</param></function></request>";
     NSString *sURL = [NSString stringWithFormat:sRequest,sLogin , sPassword , sName,self.deviceID];
     
     if ( [self sendRequest:sURL] == NO ) 
-        return NO;
+        return nil;
 
     NSString *rc = [self.response objectForKey:@"rc"];
+    NSString *msg = [self.response objectForKey:@"msg"];
     int nRes = [rc intValue];
-    
-    return nRes >= 0;
+    if ( nRes >= 0 ) {
+        return [BeaconObj createWithNameAndId:msg];
+    }
+    return nil;
 }
  /*
  Возвращает список дружбанов для телефона с данным beaconID

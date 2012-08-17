@@ -21,7 +21,8 @@
 -(void) beaconSelected:(BeaconObj*)beaconObj;
 -(NSString*)getStatusString;
 -(void)addBeacon;
--(void)registrationComplete:(id)sender;
+-(void)beaconAdded:(BeaconObj*)beacon sender:(id)obj;
+-(void)registrationComplete:(BeaconObj*)beacon;
 -(void)selectTab:(int)index;
 
 @end

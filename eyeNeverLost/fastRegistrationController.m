@@ -67,7 +67,7 @@
     
     GatewayUtil *gw = [[GatewayUtil alloc]init];
     
-    __block BOOL fOk;
+    __block BeaconObj *beacon;
     HUD = [[MBProgressHUD alloc] initWithWindow:[UIApplication sharedApplication].keyWindow];
     HUD.labelText = @"Подождите";
     HUD.detailsLabelText = @"Идет обработка данных...";
@@ -75,13 +75,12 @@
     HUD.delegate = self;
     [self.view.window addSubview:HUD];
     [HUD showAnimated:YES whileExecutingBlock:^{ 
-        fOk = [gw fastRegistration:sLogin password:sPassword beaconName:sName];
+        beacon = [gw fastRegistration:sLogin password:sPassword beaconName:sName];
     } completionBlock:^{
         [HUD removeFromSuperview];
-        if ( fOk == NO ) alert(@"Ошибка",@"Ошибка регистрации %@",[gw.response objectForKey:@"msg"]);
-        else  { 
-            [self.eventSink registrationComplete:self];
-        }
+        if ( beacon == nil ) alert(@"Ошибка",@"Ошибка регистрации %@",[gw.response objectForKey:@"msg"]);
+        else  
+            [self.eventSink registrationComplete:beacon];
     }];
 }
 

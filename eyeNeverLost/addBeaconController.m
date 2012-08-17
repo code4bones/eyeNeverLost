@@ -11,7 +11,6 @@
 @implementation addBeaconController
 @synthesize btnAdd,txtName,btnCancel,eventSink;
 
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -38,7 +37,7 @@
         alert(@"Ошибка",@"Введите имя пользователя...");
         return;
     }
-    __block BOOL fOk;
+    __block BeaconObj* beacon;
     HUD = [[MBProgressHUD alloc] initWithWindow:[UIApplication sharedApplication].keyWindow];
     HUD.labelText = @"Подождите";
     HUD.detailsLabelText = @"Идет обработка данных...";
@@ -46,15 +45,12 @@
     HUD.delegate = self;
     [self.view.window addSubview:HUD];
     [HUD showAnimated:YES whileExecutingBlock:^{ 
-        fOk = [gw addBeacon:sLogin password:sPassword beaconName:sName]; 
+        beacon = [gw addBeacon:sLogin password:sPassword beaconName:sName]; 
     } completionBlock:^{
         [HUD removeFromSuperview];
-        if ( fOk == NO )
+        if ( beacon == nil )
             alert(@"Ошибка",@"%@",[gw.response objectForKey:@"msg"]);
-        else 
-            alert(@"Инфо",@"Новый пользователь добавлен - %@",sName);
-        [self dismissModalViewControllerAnimated:YES];
-               
+        [self.eventSink beaconAdded:beacon sender:self]; 
     }];
 }
 
