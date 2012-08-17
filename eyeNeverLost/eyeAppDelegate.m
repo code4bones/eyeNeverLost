@@ -238,6 +238,7 @@
 }
 
 - (void)sendLocation {
+    // [[UIApplication sharedApplication] applicationState] == UIApplicationStateBackground
     
     [locMgr stopUpdatingLocation];
     [self.eventSink updateStats:lastLocation updateView:NO];

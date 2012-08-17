@@ -291,7 +291,7 @@
     NSString *docsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSString *offlineFile = [docsPath stringByAppendingPathComponent:@"LocationHistory.log"];
     
-    NSString *sRequest = @"http://" AVK_HOST "/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG.saveLocation_Phone_IPhnone</name><index>1</index><param>%@^%f^%f^%f^-%@^%@^D%@^E%d</param></function></request>";
+    NSString *sRequest = @"http://" AVK_HOST "/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG.saveLocation_Phone_IPhnone_ext</name><index>1</index><param>%@^%f^%f^%f^-%@^%@^D%@^E%d</param></function></request>";
     
     int battLevel = [GatewayUtil getBatteryLevel];
     NSString *sDate = [dateFormatter stringFromDate:when]; 

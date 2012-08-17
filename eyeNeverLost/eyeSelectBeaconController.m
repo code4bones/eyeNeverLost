@@ -36,6 +36,8 @@
 
 -(IBAction)onBeaconSelected:(id)sender {
     [self.dataSource beaconSelected:currentBeacon];
+    if ( isMapMode == YES )
+        [self dismissModalViewControllerAnimated:YES];
 }
 
 -(IBAction)onCancel:(id)seneder {
