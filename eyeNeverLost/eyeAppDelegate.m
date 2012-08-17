@@ -293,8 +293,8 @@
 - (void) initUpdateInterval {
     updateInterval = [gwUtil getFrequency:beaconID];
     if ( updateInterval <= 0 ) updateInterval = 10; // минут
-    //updateInterval *= 60;
-    updateInterval = 30;
+    updateInterval *= 60;
+    //updateInterval = 30;
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
