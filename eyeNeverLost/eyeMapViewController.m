@@ -23,7 +23,7 @@
 
         self.title = @"КАРТА";
         
-        mapView.showsUserLocation = NO;
+        //mapView.showsUserLocation = NO;
    
         //NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
         //[uDef setValue:nil forKey:@"seatMateID"];
@@ -73,6 +73,8 @@
 
 -(void)showBeacon:(BeaconObj*)beacon {
    
+    mapView.showsUserLocation = NO;
+
     if ( beacon == nil ) {
         NSString *msg = [gw.response objectForKey:@"msg"];
         toast(@"Внимание",@"Нет записей о положении %@ ( %@ ) %@", beaconObj.name,beaconObj.uid,msg == nil?@"":msg);
@@ -115,11 +117,6 @@
 }
 
 -(IBAction) onRefreshBuddie:(id)sender {
-    
-    NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
-    //NSString *seatMateID = [uDef stringForKey:@"seatMateID"];
-    //if ( seatMateID == nil )
-    //    return;
     
     __block BeaconObj *beacon;
     

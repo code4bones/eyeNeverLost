@@ -30,6 +30,7 @@
 		CE74E81015A4C22D0021912B /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = CE74E80915A4C22D0021912B /* TBXML.m */; };
 		CE74E81315A4C3A30021912B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE74E81115A4C3A30021912B /* CoreLocation.framework */; };
 		CE74E81415A4C3A30021912B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CE74E81215A4C3A30021912B /* libz.dylib */; };
+		CE87416D15E4391000123A94 /* 2012-08-22.1 in Resources */ = {isa = PBXBuildFile; fileRef = CE87416C15E4391000123A94 /* 2012-08-22.1 */; };
 		CE874C6115BB0C5200F65127 /* eyeSelectBeaconController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE874C5F15BB0C5200F65127 /* eyeSelectBeaconController.m */; };
 		CE874C6215BB0C5200F65127 /* eyeSelectBeaconController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE874C6015BB0C5200F65127 /* eyeSelectBeaconController.xib */; };
 		CE8AF29715DDC40600EBEAD0 /* 2012-08-17.1 in Resources */ = {isa = PBXBuildFile; fileRef = CE8AF29615DDC40500EBEAD0 /* 2012-08-17.1 */; };
@@ -84,6 +85,7 @@
 		CE74E81115A4C3A30021912B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		CE74E81215A4C3A30021912B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		CE74E82115A52D000021912B /* EventSinkDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventSinkDelegate.h; sourceTree = "<group>"; };
+		CE87416C15E4391000123A94 /* 2012-08-22.1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.man; path = "2012-08-22.1"; sourceTree = "<group>"; };
 		CE874C5E15BB0C5200F65127 /* eyeSelectBeaconController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eyeSelectBeaconController.h; sourceTree = "<group>"; };
 		CE874C5F15BB0C5200F65127 /* eyeSelectBeaconController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = eyeSelectBeaconController.m; sourceTree = "<group>"; };
 		CE874C6015BB0C5200F65127 /* eyeSelectBeaconController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = eyeSelectBeaconController.xib; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				CE8AF29615DDC40500EBEAD0 /* 2012-08-17.1 */,
+				CE87416C15E4391000123A94 /* 2012-08-22.1 */,
 			);
 			name = Tickets;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 				CE8AF29715DDC40600EBEAD0 /* 2012-08-17.1 in Resources */,
 				CE8AF29915DDCD3E00EBEAD0 /* eyeNeverLost.png in Resources */,
 				CE8AF29B15DDCDDA00EBEAD0 /* eyeNeverLost_iPad.png in Resources */,
+				CE87416D15E4391000123A94 /* 2012-08-22.1 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,10 +18,11 @@
     NSDateFormatter *dateFormatter;
     UITextField *txtStatus;
     int nUpdateCount;
+    UIButton *btnLink;
     CLLocation *clLocation;
 }
 
-
+@property (strong,retain) IBOutlet UIButton *btnLink;
 @property (strong,retain) CLLocation *clLocation;
 @property (strong,retain) IBOutlet UITextField *txtStatus;
 @property (strong,retain) IBOutlet UILabel *lbLatitude;
@@ -30,5 +31,6 @@
 
 
 -(void) update:(id)obj;
+-(IBAction)onLink:(id)obj;
 
 @end

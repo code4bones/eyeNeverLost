@@ -13,7 +13,7 @@
 @implementation eyeSecondViewController
 
 @synthesize lbLatitude,lbLongitude,lbTime;
-@synthesize txtStatus,clLocation;
+@synthesize txtStatus,clLocation,btnLink;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -47,6 +47,11 @@
 }
 - (NSString*)getStatusString {
     return [self.txtStatus text];
+}
+
+-(IBAction)onLink:(id)obj {
+    NSString *sURL = [NSString stringWithString:[btnLink currentTitle]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:sURL]];
 }
 
 - (void) updateStats:(CLLocation*)loc updateView:(BOOL)updateView {

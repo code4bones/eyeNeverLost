@@ -211,7 +211,9 @@
             [self.eventSink controlLocation:YES];
             [self setStateLabel];
             [self.eventSink selectTab:1];
-            toast(@"Сервис запущен",@"");
+            toast(@"Успешно",@"Информация о местоположении доступна в ЛК по адресу http://cabeenet.tygdenakarte.ru");
+
+            //toast(@"Сервис запущен",@"");
             //alert(@"Успешно",@"Сервис запущен");
         } else {
             NSString *msg = [gw.response objectForKey:@"msg"];
@@ -271,6 +273,8 @@
     }
     [btnActivate setTitle:sTitle forState:0];
     [lbLogin setText:sLabel];
+    [btnRegister setHidden:fActive];
+     
 }
 
 - (void)viewDidLoad
