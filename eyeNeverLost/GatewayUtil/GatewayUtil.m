@@ -330,7 +330,7 @@
             sData = [NSString stringWithContentsOfFile:offlineFile usedEncoding:&encoding error:&error];
         } 
         
-        sData = [sData stringByAppendingFormat:@"-1^%@^%f^%f^%f^-%@^%@^D%@^E%@\n",beaconID,lng,lat,prec,self.deviceID,stat,sDate,battLevel];
+        sData = [sData stringByAppendingFormat:@"-1^%@^%f^%f^%f^-%@^%@^D%@^E%d\n",beaconID,lng,lat,prec,self.deviceID,stat,sDate,battLevel];
 
         // Перезаписываем файло
         if ([sData writeToFile:offlineFile atomically:YES encoding:NSUTF8StringEncoding error:&error] == NO )
