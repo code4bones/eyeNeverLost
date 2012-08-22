@@ -20,13 +20,15 @@
     UILabel *lbTitle;
     BeaconObj* beaconObj;
     GatewayUtil *gw;
+    id<EventSinkDelegate> eventSink;
 }
 
-
+@property (strong,retain) id eventSink;
 @property (strong,retain) IBOutlet UILabel *lbTitle;
 @property (strong,retain) IBOutlet UIActionSheet *actionSheet;
 @property (strong,retain) IBOutlet MKMapView *mapView;
 @property (strong,retain) IBOutlet UIToolbar *tbTop;
+
 
 -(IBAction) onSelectBuddie:(id)sender;
 -(IBAction) onRefreshBuddie:(id)sender;

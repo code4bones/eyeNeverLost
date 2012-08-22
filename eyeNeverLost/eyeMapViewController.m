@@ -12,10 +12,10 @@
 #import "eyeSelectBeaconView.h"
 
 @implementation eyeMapViewController
-@synthesize mapView,tbTop,actionSheet,lbTitle;
+@synthesize mapView,tbTop,actionSheet,lbTitle,eventSink;
 
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil 
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -23,15 +23,23 @@
 
         self.title = @"КАРТА";
         
-        //mapView.showsUserLocation = NO;
-   
-        //NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
-        //[uDef setValue:nil forKey:@"seatMateID"];
-        //[uDef setValue:nil forKey:@"seatMateName"];
-        //[uDef synchronize];
+        mapView.showsUserLocation = NO;
+        beaconObj = nil;
     }
     
     return self;
+}
+
+- (void)viewWillAppear:(BOOL)animated {    // Called when the view is about to made visible. 
+    if ( beaconObj == nil ) {
+        beaconObj = [eventSink getCurrentBeacon];
+        netlog(@"map beacon selected %s\n",beaconObj.uid);
+        [self onRefreshBuddie:nil];
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    netlog(@"did apperar\n");
 }
 
 -(NSMutableArray*)getBeacons:(id)sender {
@@ -44,11 +52,11 @@
 
 -(void)beaconSelected:(BeaconObj*)beacon {
     
-    NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
+    //NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
     beaconObj = beacon;
     //[uDef setValue:beaconObj.uid forKey:@"seatMateID"];
     //[uDef setValue:beaconObj.name forKey:@"seatMateName"];
-    [uDef synchronize];
+    //[uDef synchronize];
     [self onRefreshBuddie: nil];               
 }
 

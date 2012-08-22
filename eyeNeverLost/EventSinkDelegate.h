@@ -24,5 +24,6 @@
 -(void)beaconAdded:(BeaconObj*)beacon sender:(id)obj;
 -(void)registrationComplete:(BeaconObj*)beacon;
 -(void)selectTab:(int)index;
+-(BeaconObj*)getCurrentBeacon;
 
 @end

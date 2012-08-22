@@ -34,23 +34,17 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    UIViewController *vcLogin, *vcStats,*vcMap;
+    //UIViewController *vcLogin, *vcStats,*vcMap;
    // if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        vcLogin = [[eyeFirstViewController alloc] initWithNibName:@"eyeFirstViewController_iPhone" bundle:nil];
-        vcStats = [[eyeSecondViewController alloc] initWithNibName:@"eyeSecondViewController_iPhone" bundle:nil];
-        vcMap   = [[eyeMapViewController alloc] initWithNibName:
+    eyeFirstViewController *vcLogin = [[eyeFirstViewController alloc] initWithNibName:@"eyeFirstViewController_iPhone" bundle:nil];
+    eyeSecondViewController* vcStats = [[eyeSecondViewController alloc] initWithNibName:@"eyeSecondViewController_iPhone" bundle:nil];
+    eyeMapViewController *vcMap   = [[eyeMapViewController alloc] initWithNibName:
                    @"eyeMapViewController" bundle:nil];
-    /* }  else {
-        vcLogin = [[eyeFirstViewController alloc] initWithNibName:@"eyeFirstViewController_iPad" bundle:nil];
-        vcStats = [[eyeSecondViewController alloc] initWithNibName:@"eyeSecondViewController_iPhone" bundle:nil];
-        vcMap   = [[eyeMapViewController alloc] initWithNibName:
-                   @"eyeMapViewController" bundle:nil];
-    }*/
     
-    eyeFirstViewController *vc1 = (eyeFirstViewController*)vcLogin;
-    eyeSecondViewController *vc2 = (eyeSecondViewController*)vcStats;
-    vc1.eventSink = self;
-    self.eventSink = vc2;
+    
+    vcMap.eventSink = vcLogin;
+    vcLogin.eventSink = self;
+    self.eventSink = vcStats;
     
     self.tabBarController = [[UITabBarController alloc] init];
     self.tabBarController.viewControllers = [NSArray arrayWithObjects:vcLogin, vcStats,vcMap, nil];

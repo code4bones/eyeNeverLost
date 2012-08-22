@@ -186,6 +186,14 @@
     [self presentModalViewController:fastRegistration animated:YES];
 }
 
+-(BeaconObj*)getCurrentBeacon {
+    BeaconObj *obj = [[BeaconObj alloc]init];
+    NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
+    obj.uid = [uDef stringForKey:@"beaconID"];
+    obj.name = [uDef stringForKey:@"beaconName"];
+    return obj;
+}
+
 /*
  Начинаем мониторить позицию
  */
@@ -271,6 +279,8 @@
         sLabel = [NSString stringWithFormat:@"Логин / %@ - %@",sName,fActive == YES?@"Активирован":@"Деактивирован"]; 
         sTitle = fActive == YES?@"Деактивировать":@"Активировать";
     }
+    [txtLogin setText:@""];
+    [txtPassword setText:@""];
     [btnActivate setTitle:sTitle forState:0];
     [lbLogin setText:sLabel];
     [btnRegister setHidden:fActive];
