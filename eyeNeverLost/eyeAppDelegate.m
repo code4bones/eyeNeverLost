@@ -29,6 +29,7 @@
 @synthesize tabBarController = _tabBarController;
 @synthesize eventSink,locMgr,nsLock,nsQueue;
 @synthesize keepAlive,locMgrKeepAlive;
+@synthesize networkInfo;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -86,8 +87,24 @@
     
     netlog(@"Battery State: %i Charge: %f [%d]", device.batteryState, device.batteryLevel,device.batteryMonitoringEnabled);
     
+    // будем посмотреть на горячую смену сим карты
+    networkInfo = [[CTTelephonyNetworkInfo alloc] init];
+    networkInfo.subscriberCellularProviderDidUpdateNotifier = ^(CTCarrier* carrier){
+        
+        netlog(@"Sim change event triggered");
+        NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
+        NSString *beacon = [NSString stringWithString:[uDef stringForKey:@"beaconID"]];
+        if ( beacon != nil ) {
+            GatewayUtil *gw = [[GatewayUtil alloc]init];
+            [gw notifySimChanged:beacon simInfo:carrier];
+        } else {
+            netlog(@"Sim state changed,but no currently active beacon...");
+        }
+    };
+    
     return YES;
 }
+
 
 -(void)selectTab:(int)index {
     [self.tabBarController setSelectedIndex:index];
@@ -108,7 +125,6 @@
  */
 - (void)controlLocation:(BOOL)doStart {
     NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
-    
     beaconID = [NSString stringWithString:[uDef stringForKey:@"beaconID"]];
     [self initUpdateInterval];
     

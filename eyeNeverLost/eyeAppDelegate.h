@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "EventSinkDelegate.h"
 #import <CoreLocation/CoreLocation.h>
+#import <CoreTelephony/CTTelephonyNetworkInfo.h>	
 #import "Toast.h"
-
+	
 // Может он не так уж и нужен, но пусть будет
 @interface KeepAliveDelegate : NSObject <CLLocationManagerDelegate>
 @end
@@ -32,7 +33,6 @@ UITabBarControllerDelegate,EventSinkDelegate,CLLocationManagerDelegate>
     NSLock *nsLock;
     UIBackgroundTaskIdentifier bgTask;
     int updateCounter;
-    //NSMutableArray *msgQueue;
     int locationCount;
     NSTimeInterval firstUpdate;
     CLLocation *lastLocation;
@@ -41,9 +41,9 @@ UITabBarControllerDelegate,EventSinkDelegate,CLLocationManagerDelegate>
     int  updateInterval;
     NSString *beaconID;
     GatewayUtil *gwUtil;
+    CTTelephonyNetworkInfo *networkInfo;
 }
 
-//@property (strong, nonatomic) NSMutableArray *msgQueue;
 @property (strong, nonatomic) KeepAliveDelegate* keepAlive;
 @property (strong, nonatomic) CLLocationManager *locMgrKeepAlive;
 @property (strong, nonatomic) NSOperationQueue *nsQueue;
@@ -51,10 +51,10 @@ UITabBarControllerDelegate,EventSinkDelegate,CLLocationManagerDelegate>
 @property (strong, nonatomic) CLLocationManager *locMgr;
 @property (strong, nonatomic) id eventSink;
 @property (strong, nonatomic) UIWindow *window;
-
+@property (strong, nonatomic) CTTelephonyNetworkInfo *networkInfo;
 @property (strong, nonatomic) UITabBarController *tabBarController;
 
--(void)sendLocation;
+- (void)sendLocation;
 - (void) initUpdateInterval;
 - (void)batteryChanged:(NSNotification *)notification;
 

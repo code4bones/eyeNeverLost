@@ -75,6 +75,31 @@
 }
 
 /*
+ Если была смена сим карты...
+ или если simInfo == null, то текущий провайдер
+ PHONEFUNC_PKG.phone_simchanged (beaconID,phonePlatformName,carrierName,isoCountryCode,mobileCountryCode,mobileNetworkCode); 
+ - вызывается из GatewayUtil.Authorization
+ */
+
+-(BOOL)notifySimChanged:(NSString*)beaconID simInfo:(CTCarrier*)ct {
+    NSString *sRequest = nil;
+    NSString *sURL = nil;
+    NSString *sPhonePlatformName = @"IPhone";
+    
+    sRequest = [NSString stringWithString:@"http://" AVK_HOST "/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG.phone_simchanged</name><index></index><param>%@^^%@^%@^%@^%@^%@</param></function></request>"];
+    
+    if ( ct == nil ) {
+        netlog(@"Defaulting to current network provider");
+        CTTelephonyNetworkInfo *info = [[CTTelephonyNetworkInfo alloc]init];
+        ct = info.subscriberCellularProvider;
+        netlog(@"Defaulting to current network provider - %@",ct.carrierName);
+    }
+    
+    sURL = [NSString stringWithFormat:sRequest,beaconID,sPhonePlatformName,ct.carrierName,ct.isoCountryCode,ct.mobileCountryCode,ct.mobileNetworkCode];
+    return [self sendRequest:sURL];
+}
+
+/*
     Либо проверка на существование логинпароля либо для активации 
     телефона с beaconID
  */
@@ -95,16 +120,22 @@
     if ( [self sendRequestWithActivity:sURL] == NO ) {
         return NO;
     }
-        
-    // вызов с простой проверкой существования пользователя
-    if ( beaconID == nil )
-        netlog(@"Authorization status: %@ [%@]\n",[response objectForKey:@"rc"],[response objectForKey:@"msg"]);
-    else // активация телефона с биконом
-        netlog(@"Activation status: %@ [%@]\n",[response objectForKey:@"rc"],[response objectForKey:@"msg"]);
-    
+
     // проверка на результат
     NSString *rc = [self.response objectForKey:@"rc"];
     int nRes = [rc intValue];
+
+    // активация телефона 
+    if ( beaconID != nil ) {
+        // дергаем обновление инфы о сим карты
+        if ( nRes >= 0 )
+            [self notifySimChanged:beaconID simInfo:nil];
+        netlog(@"Activation status: %@ [%@]\n",[response objectForKey:@"rc"],[response objectForKey:@"msg"]);
+    }        
+    else {  
+        // вызов с простой проверкой существования пользователя
+        netlog(@"Authorization status: %@ [%@]\n",[response objectForKey:@"rc"],[response objectForKey:@"msg"]);
+    }
     
     return nRes >= 0;
 }

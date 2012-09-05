@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 #import <SystemConfiguration/SystemConfiguration.h>
+#import <CoreTelephony/CTTelephonyNetworkInfo.h>
+#import <CoreTelephony/CTCarrier.h>
 
 #import "../NetLog/NetLog.h"
 #import "../TBXML/TBXML-Headers/TBXML.h"
@@ -63,13 +65,15 @@ enum kLocationModes {
 -(BeaconObj*)getLastBeaconLocation:(NSString*)beaconID;
 -(BOOL)sendOfflineFile:(NSString*)offlineFile;
 -(BeaconObj*)addBeacon:(NSString*)login password:(NSString*)pass beaconName:(NSString*)name;
+-(BOOL)notifySimChanged:(NSString*)beaconID simInfo:(CTCarrier*)ct;
+-(BeaconObj*)fastRegistration:(NSString*)sLogin password:(NSString*)sPassword beaconName:(NSString*)sName;
+
 // Utility / Common
 -(TBXMLElement*) xmlGetElement:(NSString*)sName parentNode:(TBXMLElement*)parent;
 -(BOOL) sendRequest:(NSString*)sURL;
 -(BOOL) sendRequestWithActivity:(NSString*)sURL;
 -(NSMutableArray*) beaconParseResponse:(NSString *)srcStr outList:(NSMutableArray *)list;
 + (BOOL) isConnected;
--(BeaconObj*)fastRegistration:(NSString*)sLogin password:(NSString*)sPassword beaconName:(NSString*)sName;
 + (int) getBatteryLevel;
 
 

@@ -39,6 +39,8 @@
 		CE8AF29F15DE630900EBEAD0 /* Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8AF29E15DE630900EBEAD0 /* Toast.m */; };
 		CE8B7E7015E4E373004233D3 /* 2012-08-22.2 in Resources */ = {isa = PBXBuildFile; fileRef = CE8B7E6F15E4E373004233D3 /* 2012-08-22.2 */; };
 		CE8CC64815ACCC6F0015AC1A /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8CC64715ACCC6F0015AC1A /* MBProgressHUD.m */; };
+		CE8D363215F75E7C00A67108 /* 2012-09-03.1 in Resources */ = {isa = PBXBuildFile; fileRef = CE8D363115F75E7C00A67108 /* 2012-09-03.1 */; };
+		CE8D363515F7605E00A67108 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE8D363415F7605E00A67108 /* CoreTelephony.framework */; };
 		CE8DB86015DBBBAD00389C41 /* addBeaconController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8DB85E15DBBBAD00389C41 /* addBeaconController.m */; };
 		CE8DB86115DBBBAD00389C41 /* addBeaconController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8DB85F15DBBBAD00389C41 /* addBeaconController.xib */; };
 		CE8DB86615DC3C3F00389C41 /* fastRegistrationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8DB86415DC3C3F00389C41 /* fastRegistrationController.m */; };
@@ -98,6 +100,8 @@
 		CE8B7E6F15E4E373004233D3 /* 2012-08-22.2 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "2012-08-22.2"; sourceTree = "<group>"; };
 		CE8CC64615ACCC6F0015AC1A /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		CE8CC64715ACCC6F0015AC1A /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		CE8D363115F75E7C00A67108 /* 2012-09-03.1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.man; path = "2012-09-03.1"; sourceTree = "<group>"; };
+		CE8D363415F7605E00A67108 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		CE8DB85D15DBBBAD00389C41 /* addBeaconController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addBeaconController.h; sourceTree = "<group>"; };
 		CE8DB85E15DBBBAD00389C41 /* addBeaconController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addBeaconController.m; sourceTree = "<group>"; };
 		CE8DB85F15DBBBAD00389C41 /* addBeaconController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = addBeaconController.xib; sourceTree = "<group>"; };
@@ -118,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE8D363515F7605E00A67108 /* CoreTelephony.framework in Frameworks */,
 				CE93D55D15A9E00000E00E7A /* SystemConfiguration.framework in Frameworks */,
 				CEC8F46715A73E6F00DFFD0E /* MapKit.framework in Frameworks */,
 				CE74E81315A4C3A30021912B /* CoreLocation.framework in Frameworks */,
@@ -153,6 +158,7 @@
 		CE74E7C715A4C04E0021912B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE8D363415F7605E00A67108 /* CoreTelephony.framework */,
 				CE93D55C15A9DFFF00E00E7A /* SystemConfiguration.framework */,
 				CEC8F46615A73E6E00DFFD0E /* MapKit.framework */,
 				CE74E81115A4C3A30021912B /* CoreLocation.framework */,
@@ -261,6 +267,7 @@
 				CE8AF29615DDC40500EBEAD0 /* 2012-08-17.1 */,
 				CE87416C15E4391000123A94 /* 2012-08-22.1 */,
 				CE8B7E6F15E4E373004233D3 /* 2012-08-22.2 */,
+				CE8D363115F75E7C00A67108 /* 2012-09-03.1 */,
 			);
 			name = Tickets;
 			sourceTree = "<group>";
@@ -450,6 +457,7 @@
 				CE8AF29B15DDCDDA00EBEAD0 /* eyeNeverLost_iPad.png in Resources */,
 				CE87416D15E4391000123A94 /* 2012-08-22.1 in Resources */,
 				CE8B7E7015E4E373004233D3 /* 2012-08-22.2 in Resources */,
+				CE8D363215F75E7C00A67108 /* 2012-09-03.1 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

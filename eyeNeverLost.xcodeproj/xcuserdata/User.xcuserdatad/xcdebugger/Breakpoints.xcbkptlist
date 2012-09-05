@@ -9,11 +9,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "eyeNeverLost/GatewayUtil/GatewayUtil.m"
-         timestampString = "366870683.066836"
+         timestampString = "368537564.229284"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "97"
-         endingLineNumber = "97"
+         startingLineNumber = "122"
+         endingLineNumber = "122"
          landmarkName = "-Authorization:password:beaconID:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -23,11 +23,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "eyeNeverLost/GatewayUtil/GatewayUtil.m"
-         timestampString = "366871861.659999"
+         timestampString = "368537564.229284"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "204"
-         endingLineNumber = "204"
+         startingLineNumber = "235"
+         endingLineNumber = "235"
          landmarkName = "-getBeaconList:password:"
          landmarkType = "5">
       </FileBreakpoint>
