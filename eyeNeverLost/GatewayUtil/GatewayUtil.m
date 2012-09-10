@@ -81,12 +81,12 @@
  - вызывается из GatewayUtil.Authorization
  */
 
--(BOOL)notifySimChanged:(NSString*)beaconID simInfo:(CTCarrier*)ct {
+-(BOOL)notifySimChanged:(NSString*)beaconID simInfo:(CTCarrier*)ct changed:(BOOL)chng {
     NSString *sRequest = nil;
     NSString *sURL = nil;
     NSString *sPhonePlatformName = @"IPhone";
     
-    sRequest = [NSString stringWithString:@"http://" AVK_HOST "/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG.phone_simchanged</name><index></index><param>%@^^%@^%@^%@^%@^%@</param></function></request>"];
+    sRequest = [NSString stringWithString:@"http://" AVK_HOST "/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG.phone_simchanged</name><index></index><param>%@^^%@^%@^%@^%@^%@%@</param></function></request>"];
     
     if ( ct == nil ) {
         netlog(@"Defaulting to current network provider");
@@ -95,7 +95,9 @@
         netlog(@"Defaulting to current network provider - %@",ct.carrierName);
     }
     
-    sURL = [NSString stringWithFormat:sRequest,beaconID,sPhonePlatformName,ct.carrierName,ct.isoCountryCode,ct.mobileCountryCode,ct.mobileNetworkCode];
+    sURL = [NSString stringWithFormat:sRequest,beaconID,sPhonePlatformName,ct.carrierName,ct.isoCountryCode,ct.mobileCountryCode,ct.mobileNetworkCode,chng == YES?"^needSendNotifycation":""];
+        	 
+    
     return [self sendRequest:sURL];
 }
 
@@ -129,7 +131,7 @@
     if ( beaconID != nil ) {
         // дергаем обновление инфы о сим карты
         if ( nRes >= 0 )
-            [self notifySimChanged:beaconID simInfo:nil];
+        [self notifySimChanged:beaconID simInfo:nil changed:NO];
         netlog(@"Activation status: %@ [%@]\n",[response objectForKey:@"rc"],[response objectForKey:@"msg"]);
     }        
     else {  

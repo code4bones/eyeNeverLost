@@ -96,7 +96,7 @@
         NSString *beacon = [NSString stringWithString:[uDef stringForKey:@"beaconID"]];
         if ( beacon != nil ) {
             GatewayUtil *gw = [[GatewayUtil alloc]init];
-            [gw notifySimChanged:beacon simInfo:carrier];
+            [gw notifySimChanged:beacon simInfo:carrier changed:YES];
         } else {
             netlog(@"Sim state changed,but no currently active beacon...");
         }

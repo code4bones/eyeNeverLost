@@ -65,7 +65,7 @@ enum kLocationModes {
 -(BeaconObj*)getLastBeaconLocation:(NSString*)beaconID;
 -(BOOL)sendOfflineFile:(NSString*)offlineFile;
 -(BeaconObj*)addBeacon:(NSString*)login password:(NSString*)pass beaconName:(NSString*)name;
--(BOOL)notifySimChanged:(NSString*)beaconID simInfo:(CTCarrier*)ct;
+-(BOOL)notifySimChanged:(NSString*)beaconID simInfo:(CTCarrier*)ct changed:(BOOL)chng;
 -(BeaconObj*)fastRegistration:(NSString*)sLogin password:(NSString*)sPassword beaconName:(NSString*)sName;
 
 // Utility / Common
