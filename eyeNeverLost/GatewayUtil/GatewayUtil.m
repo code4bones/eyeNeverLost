@@ -537,5 +537,12 @@
     return isReachable;
 }
 
++(BOOL) checkGPS {
+    if ( [CLLocationManager locationServicesEnabled] == NO ) {
+        alert(@"Внимание !",@"GPS приемник деактивирован,для корректной работы, зайдите в настройки и активируйте приемник	");
+        return NO;
+    }
+    return YES;
+}
 
 @end

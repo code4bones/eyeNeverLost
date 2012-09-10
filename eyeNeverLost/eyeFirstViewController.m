@@ -129,6 +129,9 @@
         return;
     }
     
+    if ( [GatewayUtil checkGPS] == NO )
+        return;
+    
     [uDef setValue:sLogin forKey:@"Login"];
     [uDef setValue:sPassword forKey:@"Password"];
     [uDef synchronize];
@@ -178,6 +181,11 @@
 }
 
 -(IBAction)onRegisterBeacon {
+    
+    if ( [GatewayUtil checkGPS] == NO ) {
+        return;
+    }
+    
     fastRegistrationController *fastRegistration = [[fastRegistrationController alloc] initWithNibName:@"fastRegistrationController" bundle:nil];
     fastRegistration.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     fastRegistration.eventSink = self;

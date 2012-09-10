@@ -75,7 +75,7 @@ enum kLocationModes {
 -(NSMutableArray*) beaconParseResponse:(NSString *)srcStr outList:(NSMutableArray *)list;
 + (BOOL) isConnected;
 + (int) getBatteryLevel;
-
++ (BOOL) checkGPS;
 
 @end
 

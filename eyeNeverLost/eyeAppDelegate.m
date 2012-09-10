@@ -102,6 +102,8 @@
         }
     };
     
+    [GatewayUtil checkGPS];
+    
     return YES;
 }
 
