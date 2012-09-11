@@ -89,13 +89,12 @@
     sRequest = [NSString stringWithString:@"http://" AVK_HOST "/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG.phone_simchanged</name><index></index><param>%@^^%@^%@^%@^%@^%@%@</param></function></request>"];
     
     if ( ct == nil ) {
-        netlog(@"Defaulting to current network provider");
         CTTelephonyNetworkInfo *info = [[CTTelephonyNetworkInfo alloc]init];
         ct = info.subscriberCellularProvider;
         netlog(@"Defaulting to current network provider - %@",ct.carrierName);
     }
     
-    sURL = [NSString stringWithFormat:sRequest,beaconID,sPhonePlatformName,ct.carrierName,ct.isoCountryCode,ct.mobileCountryCode,ct.mobileNetworkCode,chng == YES?"^needSendNotifycation":""];
+    sURL = [NSString stringWithFormat:sRequest,beaconID,sPhonePlatformName,ct.carrierName,ct.isoCountryCode,ct.mobileCountryCode,ct.mobileNetworkCode,chng == YES?@"^needSendNotifycation":@""];
         	 
     
     return [self sendRequest:sURL];

@@ -34,6 +34,11 @@
         self.title = @"АКТИВАЦИЯ";
         
         NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
+        
+        BOOL isActive = [uDef boolForKey:@"Active"];
+        if ( isActive == YES ) {
+            netlog(@"Already Active");
+        } else {
         // Запустили мониторинг позиции ?
         [uDef setBool:NO forKey:@"Active"];
         // выбрали активный телефон ?
@@ -49,6 +54,7 @@
         [uDef setBool:NO forKey:@"Background"];
         
         [uDef synchronize];
+        }
         [GatewayUtil getBatteryLevel];
     }
     return self;
@@ -207,9 +213,9 @@
  */
 -(void) startTracking {
     
-    NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
-    
     GatewayUtil *gw = [[GatewayUtil alloc]init];
+
+    NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
     NSString *sLogin    = [uDef stringForKey:@"Login"];
     NSString *sPassword = [uDef stringForKey:@"Password"];
     NSString *beaconID  = [uDef stringForKey:@"beaconID"];
@@ -229,8 +235,7 @@
             [self.eventSink selectTab:1];
             toast(@"Успешно",@"Информация о местоположении доступна в ЛК по адресу http://cabeenet.tygdenakarte.ru");
 
-            //toast(@"Сервис запущен",@"");
-            //alert(@"Успешно",@"Сервис запущен");
+            
         } else {
             NSString *msg = [gw.response objectForKey:@"msg"];
             NSString *rc  = [gw.response objectForKey:@"rc"];
