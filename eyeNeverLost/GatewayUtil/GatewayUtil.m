@@ -8,8 +8,11 @@
 
 
 
-//#define AVK_HOST "atlant-inform.dyndns.org"
-#define AVK_HOST "shluz.tygdenakarte.ru:60080"
+#define AVK_HOST "atlant-inform.dyndns.org"
+//atlant-inform.dyndns.org,
+//скрипт:/cgi-bin/Location_02
+
+//#define AVK_HOST "shluz.tygdenakarte.ru:60080"
 
 #import "GatewayUtil.h"
 
@@ -81,20 +84,21 @@
  - вызывается из GatewayUtil.Authorization
  */
 
--(BOOL)notifySimChanged:(NSString*)beaconID simInfo:(CTCarrier*)ct changed:(BOOL)chng {
+-(BOOL)notifySimChanged:(NSString*)beaconID changed:(BOOL)chng {
     NSString *sRequest = nil;
     NSString *sURL = nil;
-    NSString *sPhonePlatformName = @"IPhone";
     
-    sRequest = [NSString stringWithString:@"http://" AVK_HOST "/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG.phone_simchanged</name><index></index><param>%@^^%@^%@^%@^%@^%@%@</param></function></request>"];
+    sRequest = [NSString stringWithString:@"http://" AVK_HOST "/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG.simchange</name><index></index><param>%@^%@^%@^%@^%@^%@^%@</param></function></request>"];
     
-    if ( ct == nil ) {
-        CTTelephonyNetworkInfo *info = [[CTTelephonyNetworkInfo alloc]init];
-        ct = info.subscriberCellularProvider;
-        netlog(@"Defaulting to current network provider - %@",ct.carrierName);
-    }
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:@"dd-MM-YYYY_HH:mm:ss"];
     
-    sURL = [NSString stringWithFormat:sRequest,beaconID,sPhonePlatformName,ct.carrierName,ct.isoCountryCode,ct.mobileCountryCode,ct.mobileNetworkCode,chng == YES?@"^needSendNotifycation":@""];
+    NSDictionary *info = [[NSBundle mainBundle] infoDictionary];
+    NSString *version = [info objectForKey:@"Version"];    
+    NSString *coPlatform = [info objectForKey:@"PlatformCode"];
+    NSString *notifFlag = @"1";
+    NSString *date = [dateFormatter stringFromDate:[NSDate date]];
+    sURL = [NSString stringWithFormat:sRequest,beaconID,notifFlag,@"simid",@"imeihash",coPlatform,version,date];
         	 
     
     return [self sendRequest:sURL];
@@ -129,8 +133,8 @@
     // активация телефона 
     if ( beaconID != nil ) {
         // дергаем обновление инфы о сим карты
-        if ( nRes >= 0 )
-        [self notifySimChanged:beaconID simInfo:nil changed:NO];
+        //if ( nRes >= 0 )
+        //[self notifySimChanged:beaconID changed:NO];
         netlog(@"Activation status: %@ [%@]\n",[response objectForKey:@"rc"],[response objectForKey:@"msg"]);
     }        
     else {  
@@ -182,7 +186,7 @@
  */
 -(NSMutableArray*)getSeatMates:(NSString*)beaconID {
  
-    NSString *sRequest = @"http://" AVK_HOST "/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG_2.get_seatmates</name><index>1</index><param>%@</param></function></request>";
+    NSString *sRequest = @"http://" AVK_HOST "/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG.get_seatmates</name><index>1</index><param>%@</param></function></request>";
     
     NSString *sURL = [NSString stringWithFormat:sRequest,beaconID];
     
@@ -203,7 +207,7 @@
     юзается из eyeMapViewController
  */
 -(BeaconObj*)getLastBeaconLocation:(NSString*)beaconID {
-    NSString *sRequest = @"http://" AVK_HOST "/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG_2.get_last_beacon_location</name><index>1</index><param>%@</param></function></request>";
+    NSString *sRequest = @"http://" AVK_HOST "/cgi-bin/Location_02?document=<request><function><name>PHONEFUNC_PKG.get_last_beacon_location</name><index>1</index><param>%@</param></function></request>";
     
     NSString *sURL = [NSString stringWithFormat:sRequest,beaconID];
     

@@ -33,29 +33,29 @@
         //self.tabBarItem.title = @"СТАРТ";
         self.title = @"АКТИВАЦИЯ";
         
-        NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
         
+        NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
         BOOL isActive = [uDef boolForKey:@"Active"];
         if ( isActive == YES ) {
             netlog(@"Already Active");
         } else {
-        // Запустили мониторинг позиции ?
-        [uDef setBool:NO forKey:@"Active"];
-        // выбрали активный телефон ?
-        [uDef setBool:NO forKey:@"LoggedIn"];
-        // имя телефона пользователя
-        [uDef setValue:nil forKey:@"beaconName"];
-        // идент телефона пользоватеья
-        [uDef setValue:nil  forKey:@"beaconID"];
-        // логинпароль
-        [uDef setValue:nil forKey:@"Login"];
-        [uDef setValue:nil  forKey:@"Password"];
-        // режим - ушли в тень или нет
-        [uDef setBool:NO forKey:@"Background"];
+            // Запустили мониторинг позиции ?
+            [uDef setBool:NO forKey:@"Active"];
+            // выбрали активный телефон ?
+            [uDef setBool:NO forKey:@"LoggedIn"];
+            // имя телефона пользователя
+            [uDef setValue:nil forKey:@"beaconName"];
+            // идент телефона пользоватеья
+            [uDef setValue:nil  forKey:@"beaconID"];
+            // логинпароль
+            [uDef setValue:nil forKey:@"Login"];
+            [uDef setValue:nil  forKey:@"Password"];
+            // режим - ушли в тень или нет
+            [uDef setBool:NO forKey:@"Background"];
         
-        [uDef synchronize];
+        
+            [uDef synchronize];
         }
-        [GatewayUtil getBatteryLevel];
     }
     return self;
 }
@@ -309,8 +309,6 @@
     lbVersion.text = sVersion;
 
     [self setStateLabel];
-
-
 
 }
 

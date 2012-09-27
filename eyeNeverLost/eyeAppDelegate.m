@@ -33,6 +33,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     //UIViewController *vcLogin, *vcStats,*vcMap;
@@ -41,6 +43,7 @@
     eyeSecondViewController* vcStats = [[eyeSecondViewController alloc] initWithNibName:@"eyeSecondViewController_iPhone" bundle:nil];
     eyeMapViewController *vcMap   = [[eyeMapViewController alloc] initWithNibName:
                    @"eyeMapViewController" bundle:nil];
+    
     
     
     vcMap.eventSink = vcLogin;
@@ -85,18 +88,16 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(batteryChanged:) name:@"UIDeviceBatteryLevelDidChangeNotification" object:device];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(batteryChanged:) name:@"UIDeviceBatteryStateDidChangeNotification" object:device];
     
-    netlog(@"Battery State: %i Charge: %f [%d]", device.batteryState, device.batteryLevel,device.batteryMonitoringEnabled);
     
     // будем посмотреть на горячую смену сим карты
     networkInfo = [[CTTelephonyNetworkInfo alloc] init];
     networkInfo.subscriberCellularProviderDidUpdateNotifier = ^(CTCarrier* carrier){
         
-        netlog(@"Sim change event triggered");
         NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
         NSString *beacon = [NSString stringWithString:[uDef stringForKey:@"beaconID"]];
         if ( beacon != nil ) {
             GatewayUtil *gw = [[GatewayUtil alloc]init];
-            [gw notifySimChanged:beacon simInfo:carrier changed:YES];
+            [gw notifySimChanged:beacon changed:YES];
         } else {
             netlog(@"Sim state changed,but no currently active beacon...");
         }
@@ -115,7 +116,6 @@
 - (void)batteryChanged:(NSNotification *)notification
 {
     UIDevice *device = [UIDevice currentDevice];
-    netlog(@"State: %i Charge: %f", device.batteryState, device.batteryLevel);
     NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
     [uDef setFloat:device.batteryLevel forKey:@"batteryLevel"];        
     [uDef synchronize];
@@ -134,7 +134,7 @@
     [uDef setBool:doStart forKey:@"Active"];
     [uDef synchronize];
     
-    netlog(@"GPS Monitor %@\n",doStart == YES?@"Started":@"Stopped");
+    netlog(@"GPS Monitor %@ for %@\n",doStart == YES?@"Started":@"Stopped",beaconID);
 
     locationCount = 0;
     firstUpdate = 0;
@@ -251,13 +251,16 @@
 - (void)sendLocation {
     // [[UIApplication sharedApplication] applicationState] == UIApplicationStateBackground
     
+    NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
+    beaconID = [NSString stringWithString:[uDef stringForKey:@"beaconID"]];
+    
     [locMgr stopUpdatingLocation];
     [self.eventSink updateStats:lastLocation updateView:NO];
     
     NSString *sStatus = [self.eventSink getStatusString];
     NSString *error  = nil;
     if ( [gwUtil saveLocation:beaconID longitude:lastLocation.coordinate.longitude latitude:lastLocation.coordinate.latitude precision:lastLocation.horizontalAccuracy status:(sStatus == nil || [sStatus length] == 0 )? @"":sStatus date:lastLocation.timestamp error:&error] == YES ) {
-        netlog(@"%@ Locations(%d) are sent: %@\n",inBackground==YES?@"Background":		@"Foreground",locationCount,error);
+        netlog(@"%@ Locations(%d) are sent: %@\n",inBackground==YES?@"Background":		@"Foreground",locationCount,error==nil?@"no error":error);
         if ( error != nil && inBackground == NO ) {
             alert(@"Ошибка",@"Ошибка записи позиции в базу: %@",error);
             
@@ -330,6 +333,10 @@
     /*
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
      */
+    NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
+    [uDef setBool:NO forKey:@"Background"];
+    [uDef synchronize];
+   
     netlog(@"applicationDidBecomeActive\n");
 }
 

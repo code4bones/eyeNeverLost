@@ -85,7 +85,9 @@
 
     if ( beacon == nil ) {
         NSString *msg = [gw.response objectForKey:@"msg"];
-        toast(@"Внимание",@"Нет записей о положении %@ ( %@ ) %@", beaconObj.name,beaconObj.uid,msg == nil?@"":msg);
+        alert(@"Внимание!",@"%@",msg);
+        //toast(@"Внимание",@"%@",msg);
+        
         return;
     }
     

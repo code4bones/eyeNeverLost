@@ -75,6 +75,8 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>PlatformCode</key>
+	<string>10</string>
 	<key>Version</key>
 	<string>Version v2.5.2</string>
 </dict>

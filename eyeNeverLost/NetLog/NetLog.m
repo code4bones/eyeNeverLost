@@ -180,7 +180,7 @@ static NSString *NetLog_DeviceName = nil;
 	NSString *message = [[NSString alloc] initWithFormat:fmtStr arguments:argList]; 
 	va_end(argList);
     
-    if ( fSilent ) {
+    if ( fSilent == YES ) {
         netlog(@"SILENT: %@\n",message);
         return;
     }
@@ -203,7 +203,7 @@ static NSString *NetLog_DeviceName = nil;
 	NSString *message = [[NSString alloc] initWithFormat:fmtStr arguments:argList]; 
 	va_end(argList);
 
-    if ( fSilent ) {
+    if ( fSilent == YES ) {
         netlog(@"SILENT: %@\n",message);
         return;
     }

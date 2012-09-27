@@ -47,6 +47,7 @@
 		CE8DB86715DC3C3F00389C41 /* fastRegistrationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8DB86515DC3C3F00389C41 /* fastRegistrationController.xib */; };
 		CE93D55B15A8799200E00E7A /* MKMapView+ZoomLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE93D55A15A8799200E00E7A /* MKMapView+ZoomLevel.m */; };
 		CE93D55D15A9E00000E00E7A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE93D55C15A9DFFF00E00E7A /* SystemConfiguration.framework */; };
+		CE9902411614D43500687A00 /* 2012-09-27.1 in Resources */ = {isa = PBXBuildFile; fileRef = CE9902401614D43500687A00 /* 2012-09-27.1 */; };
 		CEC8F46415A738E500DFFD0E /* eyeMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC8F46215A738E400DFFD0E /* eyeMapViewController.m */; };
 		CEC8F46515A738E500DFFD0E /* eyeMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC8F46315A738E500DFFD0E /* eyeMapViewController.xib */; };
 		CEC8F46715A73E6F00DFFD0E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC8F46615A73E6E00DFFD0E /* MapKit.framework */; };
@@ -102,6 +103,8 @@
 		CE8CC64715ACCC6F0015AC1A /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		CE8D363115F75E7C00A67108 /* 2012-09-03.1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.man; path = "2012-09-03.1"; sourceTree = "<group>"; };
 		CE8D363415F7605E00A67108 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		CE8D36361610807200A67108 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ru; path = ru.lproj/eyeFirstViewController_iPhone.xib; sourceTree = "<group>"; };
+		CE8D36371610819100A67108 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ru; path = ru.lproj/eyeSecondViewController_iPhone.xib; sourceTree = "<group>"; };
 		CE8DB85D15DBBBAD00389C41 /* addBeaconController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addBeaconController.h; sourceTree = "<group>"; };
 		CE8DB85E15DBBBAD00389C41 /* addBeaconController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addBeaconController.m; sourceTree = "<group>"; };
 		CE8DB85F15DBBBAD00389C41 /* addBeaconController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = addBeaconController.xib; sourceTree = "<group>"; };
@@ -111,6 +114,7 @@
 		CE93D55915A8799200E00E7A /* MKMapView+ZoomLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKMapView+ZoomLevel.h"; sourceTree = "<group>"; };
 		CE93D55A15A8799200E00E7A /* MKMapView+ZoomLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKMapView+ZoomLevel.m"; sourceTree = "<group>"; };
 		CE93D55C15A9DFFF00E00E7A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		CE9902401614D43500687A00 /* 2012-09-27.1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.man; path = "2012-09-27.1"; sourceTree = "<group>"; };
 		CEC8F46115A738E400DFFD0E /* eyeMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eyeMapViewController.h; sourceTree = "<group>"; };
 		CEC8F46215A738E400DFFD0E /* eyeMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = eyeMapViewController.m; sourceTree = "<group>"; };
 		CEC8F46315A738E500DFFD0E /* eyeMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = eyeMapViewController.xib; sourceTree = "<group>"; };
@@ -268,6 +272,7 @@
 				CE87416C15E4391000123A94 /* 2012-08-22.1 */,
 				CE8B7E6F15E4E373004233D3 /* 2012-08-22.2 */,
 				CE8D363115F75E7C00A67108 /* 2012-09-03.1 */,
+				CE9902401614D43500687A00 /* 2012-09-27.1 */,
 			);
 			name = Tickets;
 			sourceTree = "<group>";
@@ -423,6 +428,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				ru,
 			);
 			mainGroup = CE74E7B915A4C04E0021912B;
 			productRefGroup = CE74E7C515A4C04E0021912B /* Products */;
@@ -458,6 +464,7 @@
 				CE87416D15E4391000123A94 /* 2012-08-22.1 in Resources */,
 				CE8B7E7015E4E373004233D3 /* 2012-08-22.2 in Resources */,
 				CE8D363215F75E7C00A67108 /* 2012-09-03.1 in Resources */,
+				CE9902411614D43500687A00 /* 2012-09-27.1 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +525,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				CE74E7E915A4C04E0021912B /* en */,
+				CE8D36361610807200A67108 /* ru */,
 			);
 			name = eyeFirstViewController_iPhone.xib;
 			sourceTree = "<group>";
@@ -534,6 +542,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				CE74E7EF15A4C04F0021912B /* en */,
+				CE8D36371610819100A67108 /* ru */,
 			);
 			name = eyeSecondViewController_iPhone.xib;
 			sourceTree = "<group>";
