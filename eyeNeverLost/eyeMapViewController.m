@@ -66,7 +66,8 @@
 
 -(IBAction) onCenterBeacon:(id)sender {
     netlog(@"Centering on beacon\n");
-    [self showBeacon:beaconObj];
+    //onRefreshBuddie:(id)sender
+    [self onRefreshBuddie:beaconObj];
 }
 
 -(IBAction) onCenterAll:(id)sender {
@@ -146,6 +147,9 @@
         alert(@"Внимание!",@"%@",msg);
         return;
     }
+    beaconObj.latitude = beacon.latitude;
+    beaconObj.longitude = beacon.longitude;
+    beaconObj.accuracy = beacon.accuracy;
     
     lbTitle.text = [NSString stringWithFormat:@"%@ // %@",beaconObj.name,beacon.date];
     
