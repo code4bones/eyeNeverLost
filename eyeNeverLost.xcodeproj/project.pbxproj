@@ -39,6 +39,12 @@
 		CE8AF29F15DE630900EBEAD0 /* Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8AF29E15DE630900EBEAD0 /* Toast.m */; };
 		CE8B7E7015E4E373004233D3 /* 2012-08-22.2 in Resources */ = {isa = PBXBuildFile; fileRef = CE8B7E6F15E4E373004233D3 /* 2012-08-22.2 */; };
 		CE8CC64815ACCC6F0015AC1A /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8CC64715ACCC6F0015AC1A /* MBProgressHUD.m */; };
+		CE8CE77F1640A5E700B81535 /* 2012-10-31.1 in Resources */ = {isa = PBXBuildFile; fileRef = CE8CE77E1640A5E600B81535 /* 2012-10-31.1 */; };
+		CE8D07331640D21F00720F43 /* all.png in Resources */ = {isa = PBXBuildFile; fileRef = CE8D072F1640D21F00720F43 /* all.png */; };
+		CE8D07341640D21F00720F43 /* beacon_loc.png in Resources */ = {isa = PBXBuildFile; fileRef = CE8D07301640D21F00720F43 /* beacon_loc.png */; };
+		CE8D07351640D21F00720F43 /* my_loc.png in Resources */ = {isa = PBXBuildFile; fileRef = CE8D07311640D21F00720F43 /* my_loc.png */; };
+		CE8D07361640D21F00720F43 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = CE8D07321640D21F00720F43 /* user.png */; };
+		CE8D073B1640EE0D00720F43 /* all_sel.png in Resources */ = {isa = PBXBuildFile; fileRef = CE8D073A1640EE0D00720F43 /* all_sel.png */; };
 		CE8D363215F75E7C00A67108 /* 2012-09-03.1 in Resources */ = {isa = PBXBuildFile; fileRef = CE8D363115F75E7C00A67108 /* 2012-09-03.1 */; };
 		CE8D363515F7605E00A67108 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE8D363415F7605E00A67108 /* CoreTelephony.framework */; };
 		CE8DB86015DBBBAD00389C41 /* addBeaconController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8DB85E15DBBBAD00389C41 /* addBeaconController.m */; };
@@ -101,6 +107,12 @@
 		CE8B7E6F15E4E373004233D3 /* 2012-08-22.2 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "2012-08-22.2"; sourceTree = "<group>"; };
 		CE8CC64615ACCC6F0015AC1A /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		CE8CC64715ACCC6F0015AC1A /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		CE8CE77E1640A5E600B81535 /* 2012-10-31.1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.man; path = "2012-10-31.1"; sourceTree = "<group>"; };
+		CE8D072F1640D21F00720F43 /* all.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = all.png; sourceTree = "<group>"; };
+		CE8D07301640D21F00720F43 /* beacon_loc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beacon_loc.png; sourceTree = "<group>"; };
+		CE8D07311640D21F00720F43 /* my_loc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = my_loc.png; sourceTree = "<group>"; };
+		CE8D07321640D21F00720F43 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
+		CE8D073A1640EE0D00720F43 /* all_sel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = all_sel.png; sourceTree = "<group>"; };
 		CE8D363115F75E7C00A67108 /* 2012-09-03.1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.man; path = "2012-09-03.1"; sourceTree = "<group>"; };
 		CE8D363415F7605E00A67108 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		CE8D36361610807200A67108 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ru; path = ru.lproj/eyeFirstViewController_iPhone.xib; sourceTree = "<group>"; };
@@ -248,6 +260,11 @@
 		CE74E81515A4CA500021912B /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				CE8D073A1640EE0D00720F43 /* all_sel.png */,
+				CE8D072F1640D21F00720F43 /* all.png */,
+				CE8D07301640D21F00720F43 /* beacon_loc.png */,
+				CE8D07311640D21F00720F43 /* my_loc.png */,
+				CE8D07321640D21F00720F43 /* user.png */,
 				CE74E7DD15A4C04E0021912B /* first.png */,
 				CE74E7DF15A4C04E0021912B /* first@2x.png */,
 				CE74E7E415A4C04E0021912B /* second.png */,
@@ -273,6 +290,7 @@
 				CE8B7E6F15E4E373004233D3 /* 2012-08-22.2 */,
 				CE8D363115F75E7C00A67108 /* 2012-09-03.1 */,
 				CE9902401614D43500687A00 /* 2012-09-27.1 */,
+				CE8CE77E1640A5E600B81535 /* 2012-10-31.1 */,
 			);
 			name = Tickets;
 			sourceTree = "<group>";
@@ -465,6 +483,12 @@
 				CE8B7E7015E4E373004233D3 /* 2012-08-22.2 in Resources */,
 				CE8D363215F75E7C00A67108 /* 2012-09-03.1 in Resources */,
 				CE9902411614D43500687A00 /* 2012-09-27.1 in Resources */,
+				CE8CE77F1640A5E700B81535 /* 2012-10-31.1 in Resources */,
+				CE8D07331640D21F00720F43 /* all.png in Resources */,
+				CE8D07341640D21F00720F43 /* beacon_loc.png in Resources */,
+				CE8D07351640D21F00720F43 /* my_loc.png in Resources */,
+				CE8D07361640D21F00720F43 /* user.png in Resources */,
+				CE8D073B1640EE0D00720F43 /* all_sel.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,7 +506,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# ../x.sh";
+			shellScript = ../x.sh;
 		};
 /* End PBXShellScriptBuildPhase section */
 

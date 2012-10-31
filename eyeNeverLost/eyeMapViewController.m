@@ -13,6 +13,8 @@
 
 @implementation eyeMapViewController
 @synthesize mapView,tbTop,actionSheet,lbTitle,eventSink;
+@synthesize btnCenterSelf,btnCenterBeacon,btnCenterAll;
+@synthesize routeLine,polylineView;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil 
@@ -22,9 +24,9 @@
         gw = [[ GatewayUtil alloc]init];
 
         self.title = @"КАРТА";
-        
-        mapView.showsUserLocation = NO;
+        mapView.showsUserLocation = YES;
         beaconObj = nil;
+        bShowRoute = NO;
     }
     
     return self;
@@ -51,28 +53,86 @@
 }
 
 -(void)beaconSelected:(BeaconObj*)beacon {
-    
-    //NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
     beaconObj = beacon;
-    //[uDef setValue:beaconObj.uid forKey:@"seatMateID"];
-    //[uDef setValue:beaconObj.name forKey:@"seatMateName"];
-    //[uDef synchronize];
     [self onRefreshBuddie: nil];               
 }
 
--(MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id)overlay 
-{
-    MKCircleView* circleView = [[MKCircleView alloc] initWithOverlay:overlay];
-    circleView.fillColor = [UIColor blueColor];
-    circleView.strokeColor = [UIColor redColor];
-    circleView.lineWidth = 0.5;
-    circleView.alpha = 0.1;
-    return circleView;
+-(IBAction) onCenterSelf:(id)sender {
+    netlog(@"Centering on self\n");
+    // self location
+    CLLocationCoordinate2D coord = mapView.userLocation.location.coordinate;
+    [mapView setCenterCoordinate:coord zoomLevel:15 animated:YES];     
 }
 
-- (MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>) annotation{
+-(IBAction) onCenterBeacon:(id)sender {
+    netlog(@"Centering on beacon\n");
+    [self showBeacon:beaconObj];
+}
+
+-(IBAction) onCenterAll:(id)sender {
+    
+    bShowRoute = !bShowRoute;
+    [btnCenterAll setSelected:bShowRoute];
+
+    if ( bShowRoute != YES ) {
+        NSArray *overlays = [self.mapView overlays];
+        [self.mapView removeOverlays:overlays];
+        return;
+    }
+    
+    
+    CLLocationCoordinate2D coordinateArray[2];
+    coordinateArray[0] = mapView.userLocation.coordinate; //CLLocationCoordinate2DMake(lat1, lon1); 
+    if ( beaconObj != nil )
+        coordinateArray[1] = CLLocationCoordinate2DMake([beaconObj.latitude doubleValue],[beaconObj.longitude doubleValue]);
+    else
+        coordinateArray[1] = mapView.userLocation.coordinate;
+        
+    self.routeLine = [MKPolyline polylineWithCoordinates:coordinateArray count:2];
+    [self.mapView setVisibleMapRect:[self.routeLine boundingMapRect]]; //If you want the route to be visible
+    
+    [self.mapView addOverlay:self.routeLine];
+
+    
+}
+
+
+-(MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id)overlay 
+{
+    if ( overlay == self.routeLine ) {
+        if ( self.polylineView == nil ) {
+            self.polylineView = [[MKPolylineView alloc] initWithPolyline:self.routeLine];
+            self.polylineView.fillColor = [UIColor redColor];
+            self.polylineView.strokeColor = [UIColor redColor];
+            self.polylineView.lineDashPhase = 10;
+            NSArray* array = [NSArray arrayWithObjects:[NSNumber numberWithInt:20], [NSNumber numberWithInt:20], nil];
+            self.polylineView.lineDashPattern = array;
+            self.polylineView.lineWidth = 5;           
+            
+        }
+        return self.polylineView;
+    } else {
+        MKCircleView* circleView = [[MKCircleView alloc] initWithOverlay:overlay];
+        circleView.fillColor = [UIColor blueColor];
+        circleView.strokeColor = [UIColor redColor];
+        circleView.lineWidth = 0.5;
+        circleView.alpha = 0.1;
+        return circleView;
+    }
+    return nil;
+}
+
+- (MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>) annotation 
+{
     MKPinAnnotationView *annView=[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"currentloc"];
-    annView.pinColor = MKPinAnnotationColorGreen;
+    MKPointAnnotation *pta = annotation;
+    if ( pta.coordinate.latitude == self.mapView.userLocation.coordinate.latitude && 
+        pta.coordinate.longitude == self.mapView.userLocation.coordinate.longitude ) 
+    {
+        annView.pinColor = MKPinAnnotationColorRed;
+        pta.title = @"Мое местоположение";
+    } else
+        annView.pinColor = MKPinAnnotationColorGreen;
     annView.animatesDrop=TRUE;
     annView.canShowCallout = YES;
     annView.calloutOffset = CGPointMake(-5, 5);
@@ -81,20 +141,17 @@
 
 -(void)showBeacon:(BeaconObj*)beacon {
    
-    mapView.showsUserLocation = NO;
-
     if ( beacon == nil ) {
         NSString *msg = [gw.response objectForKey:@"msg"];
         alert(@"Внимание!",@"%@",msg);
-        //toast(@"Внимание",@"%@",msg);
-        
         return;
     }
     
     lbTitle.text = [NSString stringWithFormat:@"%@ // %@",beaconObj.name,beacon.date];
     
-    
     NSMutableArray *annotationsToRemove = [[NSMutableArray alloc] initWithArray: mapView.annotations]; 
+
+    // remove from annotaons to remove list the user location
     [annotationsToRemove removeObject: mapView.userLocation]; 
     [mapView removeAnnotations: annotationsToRemove];
     

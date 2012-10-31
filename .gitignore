@@ -1,2 +1,18 @@
 
 eyeNeverLost.xcodeproj/project.xcworkspace/xcuserdata/User.xcuserdatad/UserInterfaceState.xcuserstate
+
+*.d
+
+*.o
+
+*.hmap
+
+*.LinkFileList
+
+*.sh
+
+*.dat
+
+*.dep
+
+*.tm_build_errors
