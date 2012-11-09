@@ -94,7 +94,7 @@
 - (void) update:(id)obj {
 
     if ( self.clLocation == nil ) {
-        netlog(@"Statistic is null !");
+        netlog(@"Statistic is null !\n");
         return;
     }
     

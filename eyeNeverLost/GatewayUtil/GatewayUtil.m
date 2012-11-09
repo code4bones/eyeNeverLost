@@ -8,11 +8,11 @@
 
 
 
-#define AVK_HOST "atlant-inform.dyndns.org"
+//#define AVK_HOST "atlant-inform.dyndns.org"
 //atlant-inform.dyndns.org,
 //скрипт:/cgi-bin/Location_02
 
-//#define AVK_HOST "shluz.tygdenakarte.ru:60080"
+#define AVK_HOST "shluz.tygdenakarte.ru:60080"
 
 #import "GatewayUtil.h"
 
@@ -424,7 +424,7 @@
     sURL = [sURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
    
     netlog(@"sending: [%@]\n",sURL);
-
+    
     NSData *xmlData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:sURL] options:NSDataReadingUncached error:&error];
     
     if ( xmlData == nil || [xmlData length] == 0 ) {
@@ -436,7 +436,7 @@
     }
     
     netlog(@"response length = %d\n",[xmlData length]);
-    netsend(xmlData);
+    //netsend(xmlData);
     
     TBXML *tbxml = [TBXML newTBXMLWithXMLData:xmlData error:&error];
     if ( tbxml == nil ) {

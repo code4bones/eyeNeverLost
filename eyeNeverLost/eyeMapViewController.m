@@ -27,6 +27,7 @@
         mapView.showsUserLocation = YES;
         beaconObj = nil;
         bShowRoute = NO;
+        baloonMode = 2;
     }
     
     return self;
@@ -35,8 +36,12 @@
 - (void)viewWillAppear:(BOOL)animated {    // Called when the view is about to made visible. 
     if ( beaconObj == nil ) {
         beaconObj = [eventSink getCurrentBeacon];
-        netlog(@"map beacon selected %s\n",beaconObj.uid);
-        [self onRefreshBuddie:nil];
+        if ( beaconObj != 0 ) {
+            netlog(@"viewWillAppear with beacon =  %@\n",beaconObj.name);
+            [self onRefreshBuddie:nil];
+        } else {
+            netlog(@"viewWillAppear without beacon !\n");
+        }
     }
 }
 
@@ -62,12 +67,24 @@
     // self location
     CLLocationCoordinate2D coord = mapView.userLocation.location.coordinate;
     [mapView setCenterCoordinate:coord zoomLevel:15 animated:YES];     
+    baloonMode = 0;
+    [self showBaloon:baloonMode];
 }
 
 -(IBAction) onCenterBeacon:(id)sender {
     netlog(@"Centering on beacon\n");
+    if ( beaconObj != nil ) {
+        CLLocationCoordinate2D coord = CLLocationCoordinate2DMake([beaconObj.latitude doubleValue],[beaconObj.longitude doubleValue]);
+        [mapView setCenterCoordinate:coord zoomLevel:15 animated:YES];     
+
+        baloonMode = 1;
+        [self showBaloon:baloonMode];
+    }
     //onRefreshBuddie:(id)sender
-    [self onRefreshBuddie:beaconObj];
+    //baloonMode = 1;
+    //[self onRefreshBuddie:beaconObj];
+    //[self showBaloon:baloonMode];
+
 }
 
 -(IBAction) onCenterAll:(id)sender {
@@ -94,6 +111,8 @@
     
     [self.mapView addOverlay:self.routeLine];
 
+    baloonMode = 2;
+    [self showBaloon:baloonMode];
     
 }
 
@@ -132,11 +151,16 @@
     {
         annView.pinColor = MKPinAnnotationColorRed;
         pta.title = @"Мое местоположение";
-    } else
+    } else {
+        pta.title = [NSString stringWithFormat:@"%@ // %@",beaconObj.name,beaconObj.date];
+        pta.subtitle = beaconObj.status;
         annView.pinColor = MKPinAnnotationColorGreen;
-    annView.animatesDrop=TRUE;
+    }
+    
+    annView.animatesDrop = NO;
     annView.canShowCallout = YES;
-    annView.calloutOffset = CGPointMake(-5, 5);
+    annView.calloutOffset = CGPointMake(0, 0);
+    [annView setSelected:YES animated:YES];
     return annView;
 }
 
@@ -150,6 +174,8 @@
     beaconObj.latitude = beacon.latitude;
     beaconObj.longitude = beacon.longitude;
     beaconObj.accuracy = beacon.accuracy;
+    beaconObj.date = beacon.date;
+    beaconObj.status = beacon.status;
     
     lbTitle.text = [NSString stringWithFormat:@"%@ // %@",beaconObj.name,beacon.date];
     
@@ -176,7 +202,9 @@
     
     [mapView addAnnotation:annotationPoint]; 
     
-    // иногда в базу попадает отрицательна, целочисленная точнонсть - хз что это такое...
+    //[mapView setSelectedAnnotations:[mapView annotations]];
+    [self showBaloon:baloonMode];
+    // иногда в базу попадает отриц, хз что это такое...
     if ( accuracy > 0 ) {
         MKCircle *circle = [MKCircle circleWithCenterCoordinate:coord radius:accuracy];
         [mapView addOverlay:circle];
@@ -185,6 +213,27 @@
     
     CLLocationCoordinate2D centerCoord = coord; 
     [mapView setCenterCoordinate:centerCoord zoomLevel:15 animated:YES];    
+}
+
+-(void)showBaloon:(int)idx {
+    NSMutableArray *arr = [[NSMutableArray alloc] init];//WithArray: mapView.annotations]; 
+    MKUserLocation *user = [mapView userLocation];
+    NSMutableArray *all =  [[NSMutableArray alloc] initWithArray:[mapView annotations]];
+    NSMutableArray *toShow;
+    if ( idx == 0 ) // user
+    {
+        [arr addObject:user];
+        toShow = arr;
+    } else if ( idx == 1 ) // beacon 
+    {
+        [all removeObject:user];
+        toShow = all;
+    } else 
+    { // both
+        toShow = all;
+        
+    }
+    [mapView setSelectedAnnotations:toShow];
 }
 
 -(IBAction) onRefreshBuddie:(id)sender {

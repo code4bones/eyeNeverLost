@@ -27,6 +27,8 @@
     GatewayUtil *gw;
     BOOL  bShowRoute;
     id<EventSinkDelegate> eventSink;
+    int baloonMode;
+    
 }
 
 @property (strong,retain) id eventSink;
@@ -40,6 +42,7 @@
 @property (nonatomic,retain) MKPolyline *routeLine;
 @property (nonatomic,retain) MKPolylineView *polylineView;
 
+-(void)showBaloon:(int)idx;
 
 -(IBAction) onSelectBuddie:(id)sender;
 -(IBAction) onRefreshBuddie:(id)sender;

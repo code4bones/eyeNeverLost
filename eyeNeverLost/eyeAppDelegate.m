@@ -93,6 +93,7 @@
     networkInfo = [[CTTelephonyNetworkInfo alloc] init];
     networkInfo.subscriberCellularProviderDidUpdateNotifier = ^(CTCarrier* carrier){
         
+        netlog(@"***** SIM CHANGED ******");
         NSUserDefaults *uDef = [NSUserDefaults standardUserDefaults];
         NSString *beacon = [NSString stringWithString:[uDef stringForKey:@"beaconID"]];
         if ( beacon != nil ) {
@@ -288,8 +289,8 @@
         firstUpdate = [[NSDate date] timeIntervalSince1970];
         lastLocation = newLocation;
     } else {
-        if ( newLocation.horizontalAccuracy < lastLocation.horizontalAccuracy ) 
-            lastLocation = newLocation;
+        //if ( newLocation.horizontalAccuracy < lastLocation.horizontalAccuracy ) 
+        lastLocation = newLocation;
     }
     
     locationCount++;
@@ -297,6 +298,7 @@
     netlog(@"%d | Updating location %@\n",locationCount,[lastLocation description]);
     
     if ( isFirstStart == YES ) {
+        netlog(@"FIRST-TIME LOCATION SENT...\n");
         [self sendLocation];
         isFirstStart = NO;
         isUpdating = NO;
@@ -309,6 +311,7 @@
     updateInterval = [gwUtil getFrequency:beaconID];
     if ( updateInterval <= 0 ) updateInterval = 10; // минут
     updateInterval *= 60;
+    netlog(@"Fetched update inverval for %@ == %d min\n",beaconID,updateInterval);
     //updateInterval = 30;
 }
 
